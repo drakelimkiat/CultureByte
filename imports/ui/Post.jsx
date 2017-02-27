@@ -6,7 +6,7 @@ export default class Post extends Component {
             <div>
               Title: {this.props.post.title}<br/>
               Body: {this.props.post.body}<br/>
-              Author: {this.props.post.username}<br/>
+              Username: {this.props.post.username}<br/>
             </div>
         );
     }

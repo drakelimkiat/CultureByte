@@ -16,7 +16,7 @@ Meteor.methods({
     check(body, String);
  
     // Make sure the user is logged in before inserting a task
-    if (! this.userId) {
+    if (! Meteor.user()) {
       throw new Meteor.Error('not-authorized');
     }
  
@@ -24,8 +24,8 @@ Meteor.methods({
       title: title,
       body: body,
       createdAt: new Date(),
-      author: this.userId,
-      username: Meteor.users.findOne(this.userId).username
+      author: Meteor.user()._id,
+      username: Meteor.user().username
     });
   },
 });
