@@ -8,15 +8,34 @@ import Post from './Post.jsx';
 
 // App component - represents the whole app
 class App extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          index: 0
+      };
+  }
 
+  renderPost() {
+      if (this.props.posts[0] != undefined) {
+          console.log(this.props.posts);
+          return <Post
+              key={this.props.posts[this.state.index]._id}
+              post={this.props.posts[this.state.index]} />
+      }
+  }
+
+  nextPost() {
+      this.setState({
+          index: this.state.index + 1
+      });
+  }
 
   render() {
     return (
-
       <div className="container">
         <h1>CultureBytes</h1>
-        
-        <h4>{this.props.posts[0] != undefined ? this.props.posts[0].name : ''}</h4>
+        {this.renderPost()}
+        <button onClick={this.nextPost.bind(this)}>Next Post</button>
       </div>
     );
   }

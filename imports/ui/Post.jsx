@@ -3,7 +3,10 @@ import React, { Component, PropTypes } from 'react';
 export default class Post extends Component {
     render() {
         return (
-            <h4>{this.props.post.name}</h4>
+            <div>
+              <h3>{this.props.post.name}</h3>
+              {this.props.post.body}
+            </div>
         );
     }
 }
