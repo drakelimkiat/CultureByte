@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   renderPost() {
-      if (this.props.posts[0] != undefined) {
+      if (this.props.posts[0]) {
           console.log(this.props.posts);
           return <Post
               key={this.props.posts[this.state.index]._id}
@@ -52,3 +52,4 @@ export default createContainer(() => {
         posts: Posts.find({}).fetch()
     };
 }, App);
+
