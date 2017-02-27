@@ -4,7 +4,3 @@ import { render } from 'react-dom';
 
 import './main.html'
 import '../imports/startup/client'
-
-// Meteor.startup(() => {
-//   render(<App />, document.getElementById('render-target'));
-// });
