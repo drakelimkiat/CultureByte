@@ -20,9 +20,12 @@ NCSV_30_Team_Oasis_NVC
 ## Convenient links
 NVC Tom Kosnik Dropbox
 https://www.dropbox.com/personal/ncsv30%20-%20nvc
+
 NVC Google Drive link
 https://drive.google.com/drive/u/0/folders/0B1gxCZLtJyNPeGpQa3o3clFOWWM
-Consolidated Factoids and Anecdotes https://docs.google.com/document/d/1-bROC4qArekguslZ6ot9YqZrhwd1YeZ3ylc0xskIBPc/edit
+
+Consolidated Factoids and Anecdotes
+https://docs.google.com/document/d/1-bROC4qArekguslZ6ot9YqZrhwd1YeZ3ylc0xskIBPc/edit
 
 Meteor & React Tutorial
 https://www.meteor.com/tutorials/react/creating-an-app
