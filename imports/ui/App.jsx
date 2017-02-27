@@ -59,6 +59,7 @@ class App extends Component {
         <AccountsUIWrapper />
         {postView}
         {nextButton}
+        <br/><br/>
         {createPostForm}
       </div>
     );

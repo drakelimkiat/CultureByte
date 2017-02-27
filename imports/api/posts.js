@@ -25,6 +25,7 @@ Meteor.methods({
       body: body,
       createdAt: new Date(),
       author: this.userId,
+      username: Meteor.users.findOne(this.userId).username
     });
   },
 });
