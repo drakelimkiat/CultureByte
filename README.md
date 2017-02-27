@@ -14,6 +14,10 @@ NCSV_30_Team_Oasis_NVC
 2. Type `db.posts.insert({ name: "Hello world!", createdAt: new Date(), body: "somebody" });`
 3. `posts` in `db.posts` is the MongoDB collection name. Refer to `imports/api/posts.js` to see how web app can access collection
 
+## Resetting local MongoDB (deletes everything)
+1. Exit any currently running Meteor project
+2. Type `meteor reset`
+
 ## Development Workflow
 1. `git checkout -b branch-name` to create new branch. Replace 'branch-name' with appropriate description of what the branch is about.
 2. Branches should preferably be small changes / features to be added so that master can be updated iteratively and quickly.
