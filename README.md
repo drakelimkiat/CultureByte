@@ -2,7 +2,7 @@
 NCSV_30_Team_Oasis_NVC
 
 ## Setting Up
-1. `cd` into the directory that you want to install the project file in 
+1. `cd` into the directory that you want to install the project file in
 2. `git clone git@github.com:drakelimkiat/CultureByte.git`
 3. `cd` into the CultureByte folder
 4. Type `meteor` in your Terminal. If you encounter `meteor command not found`, type `curl https://install.meteor.com/ | sh` for Mac/Linux
@@ -16,3 +16,13 @@ NCSV_30_Team_Oasis_NVC
 4. Merge master into branch and solve merge conflicts if there are any.
 5. Once merge is allowed in Pull Request, merge branch into master or appropriate branch.
 6. Delete branch / close related issues if needed.
+
+## Convenient links
+NVC Tom Kosnik Dropbox
+https://www.dropbox.com/personal/ncsv30%20-%20nvc
+NVC Google Drive link
+https://drive.google.com/drive/u/0/folders/0B1gxCZLtJyNPeGpQa3o3clFOWWM
+Consolidated Factoids and Anecdotes https://docs.google.com/document/d/1-bROC4qArekguslZ6ot9YqZrhwd1YeZ3ylc0xskIBPc/edit
+
+Meteor & React Tutorial
+https://www.meteor.com/tutorials/react/creating-an-app
