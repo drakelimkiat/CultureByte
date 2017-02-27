@@ -34,6 +34,10 @@ class App extends Component {
       }
   }
 
+  renderCreatePostForm() {
+    return <Form/>
+  }
+
   nextPost() {
       this.setState({
           index: this.state.index + 1
@@ -43,9 +47,11 @@ class App extends Component {
   render() {
     let postView = null;
     let nextButton = null;
+    let createPostForm = null;
     if (this.props.currentUser) {
         postView = this.renderPost();
         nextButton = this.renderNextButton();
+        createPostForm = this.renderCreatePostForm();
     }
     return (
       <div className="container">
@@ -53,7 +59,7 @@ class App extends Component {
         <AccountsUIWrapper />
         {postView}
         {nextButton}
-        <Form/>
+        {createPostForm}
       </div>
     );
   }
@@ -80,14 +86,9 @@ class Form extends Component {
     // Get input title and body
     const title = ReactDOM.findDOMNode(this.refs.titleInput).value.trim();
     const body = ReactDOM.findDOMNode(this.refs.bodyInput).value.trim();
-    console.log(title)
-    console.log(body)
 
     // Create new post
-    Posts.insert({
-      title: title,
-      body: body
-    });
+    Meteor.call('posts.insert', title, body);
 
     // Clear form
     ReactDOM.findDOMNode(this.refs.titleInput).value = '';
