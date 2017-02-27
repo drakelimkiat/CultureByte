@@ -6,6 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import { Posts } from '../api/posts.js';
 
 import Post from './Post.jsx';
+import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 
 // App component - represents the whole app
 class App extends Component {
@@ -18,10 +19,18 @@ class App extends Component {
 
   renderPost() {
       if (this.props.posts[0] != undefined) {
-          console.log(this.props.posts);
           return <Post
               key={this.props.posts[this.state.index]._id}
               post={this.props.posts[this.state.index]} />
+      }
+  }
+
+  renderNextButton() {
+      // Check if we are at the end of the list
+      if (this.props.posts.length != this.state.index + 1) {
+          return <button onClick={this.nextPost.bind(this)}>Next Post</button>;
+      } else {
+          return <button disabled>No more posts!</button>;
       }
   }
 
@@ -32,14 +41,18 @@ class App extends Component {
   }
 
   render() {
+    let postView = null;
+    let nextButton = null;
+    if (this.props.currentUser) {
+        postView = this.renderPost();
+        nextButton = this.renderNextButton();
+    }
     return (
       <div className="container">
         <h1>CultureBytes</h1>
-        {this.renderPost()}
-        <button onClick={this.nextPost.bind(this)}>Next Post</button>
-
-        <br/><br/>
-
+        <AccountsUIWrapper />
+        {postView}
+        {nextButton}
         <Form/>
       </div>
     );
@@ -48,13 +61,15 @@ class App extends Component {
 
 App.propTypes = {
     posts: PropTypes.array.isRequired,
+    currentUser: PropTypes.object
 };
 
 export default createContainer(() => {
     Meteor.subscribe('posts');
 
     return {
-        posts: Posts.find({}).fetch()
+        posts: Posts.find({}).fetch(),
+        currentUser: Meteor.user()
     };
 }, App);
 
