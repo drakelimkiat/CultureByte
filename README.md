@@ -9,6 +9,15 @@ NCSV_30_Team_Oasis_NVC
 5. If you encounter an error: `Your application is crashing. Waiting for file change.` do Ctrl+C to terminate the process, then do `meteor npm install --save babel-runtime`.
 6. After meteor is successfully installed, just type `meteor`
 
+## Populating local MongoDB
+1. Go to your app directory and type `meteor mongo`
+2. Type `db.posts.insert({ name: "Hello world!", createdAt: new Date(), body: "somebody" });`
+3. `posts` in `db.posts` is the MongoDB collection name. Refer to `imports/api/posts.js` to see how web app can access collection
+
+## Resetting local MongoDB (deletes everything)
+1. Exit any currently running Meteor project
+2. Type `meteor reset`
+
 ## Development Workflow
 1. `git checkout -b branch-name` to create new branch. Replace 'branch-name' with appropriate description of what the branch is about.
 2. Branches should preferably be small changes / features to be added so that master can be updated iteratively and quickly.
