@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   renderPost() {
-      if (this.props.posts[0] != undefined) {
+      if (this.props.posts[0]) {
           return <Post
               key={this.props.posts[this.state.index]._id}
               post={this.props.posts[this.state.index]} />
