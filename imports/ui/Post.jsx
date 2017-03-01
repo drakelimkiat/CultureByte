@@ -1,11 +1,36 @@
 import React, { Component, PropTypes } from 'react';
+import { Session } from 'meteor/session'
 
 export default class Post extends Component {
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        usersWhoLiked: [],
+      };
+    }
+
+    componentWillMount() {
+      this.getUsersWhoLiked(this.props.post._id);
+    }
+
+    getUsersWhoLiked(currentPost) {
+      Meteor.call('posts.usersWhoLiked', currentPost, function(error, result) {
+        if (error) {
+          console.log(error.reason);
+          return;
+        }
+        this.setState({usersWhoLiked: result['usernames']});
+      }.bind(this));
+    }
+
     unlike(currentPost, currentUser) {
       // Decrement like_count of current post
       Meteor.call('posts.unlike', currentPost);
       // Remove current post id from liked_posts array of user
       Meteor.call('users.unlike', currentPost, currentUser);
+      // Update users who liked
+      this.getUsersWhoLiked(currentPost);
     }
 
     like(currentPost, currentUser) {
@@ -13,6 +38,8 @@ export default class Post extends Component {
       Meteor.call('posts.like', currentPost);
       // Add current post id to liked_posts array of user
       Meteor.call('users.like', currentPost, currentUser);
+      // Update users who liked
+      this.getUsersWhoLiked(currentPost);
     }
 
     renderLikeButton() {
@@ -41,7 +68,8 @@ export default class Post extends Component {
               Title: {this.props.post.title}<br/>
               Body: {this.props.post.body}<br/>
               Username: {this.props.post.username}<br/>
-              No. of Likes: { this.props.post.liked_count }<br/>
+              No. of Likes: {this.props.post.liked_count}<br/>
+              Users who Liked: {this.state.usersWhoLiked}<br/>
               { this.renderLikeButton() }
             </div>
         );

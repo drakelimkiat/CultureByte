@@ -60,4 +60,12 @@ Meteor.methods({
     }
     Meteor.users.update({_id: user._id}, {$pull: {'profile.liked_posts': post}});
   },
+
+  'posts.usersWhoLiked'(post) {
+    let users = Meteor.users.find({'profile.liked_posts': post})
+    let usernames = users.map(function(user) {
+      return user.username + " ";
+    });
+    return {'usernames': usernames};
+  },
 });
