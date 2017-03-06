@@ -21,13 +21,17 @@ Meteor.methods({
       throw new Meteor.Error('not-authorized');
     }
 
-    Posts.insert({
+    try {
+      Posts.insert({
       title: title,
       body: body,
       pictureUrl: pictureUrl,
       createdAt: new Date(),
       author: Meteor.user()._id,
       username: Meteor.user().username
-    });
+      });
+    } catch (exception) {
+      return exception;
+    }
   },
 });
