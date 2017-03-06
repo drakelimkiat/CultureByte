@@ -34,6 +34,15 @@ class App extends Component {
       }
   }
 
+  renderBackButton() {
+      // Check if we are at the start of the list
+      if (this.state.index != 0) {
+          return <button onClick={this.previousPost.bind(this)}>Previous Post</button>;
+      } else {
+          return <button disabled>First post!</button>;
+      }
+  }
+
   renderCreatePostForm() {
     return <Form/>
   }
@@ -44,13 +53,21 @@ class App extends Component {
       });
   }
 
+  previousPost() {
+    this.setState({
+        index: this.state.index - 1
+    });
+  }
+
   render() {
     let postView = null;
     let nextButton = null;
+    let backButton = null;
     let createPostForm = null;
     if (this.props.currentUser) {
         postView = this.renderPost();
         nextButton = this.renderNextButton();
+        backButton = this.renderBackButton();
         createPostForm = this.renderCreatePostForm();
     }
     return (
@@ -58,6 +75,7 @@ class App extends Component {
         <h1>CultureBytes</h1>
         <AccountsUIWrapper />
         {postView}
+        {backButton}
         {nextButton}
         <br/><br/>
         {createPostForm}
