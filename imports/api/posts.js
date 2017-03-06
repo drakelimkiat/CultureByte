@@ -76,7 +76,12 @@ Meteor.methods({
   'posts.usersWhoLiked'(postId) {
     check(postId, String);
 
-    let users = Meteor.users.find({'profile.liked_posts': postId})
+    // Make sure the user is logged in before querying users who liked
+    if (! Meteor.user()) {
+      throw new Meteor.Error('not-authorized');
+    }
+
+    let users = Meteor.users.find({'profile.liked_posts': postId});
     let usernames = users.map(function(user) {
       return user.username + " ";
     });

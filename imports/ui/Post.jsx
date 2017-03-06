@@ -50,16 +50,16 @@ export default class Post extends Component {
       console.log("currentUser:", currentUser);
 
       if (currentUser.profile != undefined && currentUser.profile.liked_posts != undefined) {
-        const likedPosts = currentUser.profile.liked_posts
+        const likedPosts = currentUser.profile.liked_posts;
         console.log("likedPosts:", likedPosts);
         if (likedPosts.indexOf(currentPostId) != -1) {
           // Current user liked this post. Clicking should unlike
-          return <button onClick={this.unlike.bind(this, currentPostId, currentUserId)}>Unlike</button>
+          return <button onClick={this.unlike.bind(this, currentPostId, currentUserId)}><i className="fa fa-heart" aria-hidden="true"></i></button>
         }
       }
 
       // Current user did not like this post. Clicking should like
-      return <button onClick={this.like.bind(this, currentPostId, currentUserId)}>Like</button>
+      return <button onClick={this.like.bind(this, currentPostId, currentUserId)}><i className="fa fa-heart-o" aria-hidden="true"></i></button>
     }
 
     render() {
