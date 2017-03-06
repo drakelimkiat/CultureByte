@@ -11,18 +11,20 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'posts.insert'(title, body) {
+  'posts.insert'(title, body, pictureUrl) {
     check(title, String);
     check(body, String);
- 
+    check(pictureUrl, String);
+
     // Make sure the user is logged in before inserting a task
     if (! Meteor.user()) {
       throw new Meteor.Error('not-authorized');
     }
- 
+
     Posts.insert({
       title: title,
       body: body,
+      pictureUrl: pictureUrl,
       createdAt: new Date(),
       author: Meteor.user()._id,
       username: Meteor.user().username

@@ -6,6 +6,8 @@ export default class Post extends Component {
             <div>
               Title: {this.props.post.title}<br/>
               Body: {this.props.post.body}<br/>
+              PictureUrl: {this.props.post.pictureUrl}<br/>
+              <img style={{width:500, height:500}} src={this.props.post.pictureUrl}/><br/>
               Username: {this.props.post.username}<br/>
             </div>
         );
