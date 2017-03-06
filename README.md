@@ -18,6 +18,42 @@ NCSV_30_Team_Oasis_NVC
 1. Exit any currently running Meteor project
 2. Type `meteor reset`
 
+## MongoDB Schema and quick user guide
+1. After going to app directory and typing 'meteor mongo', default db would be 'meteor'
+2. Type 'db.getCollectonNames()' to view all collection names in the db. 
+3. Currently, you should see 3 collection names: "meteor_accounts_loginServiceConfiguration", "posts", "users". 
+4. To view the contents of the individual collection, type 'db.<collection_name>.find()'. Add a '.pretty()' at the back to prettify it, i.e. 'db.<collection_name>.find().pretty()'.
+5. Current example schema for each entry of 'users': 
+{
+	"_id" : "123",
+	"createdAt" : ISODate("2017-03-06T01:11:17.476Z"),
+	"services" : {
+		"password" : {
+			"bcrypt" : "xxx"
+		},
+		"resume" : {
+			"loginTokens" : [
+				{
+					"when" : ISODate("2017-03-06T01:11:17.493Z"),
+					"hashedToken" : "xxx"
+				}
+			]
+		}
+	},
+	"username" : "celesteanglm"
+}
+6. Current example schema for each entry of 'posts':
+{
+	"_id" : "xxx",
+	"title" : "xxx",
+	"body" : "xxx",
+	"pictureUrl" : "xxx.png",
+	"createdAt" : ISODate("2017-03-06T01:11:49.621Z"),
+	"author" : "123",
+	"username" : "celesteanglm"
+}
+7. Note that "_id" and "username" would be mapped to both collections, e.g. each time the user with username celesteanglm creates a post, in the entry in 'posts', the "username" field would contain the "username" from the 'users' collection, and the "author" field would contain the "_id" from the 'users' collection.
+
 ## Development Workflow
 1. `git checkout -b branch-name` to create new branch. Replace 'branch-name' with appropriate description of what the branch is about.
 2. Branches should preferably be small changes / features to be added so that master can be updated iteratively and quickly.
