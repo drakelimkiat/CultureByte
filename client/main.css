@@ -1,1 +1,114 @@
-/* CSS declarations go here */
+@import url("fonts.css");
+/** 
+ * ===================================================================
+ * header styles 
+ *
+ * ------------------------------------------------------------------- 
+ */
+.header {
+	width: 100%;
+	min-height: 66px;
+	position: absolute;
+	background: #14171c;
+	top: 0;
+	left: 0;
+	z-index: 600;
+}
+.buffer {
+	height: 3000px;
+}
+
+/**
+ * primary navigation
+ * - 
+ */
+.main-navigation {
+	display: inline-block;
+	width: auto;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	font-family: "raleway-heavy", sans-serif;
+	font-size: 11.5px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	position: absolute;
+	top: 0;
+	right: 35px;
+}
+.main-navigation li {
+	position: relative;
+	display: inline-block;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	right: 100px;
+	height: 66px;
+}
+.main-navigation li.current a {
+	color: #FFFFFF;
+}
+.main-navigation li.current a::after {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 80%;
+	height: 3px;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	background-color: #05bca9;
+	content: '\0020';
+	display: block;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.main-navigation li.highlight a {
+	color: #05bca9;
+}
+.main-navigation li.with-sep a {
+	position: relative;
+	padding-left: 22px;
+	margin-left: 8px;
+}
+.main-navigation li.with-sep a::before {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 1px;
+	height: 20px;
+	margin-top: -10px;
+	background-color: rgba(255, 255, 255, 0.2);
+	content: '\0020';
+	display: block;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+/* navigation links */
+.main-navigation li a {
+	display: block;
+	padding: 18px 7px;
+	line-height: 30px;
+	text-decoration: none;
+	text-align: left;
+	color: #98999a;
+	position: relative;
+	-moz-transition: color 0.3s ease-in-out;
+	-o-transition: color 0.3s ease-in-out;
+	-webkit-transition: color 0.3s ease-in-out;
+	-ms-transition: color 0.3s ease-in-out;
+	transition: color 0.3s ease-in-out;
+}
+.main-navigation li a:active {
+	background-color: transparent !important;
+}
+.main-navigation li a:hover {
+	color: #FFFFFF;
+}

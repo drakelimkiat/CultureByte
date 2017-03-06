@@ -1,11 +1,11 @@
 import React from 'react';
-import Navigation from './Navigation.jsx';
+import NavBar from './LandingPage/NavBar';
 
 const Main = ({children}) => {
 	if (!children) {
 		return (
 			<div>
-				<Navigation />
+				<NavBar />
 				<div>Loading...</div>
 			</div>
 		);
@@ -13,7 +13,7 @@ const Main = ({children}) => {
 
 	return (
 		<div>
-			<Navigation />
+			<NavBar />
 			{children}
 		</div>
 	);
