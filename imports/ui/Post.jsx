@@ -67,6 +67,8 @@ export default class Post extends Component {
               Id: {this.props.post._id}<br/>
               Title: {this.props.post.title}<br/>
               Body: {this.props.post.body}<br/>
+              PictureUrl: {this.props.post.pictureUrl}<br/>
+              <img style={{width:500, height:500}} src={this.props.post.pictureUrl}/><br/>
               Username: {this.props.post.username}<br/>
               No. of Likes: {this.props.post.liked_count}<br/>
               Users who Liked: {this.state.usersWhoLiked}<br/>
