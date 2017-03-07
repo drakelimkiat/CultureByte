@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 import App from '../../ui/App.jsx';
-import LandingPage from '../../ui/LandingPage.jsx';
+import LandingPage from '../../ui/LandingPage/LandingPage.jsx';
 import Main from '../../ui/Main.jsx';
 
 Meteor.startup(() => {
