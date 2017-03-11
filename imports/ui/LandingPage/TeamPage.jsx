@@ -4,13 +4,13 @@ import TeamMember from './TeamMember.jsx';
 const TeamPage = () => {
    	return (
    		<div className="team">
-   			<div className="row">
+   			<div className="cb-row">
    			    <div className="team-page-header">
           			<h2>The Team</h2>
           			<p>Introducing our relatively young group of founders</p>
         		</div>
    			</div>
-   			<div className="row">
+   			<div className="cb-row">
    				<TeamMember
    					name="Ana"
    					role="CPO"

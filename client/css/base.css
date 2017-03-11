@@ -292,19 +292,19 @@ textarea {
  * ------------------------------------------------------------------- 
  */
 
-.row {
+.cb-row {
 	width: 94%;
 	max-width: 1140px;
 	margin: 0 auto;
 }
-.row:before, .row:after {
+.cb-row:before, .cb-row:after {
 	content: "";
 	display: table;
 }
-.row:after {
+.cb-row:after {
 	clear: both;
 }
-.row .row {
+.cb-row .cb-row {
 	width: auto;
 	max-width: none;
 	margin-left: -20px;
@@ -362,7 +362,7 @@ textarea {
  */
 
 @media screen and (max-width:1024px) {
-	.row .row {
+	.cb-row .cb-row {
 		margin-left: -18px;
 		margin-right: -18px;
 	}
@@ -377,12 +377,12 @@ textarea {
  */
 
 @media screen and (max-width:768px) {
-	.row {
+	.cb-row {
 		width: auto;
 		padding-left: 30px;
 		padding-right: 30px;
 	}
-	.row .row {
+	.cb-row .cb-row {
 		padding-left: 0;
 		padding-right: 0;
 		margin-left: -15px;
@@ -417,11 +417,11 @@ textarea {
  */
 
 @media screen and (max-width:600px) {
-	.row {
+	.cb-row {
 		padding-left: 25px;
 		padding-right: 25px;
 	}
-	.row .row {
+	.cb-row .cb-row {
 		margin-left: -10px;
 		margin-right: -10px;
 	}
@@ -448,11 +448,11 @@ textarea {
  */
 
 @media screen and (max-width:400px) {
-	.row {
+	.cb-row {
 		padding-left: 30px;
 		padding-right: 30px;
 	}
-	.row .row {
+	.cb-row .cb-row {
 		padding-left: 0;
 		padding-right: 0;
 		margin-left: 0;
