@@ -15,31 +15,31 @@ const TeamPage = () => {
    					name="Ana"
    					role="CPO"
    					description="She decides which features make the cut!"
-   					src="img ana"
+   					imageClassName="img ana"
    					key="Ana" />
    				<TeamMember
    					name="Si Kai"
    					role="CTO"
    					description="He decides all things tech!"
-   					src="img sikai"
+   					imageClassName="img sikai"
    					key="SiKai" />
    				<TeamMember
    					name="Celeste"
    					role="CDO"
    					description="She decides all things data related!"
-   					src="img celeste"
+   					imageClassName="img celeste"
    					key="Celeste" />
    				<TeamMember
    					name="Lim Kiat"
    					role="CFO"
    					description="He does our financial projections!"
-   					src="img limkiat"
+   					imageClassName="img limkiat"
    					key="LimKiat" />
    				<TeamMember
    					name="Annabel"
    					role="CEO"
    					description="She sells CultureByte to investors!"
-   					src="img annabel"
+   					imageClassName="img annabel"
    					key="Annabel" />
    			</div>
    		</div>
