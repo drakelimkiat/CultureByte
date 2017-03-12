@@ -7,8 +7,8 @@ const LandingPage = () => {
 	return (
 		<div>
 			<TitlePage />
-			<TeamPage />
 			<CategoryPage />
+			<TeamPage />
 		</div>
 	);
 };
