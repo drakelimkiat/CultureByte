@@ -287,14 +287,19 @@
 }
 .folio-info {
   	opacity: 0;
+  	color: #fff;
   	margin-bottom: 75px;
   	margin-top: -75px;
   	-webkit-transition: all 1s ease-in-out;
   	transition: all 1s ease-in-out;
 }
 .folio-info h3 {
-  	margin-top: 0;
-  	color: #fff;
+  	font-size: 18px;
+  	font-family: "raleway-semibold", sans-serif;
+}
+.folio-info p {
+	font-size: 14px;
+	font-family: "raleway-regular", sans-serif;
 }
 .folio-overview a {
   	font-size: 18px;
