@@ -2,7 +2,7 @@ import React from 'react';
 
 const IndividualCategory = ({title, subtitle, imageClassName}) => {
    	return (
-   		<div className="folio-item wow fadeInRightBig">
+   		<div className="folio-item wow fadeInRightBig col-1-2">
    			<div className="folio-image">
 				<div className={imageClassName} />
 			</div>

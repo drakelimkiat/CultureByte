@@ -4,11 +4,11 @@ import IndividualCategory from './IndividualCategory.jsx'
 const CategoryPage = () => {
    	return (
 		<div id="category">
-			<div className="container row heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp">
+			<div className="cb-row category-header wow fadeInUp">
 				<h2>Categories of CultureByte</h2>
 				<p>Please select a category to begin!</p>
 			</div>
-			<div className="container-fluid row col-sm-3">
+			<div className="container-fluid">
 				<IndividualCategory 
 					title="Trending"
 					subtitle="Read the most popular culture bytes"
