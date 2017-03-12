@@ -252,8 +252,7 @@
  *
  * ------------------------------------------------------------------- 
  */
-#category .container-fluid, 
-#category .col-sm-3  {
+#category .container-fluid {
 	overflow: hidden;
 	padding: 0;
 }
@@ -262,6 +261,7 @@
 }
 #category .col-1-2 {
 	padding: 0;
+	overflow: hidden;
 }
 #category .overlay {
   	background-color: #000;
@@ -335,12 +335,12 @@
 }
 #category .folio-item:hover .folio-overview .folio-expand {
   	margin-top: 0;
-  	margin-left:0;
+  	margin-left: 0;
 }
 #category .folio-item:hover .overlay .folio-info {
   	opacity: 1;  
-  	margin-bottom:0;
-  	margin-top:0;
+  	margin-bottom: 0;
+  	margin-top: 0;
 }
 .trending-category {
 	background: url("/images/category/trending.jpg") no-repeat center;
