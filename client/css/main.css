@@ -294,14 +294,14 @@
   	transition: all 1s ease-in-out;
 }
 .folio-info h3 {
-  	font-size: 18px;
+  	font-size: 22px;
   	font-family: "raleway-semibold", sans-serif;
 }
 .folio-info p {
-	font-size: 14px;
+	font-size: 18px;
 	font-family: "raleway-regular", sans-serif;
 }
-.folio-overview a {
+.folio-overview i {
   	font-size: 18px;
   	color: #333;
   	height: 50px;
@@ -313,8 +313,8 @@
   	margin-top: 20px;
   	margin-right: 5px;
 }
-.folio-overview a:hover {
-  	color: #fff;
+.folio-overview i:hover {
+  	color: #0061ff;
 }
 .folio-expand {
   	margin-top: -500px;
