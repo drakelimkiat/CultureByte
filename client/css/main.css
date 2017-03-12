@@ -193,6 +193,7 @@
   	margin-bottom: 10px;
   	color: #333;
   	font-family: "montserrat-regular", sans-serif;
+  	font-size: 20px
 }
 .member-info h4 {
   	font-size: 16px;
@@ -231,6 +232,7 @@
 }
 .team {
 	padding-top: 0;
+	padding-bottom: 60px;
 }
 .team-page-header h2 {
 	font-family: "raleway-regular", sans-serif;
@@ -243,9 +245,6 @@
   	margin-bottom: 50px;
   	margin-top: 100px;
 }
-.team {
-	padding-bottom: 60px;
-}
 
 /** 
  * ===================================================================
@@ -255,96 +254,122 @@
  */
 #category .container-fluid, 
 #category .col-sm-3  {
-  overflow: hidden;
-  padding: 0;
+	overflow: hidden;
+	padding: 0;
 }
 #category .folio-item {
-  position: relative;
+  	position: relative;
+}
+#category .col-1-2 {
+	padding: 0;
 }
 #category .overlay {
-  background-color: #000;
-  color: #fff; 
-  left: 0;
-  right:0;
-  bottom:-100%;
-  height: 0;
-  position: absolute;
-  text-align: center;
-  opacity:0;  
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  	background-color: #000;
+  	color: #fff; 
+  	left: 0;
+  	right:0;
+  	bottom:-100%;
+  	height: 0;
+  	position: absolute;
+  	text-align: center;
+  	opacity:0;  
+  	-webkit-transition: all 0.5s ease-in-out;
+  	transition: all 0.5s ease-in-out;
 }
 .overlay-content {
-  display: table;
-  height: 100%;
-  width: 100%;
+  	display: table;
+  	height: 100%;
+  	width: 100%;
 }
 .overlay-text {
-  display: table-cell;
-  vertical-align: middle;
+  	display: table-cell;
+  	vertical-align: middle;
 }
 .folio-info {
-  opacity: 0;
-  margin-bottom: 75px;
-  margin-top: -75px;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  	opacity: 0;
+  	margin-bottom: 75px;
+  	margin-top: -75px;
+  	-webkit-transition: all 1s ease-in-out;
+  	transition: all 1s ease-in-out;
 }
 .folio-info h3 {
-  margin-top: 0;
-  color: #fff;
+  	margin-top: 0;
+  	color: #fff;
 }
 .folio-overview a {
-  font-size: 18px;
-  color: #333;
-  height: 50px;
-  width: 50px;
-  line-height: 50px;
-  border-radius: 50%;
-  background-color: #fff;
-  display: inline-block;
-  margin-top: 20px;
-  margin-right: 5px;
+  	font-size: 18px;
+  	color: #333;
+  	height: 50px;
+  	width: 50px;
+  	line-height: 50px;
+  	border-radius: 50%;
+  	background-color: #fff;
+  	display: inline-block;
+  	margin-top: 20px;
+  	margin-right: 5px;
 }
 .folio-overview a:hover {
-  color: #fff;
+  	color: #fff;
 }
 .folio-expand {
-  margin-top: -500px;
-  margin-left: -500px;
+  	margin-top: -500px;
+  	margin-left: -500px;
 }
 .folio-image, .folio-expand {
-  -webkit-transition: all 0.8s ease-in-out;
-  transition: all 0.8s ease-in-out;
+  	-webkit-transition: all 0.8s ease-in-out;
+  	transition: all 0.8s ease-in-out;
 }
 #category .folio-item:hover .folio-image {
-  -webkit-transform: scale(1.5) rotate(-15deg);
-  transform: scale(1.5) rotate(-15deg);
+  	-webkit-transform: scale(1.5) rotate(-15deg);
+  	transform: scale(1.5) rotate(-15deg);
 }
 #category .folio-item:hover .overlay {
-  opacity: 0.8;
-  bottom: 0;
-  height: 100%;
+  	opacity: 0.8;
+  	bottom: 0;
+  	height: 100%;
 }
 #category .folio-item:hover .folio-overview .folio-expand {
-  margin-top: 0;
-  margin-left:0;
+  	margin-top: 0;
+  	margin-left:0;
 }
 #category .folio-item:hover .overlay .folio-info {
-  opacity: 1;  
-  margin-bottom:0;
-  margin-top:0;
+  	opacity: 1;  
+  	margin-bottom:0;
+  	margin-top:0;
 }
 .trending-category {
 	background: url("/images/category/trending.jpg") no-repeat center;
+	float: left;
 }
-.recentAdditions {
-	background: url("/images/category/recentAdditions.jpg") no-repeat center;
+.recent-additions-category {
+	background: url("/images/category/recentAdditions.png") no-repeat center;
+	float: right;
 }
 .folio-image .category-image {
-	height: 200px;
-	width: 250px;
+	display: block;
+	height: 400px;
+	width: 50vw;
 	max-width: 100%;
 	max-height: 100%;
-	background-size: contain;
+	background-size: cover;
+}
+.category {
+	padding-top: 0;
+	padding-bottom: 60px;
+}
+.category-header h2 {
+	font-family: "raleway-regular", sans-serif;
+	font-size: 34px;
+	padding-bottom: 10px;
+}
+.category-header p {
+	line-height: 20px;
+	font-family: "raleway-regular", sans-serif;
+	font-size: 16px;
+}
+.category-header {
+  	padding: 0 15px 15px 90px;
+  	margin-bottom: 50px;
+  	margin-top: 100px;
+  	text-align: center;
 }
