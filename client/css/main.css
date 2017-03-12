@@ -325,8 +325,8 @@
   	transition: all 0.8s ease-in-out;
 }
 #category .folio-item:hover .folio-image {
-  	-webkit-transform: scale(1.5) rotate(-15deg);
-  	transform: scale(1.5) rotate(-15deg);
+  	-webkit-transform: scale(1.5);
+  	transform: scale(1.5);
 }
 #category .folio-item:hover .overlay {
   	opacity: 0.8;
