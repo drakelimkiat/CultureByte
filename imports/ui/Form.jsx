@@ -6,7 +6,8 @@ export default class Form extends Component {
   constructor(props) {
       super(props);
       this.state = {
-          pictureUrl: 'http://larics.fer.hr/wp-content/uploads/2016/04/default-placeholder.png'
+          message: 'Contribute by filling in the below details.',
+          isSubmitting: false,
       };
   }
 
@@ -17,46 +18,87 @@ export default class Form extends Component {
     const title = ReactDOM.findDOMNode(this.refs.titleInput).value.trim();
     const body = ReactDOM.findDOMNode(this.refs.bodyInput).value.trim();
 
-    // Create new post
-    Meteor.call('posts.insert', title, body, this.state.pictureUrl);
+    this.setState({
+      isSubmitting: true,
+      message: 'Submitting your contribution...'
+    })
 
-    // Clear form
-    ReactDOM.findDOMNode(this.refs.titleInput).value = '';
-    ReactDOM.findDOMNode(this.refs.bodyInput).value = '';
+    this.uploadPicture(title, body);
   }
 
   componentDidMount() {
     Slingshot.fileRestrictions("PostPicture", {
-      allowedFileTypes: ["image/png", "image/jpeg", "image/jpg"],
-      maxSize: null // 2 MB (use null for unlimited)
+      allowedFileTypes: ["image/png", "image/jpeg", "image/jpg", "image/gif"],
+      maxSize: 20 * 1024 * 1024 // 2 MB (use null for unlimited)
     });
   }
 
-  uploadPicture() {
+  uploadPicture(title, body) {
+
       let userId = Meteor.user()._id;
       let metaContext = { avatarId: userId };
       let uploader = new Slingshot.Upload("PostPicture", metaContext);
-      uploader.send(document.getElementById('input').files[0], function (error, downloadUrl) {
-          if (error) {
-              console.error('Error uploading', uploader.xhr.response);
-              alert (error);
-          } else {
-              console.log(downloadUrl);
-              this.setState({pictureUrl: downloadUrl});
-          }
-      }.bind(this));
+
+      if (document.getElementById('pictureInput').files[0] != null) {
+        uploader.send(document.getElementById('pictureInput').files[0], function (error, downloadUrl) {
+            if (error) {
+                console.error('Error uploading', uploader.xhr.response);
+                alert (error);
+
+                this.setState({
+                  isSubmitting: false,
+                  message: 'Failed to upload picture. Please try again.'
+                });
+
+            } else {
+                console.log(downloadUrl);
+                this.storeIntoDatabase(title, body, downloadUrl);
+            }
+        }.bind(this));
+      } else {
+        this.storeIntoDatabase(title, body, '');
+      }
+  }
+
+  storeIntoDatabase(title, body, pictureUrl) {
+    // Create new post
+    Meteor.call('posts.insert', title, body, pictureUrl, (error) => {
+      this.setState({
+        isSubmitting: false
+      });
+
+      if (error) {
+        this.setState({
+          message: 'Failed to submit contribution. Please try again.'
+        });
+      } else {
+        this.setState({
+          message: 'Contribution submitted! Care to submit another?'
+        });
+      }
+    });
   }
 
   render() {
-    return (
-      <div className="form">
-        <form className="new-post" onSubmit={this.handleSubmit.bind(this)}>
-          <input type="text" ref="titleInput" placeholder="Title"/>
-          <input type="text" ref="bodyInput" placeholder="Body"/>
-          <input type="file" id="input" onChange={this.uploadPicture.bind(this)} />
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
-    );
+    if (this.state.isSubmitting) {
+      return (
+        <div>
+          <div className="spinner"></div>
+          <div className="loadingText">Creating your CultureByte</div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="form">
+          {this.state.message} <br/>
+          <form className="new-post" onSubmit={this.handleSubmit.bind(this)}>
+            <input type="text" ref="titleInput" placeholder="Title"/> <br/>
+            <input type="text" ref="bodyInput" placeholder="Body"/> <br/>
+            <input type="file" id="pictureInput" /> <br/>
+            <input type="submit" value="Submit" /> <br/>
+          </form>
+        </div>
+      );
+    }
   }
 }
