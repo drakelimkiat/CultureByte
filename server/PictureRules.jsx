@@ -1,6 +1,6 @@
 Slingshot.fileRestrictions("PostPicture", {
-  allowedFileTypes: ["image/png", "image/jpeg", "image/jpg"],
-  maxSize: null // 2 MB (use null for unlimited)
+  allowedFileTypes: ["image/png", "image/jpeg", "image/jpg", "image/gif"],
+  maxSize: 20 * 1024 * 1024
 });
 
 
