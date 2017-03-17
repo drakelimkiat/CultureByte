@@ -1,13 +1,11 @@
 import React from 'react';
 
-const IndividualFactoid = ({title, subtitle, imageUrl, wrapperClass}) => {
+const IndividualFactoid = ({title, location, snippet, wrapperClass}) => {
    	return (
       <div className={wrapperClass}>
-        <img src={imageUrl} />
         <div className="caption">
-          <h1 className="animated fadeInLeftBig">{title}</h1>
-          <p className="animated fadeInLeftBig">{subtitle}</p>
-          <a data-scroll className="btn btn-start animated fadeInRightBig" href="">SHARE</a>
+          <h1>{title}</h1>
+          <p>{snippet}</p>
         </div>
       </div>
    	);
