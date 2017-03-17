@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TitlePage = () => {
+const TitleSection = () => {
   return (
     <div className="intro">
       <div className="intro-content">
@@ -15,4 +15,4 @@ const TitlePage = () => {
   );
 };
 
-export default TitlePage;
+export default TitleSection;

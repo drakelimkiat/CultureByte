@@ -1,7 +1,7 @@
 import React from 'react';
 import IndividualPrompt from './IndividualPrompt.jsx'
 
-const PromptPage = () => {
+const PromptSection = () => {
   return (
     <div id="home">
       <div id="home-slider" className="carousel slide carousel-fade" data-ride="carousel">
@@ -39,4 +39,4 @@ const PromptPage = () => {
   );
 };
 
-export default PromptPage;
+export default PromptSection;
