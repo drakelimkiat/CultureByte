@@ -538,13 +538,16 @@ Spinner and Loading CSS
 .caption .btn-start {
 	color: #fff;
 	font-size: 15px;
-	font-weight: 600;
-	font-family: "raleway-regular", sans-serif;
+	font-family: "raleway-heavy", sans-serif;
 	padding:14px 40px;
 	border: 2px solid #fff;
-	border-radius: 6px;
+	border-radius: 8px;
 	margin-top: 40px;
-	background: rgba(255,255,255,.1);
+}
+.caption .btn-start:hover,.left-control:hover, .right-control:hover {
+	color: #fff;
+	background-color: #028fcc;
+	border: 2px solid #028fcc;
 }
 .carousel-fade .carousel-inner .item {
 	opacity: 1;
