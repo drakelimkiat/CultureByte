@@ -1,10 +1,10 @@
 @import url("fonts.css");
 /**
- * ===================================================================
- * navbar styles
- *
- * -------------------------------------------------------------------
- */
+* ===================================================================
+* navbar styles
+*
+* -------------------------------------------------------------------
+*/
 .header {
 	width: 100%;
 	min-height: 66px;
@@ -21,9 +21,9 @@
 }
 
 /**
- * primary navigation
- * -
- */
+* primary navigation
+* -
+*/
 .main-navigation {
 	position: absolute;
 	display: inline-block;
@@ -116,11 +116,11 @@
 }
 
 /**
- * ===================================================================
- * Title Page section
- *
- * -------------------------------------------------------------------
- */
+* ===================================================================
+* Title Page section
+*
+* -------------------------------------------------------------------
+*/
 
 .intro {
 	background: #14181E url("/images/title-page.jpg") no-repeat center;
@@ -178,169 +178,169 @@ Spinner and Loading CSS
 */
 
 .loadingText {
-  position: fixed;
-  z-index: 999;
-  height: 2em;
-  overflow: show;
-  margin: auto;
-  top: 113px;
-  left: 0px;
-  bottom: 0;
-  right: 0px;
-  color: white;
-  font-family: monospace;
-  font-size: 30px;
-  text-align: center;
+	position: fixed;
+	z-index: 999;
+	height: 2em;
+	overflow: show;
+	margin: auto;
+	top: 113px;
+	left: 0px;
+	bottom: 0;
+	right: 0px;
+	color: white;
+	font-family: monospace;
+	font-size: 30px;
+	text-align: center;
 }
 
 /* Absolute Center CSS Spinner */
 .spinner {
-  content: 'Loading';
-  position: fixed;
-  z-index: 999;
-  height: 2em;
-  width: 2em;
-  overflow: show;
-  margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+	content: 'Loading';
+	position: fixed;
+	z-index: 999;
+	height: 2em;
+	width: 2em;
+	overflow: show;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
 }
 
 /* Transparent Overlay */
 .spinner:before {
-  content: 'Loading...';
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
+	content: 'Loading...';
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.6);
 }
 
 /* :not(:required) hides these rules from IE9 and below */
 .spinner:not(:required) {
-  /* hide "loading..." text */
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
+	/* hide "loading..." text */
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
 }
 
 .spinner:not(:required):after {
-  content: 'Loading...';
-  display: block;
-  font-size: 10px;
-  width: 1em;
-  height: 1em;
-  margin-top: -0.5em;
-  -webkit-animation: spinner 1500ms infinite linear;
-  -moz-animation: spinner 1500ms infinite linear;
-  -ms-animation: spinner 1500ms infinite linear;
-  -o-animation: spinner 1500ms infinite linear;
-  animation: spinner 1500ms infinite linear;
-  border-radius: 0.5em;
-  -webkit-box-shadow: rgba(255, 0, 0, 1) 1.5em 0 0 0, rgba(255, 153, 51, 1) 1.1em 1.1em 0 0, rgba(255, 255, 0, 1) 0 1.5em 0 0, rgba(0, 255, 0, 1) -1.1em 1.1em 0 0, rgba(0, 0, 255, 1) -1.5em 0 0 0, rgba(127, 0, 255, 1) -1.1em -1.1em 0 0, rgba(255, 0, 255, 1) 0 -1.5em 0 0, rgba(255, 255, 255, 1) 1.1em -1.1em 0 0;
-  box-shadow: rgba(255, 0, 0, 1) 1.5em 0 0 0, rgba(255, 153, 51, 1) 1.1em 1.1em 0 0, rgba(255, 255, 0, 1) 0 1.5em 0 0, rgba(0, 255, 0, 1) -1.1em 1.1em 0 0, rgba(0, 0, 255, 1) -1.5em 0 0 0, rgba(127, 0, 255, 1) -1.1em -1.1em 0 0, rgba(255, 0, 255, 1) 0 -1.5em 0 0, rgba(255, 255, 255, 1) 1.1em -1.1em 0 0;
+	content: 'Loading...';
+	display: block;
+	font-size: 10px;
+	width: 1em;
+	height: 1em;
+	margin-top: -0.5em;
+	-webkit-animation: spinner 1500ms infinite linear;
+	-moz-animation: spinner 1500ms infinite linear;
+	-ms-animation: spinner 1500ms infinite linear;
+	-o-animation: spinner 1500ms infinite linear;
+	animation: spinner 1500ms infinite linear;
+	border-radius: 0.5em;
+	-webkit-box-shadow: rgba(255, 0, 0, 1) 1.5em 0 0 0, rgba(255, 153, 51, 1) 1.1em 1.1em 0 0, rgba(255, 255, 0, 1) 0 1.5em 0 0, rgba(0, 255, 0, 1) -1.1em 1.1em 0 0, rgba(0, 0, 255, 1) -1.5em 0 0 0, rgba(127, 0, 255, 1) -1.1em -1.1em 0 0, rgba(255, 0, 255, 1) 0 -1.5em 0 0, rgba(255, 255, 255, 1) 1.1em -1.1em 0 0;
+	box-shadow: rgba(255, 0, 0, 1) 1.5em 0 0 0, rgba(255, 153, 51, 1) 1.1em 1.1em 0 0, rgba(255, 255, 0, 1) 0 1.5em 0 0, rgba(0, 255, 0, 1) -1.1em 1.1em 0 0, rgba(0, 0, 255, 1) -1.5em 0 0 0, rgba(127, 0, 255, 1) -1.1em -1.1em 0 0, rgba(255, 0, 255, 1) 0 -1.5em 0 0, rgba(255, 255, 255, 1) 1.1em -1.1em 0 0;
 }
 
 /* Animation */
 
 @-webkit-keyframes spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
 @-moz-keyframes spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
 @-o-keyframes spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
 @keyframes spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
 
- /* ===================================================================
- * Team Member component
- *
- * -------------------------------------------------------------------
- */
+/* ===================================================================
+* Team Member component
+*
+* -------------------------------------------------------------------
+*/
 .team-member {
 	width: 20%;
-  	text-align: center;
-  	color: #333;
-  	font-size: 14px;
-  	padding: 0 20px;
-  	margin-bottom: 50px;
-  	float: left;
+	text-align: center;
+	color: #333;
+	font-size: 14px;
+	padding: 0 20px;
+	margin-bottom: 50px;
+	float: left;
 }
 .member-info h3 {
-  	margin-top: 24px;
-  	margin-bottom: 10px;
-  	color: #333;
-  	font-family: "montserrat-regular", sans-serif;
-  	font-size: 20px
+	margin-top: 24px;
+	margin-bottom: 10px;
+	color: #333;
+	font-family: "montserrat-regular", sans-serif;
+	font-size: 20px
 }
 .member-info h4 {
-  	font-size: 16px;
-  	margin-top: 10px;
-  	margin-bottom: 15px;
-  	color: #999;
-  	font-family: "montserrat-regular", sans-serif;
+	font-size: 16px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	color: #999;
+	font-family: "montserrat-regular", sans-serif;
 }
 .member-info p,
 .team-page-header p {
@@ -380,106 +380,106 @@ Spinner and Loading CSS
 	padding-bottom: 10px;
 }
 .team-page-header {
-  	text-align: center;
-  	padding: 0 15px 15px 90px;
-  	margin-bottom: 50px;
-  	margin-top: 100px;
+	text-align: center;
+	padding: 0 15px 15px 90px;
+	margin-bottom: 50px;
+	margin-top: 100px;
 }
 /**
- * ===================================================================
- * CategoryPage section
- *
- * -------------------------------------------------------------------
- */
+* ===================================================================
+* CategoryPage section
+*
+* -------------------------------------------------------------------
+*/
 #category .container-fluid {
 	overflow: hidden;
 	padding: 0;
 }
 #category .folio-item {
-  	position: relative;
+	position: relative;
 }
 #category .col-1-2 {
 	padding: 0;
 	overflow: hidden;
 }
 #category .overlay {
-  	background-color: #000;
-  	color: #fff; 
-  	left: 0;
-  	right:0;
-  	bottom:-100%;
-  	height: 0;
-  	position: absolute;
-  	text-align: center;
-  	opacity:0;  
-  	-webkit-transition: all 0.5s ease-in-out;
-  	transition: all 0.5s ease-in-out;
+	background-color: #000;
+	color: #fff;
+	left: 0;
+	right:0;
+	bottom:-100%;
+	height: 0;
+	position: absolute;
+	text-align: center;
+	opacity:0;
+	-webkit-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 .overlay-content {
-  	display: table;
-  	height: 100%;
-  	width: 100%;
+	display: table;
+	height: 100%;
+	width: 100%;
 }
 .overlay-text {
-  	display: table-cell;
-  	vertical-align: middle;
+	display: table-cell;
+	vertical-align: middle;
 }
 .folio-info {
-  	opacity: 0;
-  	color: #fff;
-  	margin-bottom: 75px;
-  	margin-top: -75px;
-  	-webkit-transition: all 1s ease-in-out;
-  	transition: all 1s ease-in-out;
+	opacity: 0;
+	color: #fff;
+	margin-bottom: 75px;
+	margin-top: -75px;
+	-webkit-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 .folio-info h3 {
-  	font-size: 22px;
-  	font-family: "raleway-semibold", sans-serif;
+	font-size: 22px;
+	font-family: "raleway-semibold", sans-serif;
 }
 .folio-info p {
 	font-size: 18px;
 	font-family: "raleway-regular", sans-serif;
 }
 .folio-overview i {
-  	font-size: 18px;
-  	color: #333;
-  	height: 50px;
-  	width: 50px;
-  	line-height: 50px;
-  	border-radius: 50%;
-  	background-color: #fff;
-  	display: inline-block;
-  	margin-top: 20px;
-  	margin-right: 5px;
+	font-size: 18px;
+	color: #333;
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	border-radius: 50%;
+	background-color: #fff;
+	display: inline-block;
+	margin-top: 20px;
+	margin-right: 5px;
 }
 .folio-overview i:hover {
-  	color: #0061ff;
+	color: #0061ff;
 }
 .folio-expand {
-  	margin-top: -500px;
-  	margin-left: -500px;
+	margin-top: -500px;
+	margin-left: -500px;
 }
 .folio-image, .folio-expand {
-  	-webkit-transition: all 0.8s ease-in-out;
-  	transition: all 0.8s ease-in-out;
+	-webkit-transition: all 0.8s ease-in-out;
+	transition: all 0.8s ease-in-out;
 }
 #category .folio-item:hover .folio-image {
-  	-webkit-transform: scale(1.5);
-  	transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
 }
 #category .folio-item:hover .overlay {
-  	opacity: 0.8;
-  	bottom: 0;
-  	height: 100%;
+	opacity: 0.8;
+	bottom: 0;
+	height: 100%;
 }
 #category .folio-item:hover .folio-overview .folio-expand {
-  	margin-top: 0;
-  	margin-left: 0;
+	margin-top: 0;
+	margin-left: 0;
 }
 #category .folio-item:hover .overlay .folio-info {
-  	opacity: 1;  
-  	margin-bottom: 0;
-  	margin-top: 0;
+	opacity: 1;
+	margin-bottom: 0;
+	margin-top: 0;
 }
 .trending-category {
 	background: url("/images/category/trending.jpg") no-repeat center;
@@ -512,8 +512,9 @@ Spinner and Loading CSS
 	font-size: 16px;
 }
 .category-header {
-  	padding: 0 15px 15px 90px;
-  	margin-bottom: 50px;
-  	margin-top: 100px;
-  	text-align: center;
+	padding: 0 15px 15px 90px;
+	margin-bottom: 50px;
+	margin-top: 100px;
+	text-align: center;
+}
 }
