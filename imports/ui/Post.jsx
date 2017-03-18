@@ -62,19 +62,47 @@ export default class Post extends Component {
       return <button onClick={this.like.bind(this, currentPostId, currentUserId)}><i className="fa fa-heart-o" aria-hidden="true"></i></button>
     }
 
+    formatDate(date) {
+      day = date.getDate();
+      month = date.toLocaleString("en-us", { month: "short" });
+      return month + " " + day;
+    }
+
     render() {
         return (
-            <div>
-              Id: {this.props.post._id}<br/>
-              Title: {this.props.post.title}<br/>
-              Body: {this.props.post.body}<br/>
-              PictureUrl: {this.props.post.pictureUrl}<br/>
-              <img style={{width:500, height:500}} src={this.props.post.pictureUrl != '' ?
-                this.props.post.pictureUrl : '/default-placeholder.png'}/><br/>
-              Username: {this.props.post.username}<br/>
-              No. of Likes: {this.props.post.liked_count}<br/>
-              Users who Liked: {this.state.usersWhoLiked}<br/>
-              { this.renderLikeButton() }
+            <div className="post">
+              <div className="post-topbar">
+                <div className="author">
+                  <div className="profile-photo">
+                    <img src="/images/post/profile_photo.jpeg"/>
+                  </div>
+                  <div className="profile-text">
+                    <span className="username">{this.props.post.username}</span><br/>
+                    <span className="details">
+                      <span>{this.formatDate(this.props.post.createdAt)}</span>
+                      <span className="icon dot"><i className="fa fa-circle" aria-hidden="true"></i></span>
+                      <span>{this.props.post.liked_count}</span>
+                      <span className="icon heart"><i className="fa fa-heart" aria-hidden="true"></i></span>
+                    </span>
+                  </div>
+                </div>
+                <div className="like">
+                  { this.renderLikeButton() }
+                </div>
+              </div>
+
+              <br/><br/><br/><br/><br/><br/>
+
+              <div className="post-title">
+                Title: {this.props.post.title}<br/>
+              </div>
+              <div className="post-photo">
+                <img style={{width:500, height:500}} src={this.props.post.pictureUrl != '' ?
+                  this.props.post.pictureUrl : '/default-placeholder.png'}/><br/>
+              </div>
+              <div className="post-body">
+                Body: {this.props.post.body}<br/>
+              </div>
             </div>
         );
     }
