@@ -439,7 +439,9 @@ Spinner and Loading CSS
 	margin-right: 5px;
 }
 .folio-overview i:hover {
-	color: #0061ff;
+	color: #fff;
+	background-color: #05bca9;
+	border: 2px solid #05bca9;
 }
 .folio-expand {
 	margin-top: -500px;
@@ -544,7 +546,9 @@ Spinner and Loading CSS
 	border-radius: 8px;
 	margin-top: 40px;
 }
-#home .caption .btn-start:hover,.left-control:hover, .right-control:hover {
+#home .caption .btn-start:hover,
+#home .left-control:hover,
+#home .right-control:hover {
 	color: #fff;
 	background-color: #05bca9;
 	border: 2px solid #05bca9;
