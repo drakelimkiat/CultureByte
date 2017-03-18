@@ -514,7 +514,7 @@ Spinner and Loading CSS
 	position: relative;
 	height: 100vh;
 }
-#home-slider .caption {
+#home .caption {
 	position: absolute;
 	top: 50%;
 	margin-top: -104px;
@@ -526,16 +526,16 @@ Spinner and Loading CSS
 	font-weight: 300;
 	color: #fff;
 }
-#home-slider .caption h1 {
+#home .caption h1 {
 	color: #fff;
 	font-size: 60px;
 	font-family: "raleway-bold", sans-serif;
 	margin-bottom: 25px;
 }
-#home-slider .caption p {
+#home .caption p {
  font-family: "raleway-regular", sans-serif;
 }
-#home-slider .caption .btn-start {
+#home .caption .btn-start {
 	color: #fff;
 	font-size: 15px;
 	font-family: "raleway-heavy", sans-serif;
@@ -544,12 +544,12 @@ Spinner and Loading CSS
 	border-radius: 8px;
 	margin-top: 40px;
 }
-#home-slider .caption .btn-start:hover,.left-control:hover, .right-control:hover {
+#home .caption .btn-start:hover,.left-control:hover, .right-control:hover {
 	color: #fff;
 	background-color: #028fcc;
 	border: 2px solid #028fcc;
 }
-#home-slider .carousel-fade .carousel-inner .item {
+#home .carousel-fade .carousel-inner .item {
 	opacity: 1;
 	-webkit-transition-property: inherit;
 	transition-property: inherit;
@@ -558,7 +558,7 @@ Spinner and Loading CSS
 	margin: 0;
 	padding: 0;
 }
-#home-slider .carousel-fade .carousel-inner .item img {
+#home .carousel-fade .carousel-inner .item img {
 	vertical-align: middle;
 	border: none;
 	margin: 0;
@@ -569,7 +569,7 @@ Spinner and Loading CSS
 	object-fit: cover;
 	overflow: hidden;
 }
-#home-slider .carousel-fade .carousel-inner .item:after {
+#home .carousel-fade .carousel-inner .item:after {
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -578,23 +578,23 @@ Spinner and Loading CSS
 	right: 0;
 	background: rgba(0,0,0,.7);
 }
-#home-slider .carousel-fade .carousel-inner .active {
+#home .carousel-fade .carousel-inner .active {
 	opacity: 1;
 }
-#home-slider .carousel-fade .carousel-inner .active.left,
-#home-slider .carousel-fade .carousel-inner .active.right {
+#home .carousel-fade .carousel-inner .active.left,
+#home .carousel-fade .carousel-inner .active.right {
 	left: 0;
 	opacity: 1;
 	z-index: 1;
 }
-#home-slider .carousel-fade .carousel-inner .next.left,
-#home-slider .carousel-fade .carousel-inner .prev.right {
+#home .carousel-fade .carousel-inner .next.left,
+#home .carousel-fade .carousel-inner .prev.right {
 	opacity: 1;
 }
-#home-slider .carousel-fade .carousel-control {
+#home .carousel-fade .carousel-control {
 	z-index: 2;
 }
-#home-slider .left-control, #home-slider .right-control {
+#home .left-control, #home-slider .right-control {
 	position: absolute;
 	top: 50%;
 	height: 51px;
@@ -612,10 +612,10 @@ Spinner and Loading CSS
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-#home-slider.left-control {
+#home .left-control {
 	left: -51px
 }
-#home-slider.right-control {
+#home .right-control {
 	right: -51px;
 }
 #home-slider:hover .left-control {
@@ -668,7 +668,7 @@ Spinner and Loading CSS
 	overflow: hidden;
 	position: relative;
 }
-#factoid-slider .caption {
+#factoid-slider .factoid {
 	position: relative;
 	top: 50%;
 	margin-top: -104px;
@@ -680,13 +680,13 @@ Spinner and Loading CSS
 	font-weight: 300;
 	color: #fff;
 }
-#factoid-slider .caption h1 {
+#factoid-slider .factoid h1 {
 	color: #fff;
 	font-size: 60px;
 	font-family: "raleway-bold", sans-serif;
 	margin-bottom: 25px;
 }
-#factoid-slider .caption p {
+#factoid-slider .factoid p {
  font-family: "raleway-regular", sans-serif;
  font-size: 2.5rem;
  line-height: 1.8;
@@ -710,7 +710,7 @@ Spinner and Loading CSS
 	margin-left: .5rem;
 	content: '\201D';
 }
-#factoid-slider .caption .btn-start {
+#factoid-slider .factoid .btn-start {
 	color: #000;
 	font-size: 15px;
 	font-family: "raleway-heavy", sans-serif;
@@ -719,7 +719,7 @@ Spinner and Loading CSS
 	border-radius: 8px;
 	margin-top: 40px;
 }
-#factoid-slider .caption .btn-start:hover,
+#factoid-slider .factoid .btn-start:hover,
 #factoid-slider .left-control:hover,
 #factoid-slider .right-control:hover {
 	color: #000;
