@@ -546,8 +546,8 @@ Spinner and Loading CSS
 }
 #home .caption .btn-start:hover,.left-control:hover, .right-control:hover {
 	color: #fff;
-	background-color: #028fcc;
-	border: 2px solid #028fcc;
+	background-color: #05bca9;
+	border: 2px solid #05bca9;
 }
 #home .carousel-fade .carousel-inner .item {
 	opacity: 1;
@@ -633,7 +633,7 @@ Spinner and Loading CSS
 #factoid {
 	background: #FFFFFF;
 	padding-top: 10rem;
-	padding-bottom: 10rem;
+	padding-bottom: 9rem;
 	position: relative;
 	min-height: 20.4rem;
 	width: 100%;
@@ -645,6 +645,7 @@ Spinner and Loading CSS
 	font-size: 32px;
 	font-family: "raleway-semibold", sans-serif;
 	margin-bottom: 36px;
+	margin-top: 0;
 	padding-bottom: 20px;
 	position: relative;
 }
@@ -709,9 +710,9 @@ Spinner and Loading CSS
 #factoid-slider .factoid .btn-start:hover,
 #factoid-slider .left-control:hover,
 #factoid-slider .right-control:hover {
-	color: #000;
-	background-color: #028fcc;
-	border: 2px solid #028fcc;
+	color: #fff;
+	background-color: #05bca9;
+	border: 2px solid #05bca9;
 }
 #factoid-slider .carousel-fade .carousel-inner .item {
 	opacity: 1;
@@ -752,9 +753,10 @@ Spinner and Loading CSS
 	width: 51px;
 	line-height: 48px;
 	border-radius: 50%;
-	border:1px solid #000;
+	border:1px solid #bfbfbf;
 	z-index: 20;
 	font-size: 24px;
+	background: #bfbfbf;
 	color: #fff;
 	text-align: center;
 	-webkit-transition: all 0.3s ease;
@@ -779,11 +781,18 @@ Spinner and Loading CSS
 	color: #000;
 	font-size: 40px;
 	font-family: "raleway-bold", sans-serif;
-	margin-bottom: 25px;
+	margin-bottom: 10px;
+}
+#individual-factoid h4 {
+	color: rgba(0, 0, 0, 0.4);
+	font-size: 12px;
+	font-family: "raleway-regular", sans-serif;
+	text-transform: uppercase;
 }
 #individual-factoid p {
  font-family: "raleway-regular", sans-serif;
  font-size: 25px;
  line-height: 1.8;
  color: #8d8d8d;
+ margin-top: 5rem;
 }

@@ -5,6 +5,7 @@ const IndividualFactoid = ({title, location, snippet, wrapperClass}) => {
       <div className={wrapperClass}>
         <div id="individual-factoid">
           <h3>{title}</h3>
+          <h4>{location}</h4>
           <p>{snippet}</p>
         </div>
       </div>
