@@ -535,7 +535,7 @@ Spinner and Loading CSS
 #home-slider .caption p {
  font-family: "raleway-regular", sans-serif;
 }
-.caption .btn-start {
+#home-slider .caption .btn-start {
 	color: #fff;
 	font-size: 15px;
 	font-family: "raleway-heavy", sans-serif;
@@ -544,12 +544,12 @@ Spinner and Loading CSS
 	border-radius: 8px;
 	margin-top: 40px;
 }
-.caption .btn-start:hover,.left-control:hover, .right-control:hover {
+#home-slider .caption .btn-start:hover,.left-control:hover, .right-control:hover {
 	color: #fff;
 	background-color: #028fcc;
 	border: 2px solid #028fcc;
 }
-.carousel-fade .carousel-inner .item {
+#home-slider .carousel-fade .carousel-inner .item {
 	opacity: 1;
 	-webkit-transition-property: inherit;
 	transition-property: inherit;
@@ -558,7 +558,7 @@ Spinner and Loading CSS
 	margin: 0;
 	padding: 0;
 }
-.carousel-fade .carousel-inner .item img {
+#home-slider .carousel-fade .carousel-inner .item img {
 	vertical-align: middle;
 	border: none;
 	margin: 0;
@@ -569,7 +569,7 @@ Spinner and Loading CSS
 	object-fit: cover;
 	overflow: hidden;
 }
-.carousel-fade .carousel-inner .item:after {
+#home-slider .carousel-fade .carousel-inner .item:after {
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -578,23 +578,23 @@ Spinner and Loading CSS
 	right: 0;
 	background: rgba(0,0,0,.7);
 }
-.carousel-fade .carousel-inner .active {
+#home-slider .carousel-fade .carousel-inner .active {
 	opacity: 1;
 }
-.carousel-fade .carousel-inner .active.left,
-.carousel-fade .carousel-inner .active.right {
+#home-slider .carousel-fade .carousel-inner .active.left,
+#home-slider .carousel-fade .carousel-inner .active.right {
 	left: 0;
 	opacity: 1;
 	z-index: 1;
 }
-.carousel-fade .carousel-inner .next.left,
-.carousel-fade .carousel-inner .prev.right {
+#home-slider .carousel-fade .carousel-inner .next.left,
+#home-slider .carousel-fade .carousel-inner .prev.right {
 	opacity: 1;
 }
-.carousel-fade .carousel-control {
+#home-slider .carousel-fade .carousel-control {
 	z-index: 2;
 }
-.left-control, .right-control {
+#home-slider .left-control, #home-slider .right-control {
 	position: absolute;
 	top: 50%;
 	height: 51px;
@@ -612,10 +612,10 @@ Spinner and Loading CSS
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-.left-control {
+#home-slider.left-control {
 	left: -51px
 }
-.right-control {
+#home-slider.right-control {
 	right: -51px;
 }
 #home-slider:hover .left-control {
@@ -630,12 +630,7 @@ Spinner and Loading CSS
 *
 * -------------------------------------------------------------------
 */
-#factoid-slider {
-	overflow: hidden;
-	position: relative;
-	height: 100vh;
-}
-#factoid-slider h2 {
+#factoid h2 {
 	font-size: 32px;
 	font-family: "raleway-semibold", sans-serif;
 	text-align: center;
@@ -644,7 +639,7 @@ Spinner and Loading CSS
 	padding-bottom: 20px;
 	position: relative;
 }
-#factoid-slider h2::after {
+#factoid h2::after {
   display: block;
   background-color: #05bca9;
   width: 240px;
@@ -653,4 +648,143 @@ Spinner and Loading CSS
   position: absolute;
   bottom: 0;
 	left: 40%;
+}
+#factoid {
+	background: #FFFFFF;
+	padding-top: 10.2rem;
+	padding-bottom: 12rem;
+	position: relative;
+	min-height: 20.4rem;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+#factoid .carousel-inner {
+	width: 80%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+#factoid-slider {
+	overflow: hidden;
+	position: relative;
+}
+#factoid-slider .caption {
+	position: relative;
+	top: 50%;
+	margin-top: -104px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 15;
+	font-size: 18px;
+	font-weight: 300;
+	color: #fff;
+}
+#factoid-slider .caption h1 {
+	color: #fff;
+	font-size: 60px;
+	font-family: "raleway-bold", sans-serif;
+	margin-bottom: 25px;
+}
+#factoid-slider .caption p {
+ font-family: "raleway-regular", sans-serif;
+ font-size: 2.5rem;
+ line-height: 1.8;
+ color: #8d8d8d;
+}
+#factoid-slider p::before, #factoid-slider p::after {
+	display: inline;
+	font-family: Arial, sans-serif;
+	color: #c7c7c7;
+	font-size: 6rem;
+	line-height: 0;
+	vertical-align: bottom;
+	position: relative;
+	top: -1.2rem;
+}
+#factoid-slider p::before {
+	margin-right: .5rem;
+	content: '\201C';
+}
+#factoid-slider p::after {
+	margin-left: .5rem;
+	content: '\201D';
+}
+#factoid-slider .caption .btn-start {
+	color: #000;
+	font-size: 15px;
+	font-family: "raleway-heavy", sans-serif;
+	padding:14px 40px;
+	border: 2px solid #000;
+	border-radius: 8px;
+	margin-top: 40px;
+}
+#factoid-slider .caption .btn-start:hover,
+#factoid-slider .left-control:hover,
+#factoid-slider .right-control:hover {
+	color: #000;
+	background-color: #028fcc;
+	border: 2px solid #028fcc;
+}
+#factoid-slider .carousel-fade .carousel-inner .item {
+	opacity: 1;
+	-webkit-transition-property: inherit;
+	transition-property: inherit;
+	margin: 0;
+	padding: 0;
+}
+#factoid-slider .carousel-fade .carousel-inner .item:after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #fff;
+}
+#factoid-slider .carousel-fade .carousel-inner .active {
+	opacity: 1;
+}
+#factoid-slider .carousel-fade .carousel-inner .active.left,
+#factoid-slider .carousel-fade .carousel-inner .active.right {
+	left: 0;
+	opacity: 1;
+	z-index: 1;
+}
+#factoid-slider .carousel-fade .carousel-inner .next.left,
+#factoid-slider .carousel-fade .carousel-inner .prev.right {
+	opacity: 1;
+}
+#factoid-slider .carousel-fade .carousel-control {
+	z-index: 2;
+}
+#factoid-slider .left-control, #factoid-slider .right-control {
+	position: absolute;
+	top: 50%;
+	height: 51px;
+	width: 51px;
+	line-height: 48px;
+	border-radius: 50%;
+	border:1px solid #000;
+	z-index: 20;
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+#factoid-slider .left-control {
+	left: -51px
+}
+#factoid-slider .right-control {
+	right: -51px;
+}
+#factoid-slider:hover .left-control {
+	left:30px
+}
+#factoid-slider:hover .right-control {
+	right:30px
 }
