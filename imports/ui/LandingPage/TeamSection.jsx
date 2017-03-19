@@ -1,7 +1,7 @@
 import React from 'react';
 import TeamMember from './TeamMember.jsx';
 
-const TeamPage = () => {
+const TeamSection = () => {
    	return (
    		<div className="team">
    			<div className="cb-row">
@@ -46,4 +46,4 @@ const TeamPage = () => {
    	);
 };
 
-export default TeamPage;
+export default TeamSection;
