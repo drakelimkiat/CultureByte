@@ -14,7 +14,7 @@ const FactoidSection = () => {
             wrapperClass="item active"/>
           <IndividualFactoid
             title="Three Steps One Bow"
-            location="Singaporean"
+            location="Singapore"
             snippet="Buddhist devotees would arrive at the temples from as early as the day before to queue up to attend the three steps one bow ceremony."
             wrapperClass="item" />
           <IndividualFactoid
