@@ -6,7 +6,7 @@ export default class Form extends Component {
   constructor(props) {
       super(props);
       this.state = {
-          message: 'Contribute by filling in the below details.',
+          message: 'Share your story!',
           isSubmitting: false,
       };
   }
@@ -73,7 +73,7 @@ export default class Form extends Component {
         });
       } else {
         this.setState({
-          message: 'Contribution submitted! Care to submit another?'
+          message: 'CultureByte shared!'
         });
       }
     });
@@ -90,12 +90,16 @@ export default class Form extends Component {
     } else {
       return (
         <div className="form">
-          {this.state.message} <br/>
           <form className="new-post" onSubmit={this.handleSubmit.bind(this)}>
-            <input type="text" ref="titleInput" placeholder="Title"/> <br/>
-            <input type="text" ref="bodyInput" placeholder="Body"/> <br/>
-            <input type="file" id="pictureInput" /> <br/>
-            <input type="submit" value="Submit" /> <br/>
+            {this.state.message}<br/>
+            <div className="line"></div>
+            <textarea className="ghost-input" type="text" ref="titleInput" placeholder="Title"/>
+            <div className="line"></div>
+            <textarea className="ghost-input" rows="8" type="text" ref="bodyInput" placeholder="Body"/>
+            <div className="line"></div>
+            <input className="ghost-input" type="file" id="pictureInput" />
+            <div className="line"></div>
+            <input className="ghost-button" type="submit" value="Submit" />
           </form>
         </div>
       );

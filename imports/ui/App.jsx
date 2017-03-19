@@ -28,18 +28,18 @@ class App extends Component {
   renderNextButton() {
       // Check if we are at the end of the list
       if (this.props.posts.length != this.state.index + 1) {
-          return <button onClick={this.nextPost.bind(this)}>Next Post</button>;
+          return <button className="next" onClick={this.nextPost.bind(this)}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>;
       } else {
-          return <button disabled>No more posts!</button>;
+          return <button className="next" disabled><i className="fa fa-arrow-right" aria-hidden="true"></i></button>;
       }
   }
 
   renderBackButton() {
       // Check if we are at the start of the list
       if (this.state.index != 0) {
-          return <button onClick={this.previousPost.bind(this)}>Previous Post</button>;
+          return <button onClick={this.previousPost.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>;
       } else {
-          return <button disabled>First post!</button>;
+          return <button disabled><i className="fa fa-arrow-left" aria-hidden="true"></i></button>;
       }
   }
 
@@ -73,12 +73,15 @@ class App extends Component {
     return (
       <div className="container">
         <h1>CultureBytes</h1>
-        <AccountsUIWrapper />
-        {postView}
-        {backButton}
-        {nextButton}
-        <br/><br/>
-        {createPostForm}
+        <div className="content">
+          {postView}
+          {createPostForm}
+          <div className="pagination">
+            {backButton}
+            {nextButton}
+          </div>
+          <AccountsUIWrapper />
+        </div>
       </div>
     );
   }
