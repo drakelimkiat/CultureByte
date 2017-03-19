@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import TitlePage from './TitlePage.jsx';
-import TeamPage from './TeamPage.jsx';
-import CategoryPage from './CategoryPage.jsx'
+import TitlePage from './TitleSection.jsx';
+import TeamPage from './TeamSection.jsx';
+import CategoryPage from './CategorySection.jsx';
+import PromptPage from './PromptSection.jsx';
+import FactoidSection from './FactoidSection.jsx';
 
 const LandingPage = () => {
 	document.title = 'LandingPage';
 	return (
 		<div>
 			<TitlePage />
+			<FactoidSection />
 			<CategoryPage />
+			<PromptPage />
 			<TeamPage />
 		</div>
 	);

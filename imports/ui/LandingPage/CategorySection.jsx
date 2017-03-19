@@ -1,7 +1,7 @@
 import React from 'react';
 import IndividualCategory from './IndividualCategory.jsx'
 
-const CategoryPage = () => {
+const CategorySection = () => {
    	return (
 		<div id="category">
 			<div className="cb-row category-header wow fadeInUp">
@@ -9,11 +9,11 @@ const CategoryPage = () => {
 				<p>Please select a category to begin!</p>
 			</div>
 			<div className="container-fluid">
-				<IndividualCategory 
+				<IndividualCategory
 					title="Trending"
 					subtitle="Read the most popular culture bytes"
 					imageClassName="category-image trending-category"/>
-				<IndividualCategory 
+				<IndividualCategory
 					title="Recent Additions"
 					subtitle="Read culture bytes that were recently added"
 					imageClassName="category-image recent-additions-category"/>
@@ -22,4 +22,4 @@ const CategoryPage = () => {
    	);
 };
 
-export default CategoryPage;
+export default CategorySection;
