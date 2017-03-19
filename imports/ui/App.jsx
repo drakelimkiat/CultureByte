@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
+import { analytics } from "meteor/okgrow:analytics";
 
 import { Posts } from '../api/posts.js';
 
@@ -48,18 +49,29 @@ class App extends Component {
   }
 
   nextPost() {
+      // Track next post in Google Analytics
+      analytics.track('NextPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
+      });
       this.setState({
           index: this.state.index + 1
       });
   }
 
   previousPost() {
+    // Track previous post in Google Analytics
+    analytics.track('PreviousPost', {
+      Username: Meteor.user().username,
+      UserId: Meteor.user()._id
+    });
     this.setState({
         index: this.state.index - 1
     });
   }
 
   render() {
+    document.title = 'PostPage';
     let postView = null;
     let nextButton = null;
     let backButton = null;

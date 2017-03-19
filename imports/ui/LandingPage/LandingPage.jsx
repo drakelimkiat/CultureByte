@@ -4,6 +4,7 @@ import TeamPage from './TeamPage.jsx';
 import CategoryPage from './CategoryPage.jsx'
 
 const LandingPage = () => {
+	document.title = 'LandingPage';
 	return (
 		<div>
 			<TitlePage />

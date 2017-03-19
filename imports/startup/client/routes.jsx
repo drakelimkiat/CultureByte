@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import { analytics } from "meteor/okgrow:analytics";
 
 import App from '../../ui/App.jsx';
 import LandingPage from '../../ui/LandingPage/LandingPage.jsx';
@@ -17,4 +18,3 @@ Meteor.startup(() => {
 		document.getElementById( 'render-target' )
 	);
 });
-
