@@ -71,7 +71,7 @@ export default class Post extends Component {
     render() {
         return (
             <div className="post">
-              <div className="post-topbar">
+              <div className="post-component post-topbar">
                 <div className="author">
                   <div className="profile-photo">
                     <img src="/images/post/profile_photo.jpeg"/>
@@ -81,7 +81,7 @@ export default class Post extends Component {
                     <span className="details">
                       <span>{this.formatDate(this.props.post.createdAt)}</span>
                       <span className="icon dot"><i className="fa fa-circle" aria-hidden="true"></i></span>
-                      <span>{this.props.post.liked_count}</span>
+                      <span>{this.props.post.liked_count ? this.props.post.liked_count : 0}</span>
                       <span className="icon heart"><i className="fa fa-heart" aria-hidden="true"></i></span>
                     </span>
                   </div>
@@ -91,17 +91,16 @@ export default class Post extends Component {
                 </div>
               </div>
 
-              <br/><br/><br/><br/><br/><br/>
+              <div className="post-component post-title">
+                <span className="title">{this.props.post.title}</span>
+              </div>
 
-              <div className="post-title">
-                Title: {this.props.post.title}<br/>
+              <div className="post-component post-photo">
+                <img src={this.props.post.pictureUrl}/>
               </div>
-              <div className="post-photo">
-                <img style={{width:500, height:500}} src={this.props.post.pictureUrl != '' ?
-                  this.props.post.pictureUrl : '/default-placeholder.png'}/><br/>
-              </div>
-              <div className="post-body">
-                Body: {this.props.post.body}<br/>
+
+              <div className="post-component post-body">
+                {this.props.post.body}
               </div>
             </div>
         );
