@@ -5,9 +5,11 @@ import { check } from 'meteor/check';
 export const Posts = new Mongo.Collection('posts');
 
 if (Meteor.isServer) {
-  Meteor.publish('posts', function postsPublication() {
-    return Posts.find();
-  });
+    Meteor.publish('posts', function postsPublication() {
+        return Posts.find({}, {
+            sort: { createdAt: -1 }
+          });
+    });
 }
 
 Meteor.methods({
