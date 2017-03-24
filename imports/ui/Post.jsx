@@ -63,7 +63,7 @@ export default class Post extends Component {
       return <button onClick={this.like.bind(this, currentPostId, currentUserId)}><i className="fa fa-heart-o" aria-hidden="true"></i></button>
     }
   }
-  
+
   formatDate(date) {
     day = date.getDate();
     month = date.toLocaleString("en-us", { month: "short" });
@@ -91,20 +91,20 @@ export default class Post extends Component {
           <div className="like">
             { this.renderLikeButton() }
           </div>
-         </div>
-
-          <div className="post-component post-title">
-            <span className="title">{this.props.post.title}</span>
-          </div>
-
-          <div className="post-component post-photo">
-            <img src={this.props.post.pictureUrl}/>
-          </div>
-
-          <div className="post-component post-body">
-            {this.props.post.body}
-          </div>
         </div>
+
+        <div className="post-component post-title">
+          <span className="title">{this.props.post.title}</span>
+        </div>
+
+        <div className="post-component post-photo">
+          <img src={this.props.post.pictureUrl}/>
+        </div>
+
+        <div className="post-component post-body">
+          {this.props.post.body}
+        </div>
+      </div>
     );
   }
 }
