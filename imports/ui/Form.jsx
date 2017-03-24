@@ -15,8 +15,8 @@ export default class Form extends Component {
     event.preventDefault();
 
     // Get input title and body
-    const title = ReactDOM.findDOMNode(this.refs.titleInput).value.trim();
-    const body = ReactDOM.findDOMNode(this.refs.bodyInput).value.trim();
+    const title = this.refs.titleInput.value.trim();
+    const body = this.refs.bodyInput.value.trim();
 
     // Input title and body validation
     if (title == "" && body == "") {
