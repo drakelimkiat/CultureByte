@@ -60,12 +60,12 @@ export default class Form extends Component {
       if (document.getElementById('pictureInput').files[0] != null) {
         uploader.send(document.getElementById('pictureInput').files[0], function (error, downloadUrl) {
             if (error) {
-                console.error('Error uploading', uploader.xhr.response);
+                console.error('Error uploading');
                 alert (error);
 
                 this.setState({
                   isSubmitting: false,
-                  message: 'Failed to upload picture. Please try again.'
+                  message: 'Failed to upload picture. Please make sure file is in one of these types: .png/.jpeg/.jpg/.gif'
                 });
 
             } else {
