@@ -69,7 +69,6 @@ class Contribution extends Component {
   render() {
     return (
       <div className="container">
-        <h1>CultureBytes</h1>
         <div className="content">
           {this.renderPost()}
           <div className="pagination">
