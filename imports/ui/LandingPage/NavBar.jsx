@@ -2,7 +2,6 @@ import React from 'react';
 import { IndexLink, Link } from 'react-router';
 
 const NavBar = ({currentPath}) => {
-	console.log({currentPath});
 	return (
 		<div className="header">
 			<ul className="main-navigation">
