@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
+import { analytics } from "meteor/okgrow:analytics";
 
 export default class Form extends Component {
   constructor(props) {
@@ -35,6 +36,12 @@ export default class Form extends Component {
       });
       return;
     }
+
+    // Track post contribution using Google Analytics
+    analytics.track('Post Contribution', {
+      ContributionTitle: title,
+      ContributionBody: body,
+    });
 
     this.setState({
       isSubmitting: true,

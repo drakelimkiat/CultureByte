@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Session } from 'meteor/session'
+import { analytics } from "meteor/okgrow:analytics";
 
 export default class Post extends Component {
   constructor(props) {
@@ -46,6 +47,12 @@ export default class Post extends Component {
   }
 
   unlike(currentPostId, currentUserId) {
+    // Track unlike in Google Analytics
+    analytics.track('Unlike', {
+      PostId: currentPostId,
+      UserId: currentUserId
+    });
+
     Meteor.call('posts.unlike', currentPostId, currentUserId, function(error, result) {
       if (error) {
         console.log(error.reason);
@@ -56,6 +63,12 @@ export default class Post extends Component {
   }
 
   like(currentPostId, currentUserId) {
+    // Track like in Google Analytics
+    analytics.track('Like', {
+      PostId: currentPostId,
+      UserId: currentUserId
+    });
+
     Meteor.call('posts.like', currentPostId, currentUserId, function(error, result) {
       if (error) {
         console.log(error.reason);

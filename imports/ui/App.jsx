@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
+import { analytics } from "meteor/okgrow:analytics";
 
 import { Posts } from '../api/posts.js';
 
@@ -83,25 +84,53 @@ class App extends Component {
   }
 
   nextPost() {
+      // Track next post in Google Analytics
+      analytics.track('NextPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
+      });
+
     if (this.state.sortType == 'time') {
       this.setState({
           index: this.state.index + 1
+      });
+      analytics.track('NewNextPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
       });
     } else if (this.state.sortType == 'pop') {
       this.setState({
           popIndex: this.state.popIndex + 1
       });
+      analytics.track('HotNextPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
+      });
     }
   }
 
   previousPost() {
+    // Track previous post in Google Analytics
+    analytics.track('PreviousPost', {
+      Username: Meteor.user().username,
+      UserId: Meteor.user()._id
+    });
+
     if (this.state.sortType == 'time') {
       this.setState({
           index: this.state.index - 1
       });
+      analytics.track('NewPreviousPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
+      });
     } else if (this.state.sortType == 'pop') {
       this.setState({
           popIndex: this.state.popIndex - 1
+      });
+      analytics.track('HotPreviousPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
       });
     }
   }
@@ -137,6 +166,7 @@ class App extends Component {
   }
 
   render() {
+    document.title = 'PostPage';
     let postView = null;
     let toggleButton = null;
     let nextButton = null;
