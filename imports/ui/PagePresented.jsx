@@ -1,7 +1,8 @@
 import React from 'react';
-import NavBar from './LandingPage/NavBar';
+import NavBar from './LandingPage/NavBar.jsx';
 
-const Main = ({children}) => {
+const PagePresented = ({children}) => {
+	const currentPath = children.props.route.path;
 	if (!children) {
 		return (
 			<div>
@@ -10,7 +11,6 @@ const Main = ({children}) => {
 			</div>
 		);
 	}
-
 	return (
 		<div>
 			<NavBar />
@@ -19,4 +19,4 @@ const Main = ({children}) => {
 	);
 };
 
-export default Main;
+export default PagePresented;
