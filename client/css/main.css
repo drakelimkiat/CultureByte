@@ -671,6 +671,7 @@ Spinner and Loading CSS
 #factoid-slider {
 	overflow: hidden;
 	position: relative;
+	height: 70vh;
 }
 #factoid-slider .factoid {
 	position: relative;
@@ -751,8 +752,8 @@ Spinner and Loading CSS
 	z-index: 2;
 }
 #factoid-slider .left-control, #factoid-slider .right-control {
-	position: fixed;
-	top: 50%;
+	position: absolute;
+	top: 30%;
 	height: 51px;
 	width: 51px;
 	line-height: 48px;
