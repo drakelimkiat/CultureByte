@@ -19,7 +19,40 @@
 	-ms-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-
+#login-button {
+	all: initial;
+  all: unset;
+}
+.login-link-text {
+	text-decoration: none;
+}
+#login-button a {
+	text-decoration: none;
+}
+#login-dropdown-list a {
+	text-decoration: underline;
+	color: #000;
+}
+#login-dropdown-list a:hover {
+	color: #05bca9;
+}
+#login-dropdown-list {
+	position: absolute;
+	top: 30px;
+	left: auto;
+	right: 20px;
+}
+#login-button .accounts-dialog {
+	text-transform: none;
+	font-family: "raleway-regular", sans-serif;
+}
+#login-buttons .login-close-text {
+	margin: 0;
+	padding: 8px 0;
+	float: right;
+	color: #000;
+	font-size: 14px;
+}
 /**
 * primary navigation
 * -

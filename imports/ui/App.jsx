@@ -159,7 +159,6 @@ class App extends Component {
             {backButton}
             {nextButton}
           </div>
-          <AccountsUIWrapper />
         </div>
       </div>
     );
