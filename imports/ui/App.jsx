@@ -98,9 +98,19 @@ class App extends Component {
 
   renderToggleButton() {
     if (this.state.sortType == 'time') {
-      return <button onClick={this.onToggleBetweenTimeAndPop.bind(this)}>Popularity</button>
+      return (
+        <div className="category">
+          <button className="category-button enable" onClick={this.onToggleBetweenTimeAndPop.bind(this)}>New <i className="fa fa-clock-o" aria-hidden="true"></i></button>
+          <button className="category-button" onClick={this.onToggleBetweenTimeAndPop.bind(this)}>Hot <i className="fa fa-fire" aria-hidden="true"></i></button>
+        </div>
+      );
     } else if (this.state.sortType == 'pop') {
-      return <button onClick={this.onToggleBetweenTimeAndPop.bind(this)}>Time</button>;
+      return (
+        <div className="category">
+          <button className="category-button" onClick={this.onToggleBetweenTimeAndPop.bind(this)}>New <i className="fa fa-clock-o" aria-hidden="true"></i></button>
+          <button className="category-button enable" onClick={this.onToggleBetweenTimeAndPop.bind(this)}>Hot <i className="fa fa-fire" aria-hidden="true"></i></button>
+        </div>
+      );
     }
   }
 
@@ -131,8 +141,8 @@ class App extends Component {
     }
     return (
       <div className="container">
-        <h1>CultureBytes</h1>
         <div className="content">
+          {toggleButton}
           {postView}
           {createPostForm}
           <div className="pagination">
@@ -140,7 +150,6 @@ class App extends Component {
             {nextButton}
           </div>
           <AccountsUIWrapper />
-          {toggleButton}
         </div>
       </div>
     );
