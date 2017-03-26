@@ -857,7 +857,7 @@ Spinner and Loading CSS
  .post-topbar .author .profile-text .details .heart {
 	 font-size: 10px;
  }
- .post-topbar .like {
+ .post-topbar .like-or-edit {
 	 float: right;
 	 padding: 0 15px 0 0;
  }

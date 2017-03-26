@@ -67,4 +67,17 @@ Meteor.methods({
     // Remove current post id from liked_posts array of user
     Meteor.users.update({_id: userId}, {$pull: {'profile.liked_posts': postId}});
   },
+
+  'posts.update'(postId, title, body) {
+    check(postId, String);
+    check(title, String);
+    check(body, String);
+
+    // Make sure the user is logged in before unliking a post
+    if (! Meteor.user()) {
+      throw new Meteor.Error('not-authorized');
+    }
+
+    Posts.update({_id: postId}, {$set: {title: title, body: body}});
+  },
 });

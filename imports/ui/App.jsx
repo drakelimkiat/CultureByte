@@ -24,7 +24,8 @@ class App extends Component {
         if (this.props.posts[0]) {
             return <Post
                 key={this.props.posts[this.state.index]._id}
-                post={this.props.posts[this.state.index]} />
+                post={this.props.posts[this.state.index]}
+                type="post" />
         }
       } else if (this.state.sortType == 'pop') {
         if (this.props.popPosts[0]) {
