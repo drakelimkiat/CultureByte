@@ -942,3 +942,19 @@ Spinner and Loading CSS
  .pagination .next {
 	 float: right;
  }
+/**
+ * ===================================================================
+ * Edit section
+ *
+ * -------------------------------------------------------------------
+ */
+ .ghost-input-edit {
+	 width: 500px;
+	 outline: none;
+ }
+ .ghost-input-edit-title {
+	 height: 50px;
+ }
+ .ghost-input-edit-body {
+	 height: 200px;
+ }

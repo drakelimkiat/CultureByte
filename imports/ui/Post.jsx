@@ -102,11 +102,11 @@ export default class Post extends Component {
   }
 
   renderTitleTextarea() {
-    return <textarea className="ghost-input" type="text" defaultValue={this.props.post.title} onChange={this.handleTitleChange.bind(this)}/>;
+    return <textarea className="ghost-input-edit ghost-input-edit-title" type="text" defaultValue={this.props.post.title} onChange={this.handleTitleChange.bind(this)}/>;
   }
 
   renderBodyTextarea() {
-    return <textarea className="ghost-input" type="text" defaultValue={this.props.post.body} onChange={this.handleBodyChange.bind(this)}/>;
+    return <textarea className="ghost-input-edit ghost-input-edit-body" type="text" defaultValue={this.props.post.body} onChange={this.handleBodyChange.bind(this)}/>;
   }
 
   formatDate(date) {
