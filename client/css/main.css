@@ -6,6 +6,7 @@
 * -------------------------------------------------------------------
 */
 .header {
+	position: fixed;
 	width: 100%;
 	min-height: 66px;
 	position: absolute;
