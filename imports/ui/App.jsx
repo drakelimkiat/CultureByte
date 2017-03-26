@@ -31,12 +31,17 @@ class App extends Component {
         if (this.props.popPosts[0]) {
             return <Post
                 key={this.props.popPosts[this.state.popIndex]._id}
-                post={this.props.popPosts[this.state.popIndex]} />
+                post={this.props.popPosts[this.state.popIndex]}
+                type="post" />
         }
       }
   }
 
   renderNextButton() {
+      if (this.props.posts.length == 0) {
+        return;
+      }
+
       let index = null;
       let postArray = null;
       if (this.state.sortType == 'time') {
@@ -55,6 +60,10 @@ class App extends Component {
   }
 
   renderBackButton() {
+      if (this.props.posts.length == 0) {
+        return;
+      }
+
       let index = null;
       if (this.state.sortType == 'time') {
         index = this.state.index;
