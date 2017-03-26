@@ -2,18 +2,18 @@ import React from 'react';
 import NavBar from './LandingPage/NavBar.jsx';
 
 const PagePresented = ({children}) => {
-	const currentPath = children.props.route.path;
+	const currentPath = children.props.location.pathname;
 	if (!children) {
 		return (
 			<div>
-				<NavBar />
+				<NavBar currentPath=''/>
 				<div>Loading...</div>
 			</div>
 		);
 	}
 	return (
 		<div>
-			<NavBar />
+			<NavBar currentPath={currentPath}/>
 			{children}
 		</div>
 	);
