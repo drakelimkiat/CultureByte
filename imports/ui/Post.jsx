@@ -6,6 +6,9 @@ export default class Post extends Component {
     super(props);
     this.state = {
       liked: null,
+      isEditing: null,
+      editedTitle: null,
+      editedBody: null,
     };
   }
 
@@ -30,6 +33,18 @@ export default class Post extends Component {
     this.setState({liked: false});
   }
 
+  setIsEditing() {
+    this.setState({isEditing: true});
+  }
+
+  handleTitleChange(e) {
+    this.setState({editedTitle: e.target.value});
+  }
+
+  handleBodyChange(e) {
+    this.setState({editedBody: e.target.value});
+  }
+
   unlike(currentPostId, currentUserId) {
     Meteor.call('posts.unlike', currentPostId, currentUserId, function(error, result) {
       if (error) {
@@ -50,6 +65,19 @@ export default class Post extends Component {
     }.bind(this));
   }
 
+  update(currentPostId) {
+    let title = (this.state.editedTitle == null) ? this.props.post.title : this.state.editedTitle;
+    let body = (this.state.editedBody == null) ? this.props.post.body : this.state.editedBody;
+
+    Meteor.call('posts.update', currentPostId, title, body, function(error, result) {
+      if (error) {
+        console.log(error.reason);
+        return;
+      }
+      this.setState({isEditing: false, editedTitle: null, editedBody: null});
+    }.bind(this));
+  }
+
   renderLikeButton() {
     const currentPostId = this.props.post._id;
     const currentUser = Meteor.user();
@@ -57,11 +85,28 @@ export default class Post extends Component {
 
     if (this.state.liked) {
       // Current user liked current post. Clicking should unlike
-      return <button onClick={this.unlike.bind(this, currentPostId, currentUserId)}><i className="fa fa-heart" aria-hidden="true"></i></button>
+      return <button onClick={this.unlike.bind(this, currentPostId, currentUserId)}><i className="fa fa-heart" aria-hidden="true"></i></button>;
     } else {
       // Current user did not like current post. Clicking should like
-      return <button onClick={this.like.bind(this, currentPostId, currentUserId)}><i className="fa fa-heart-o" aria-hidden="true"></i></button>
+      return <button onClick={this.like.bind(this, currentPostId, currentUserId)}><i className="fa fa-heart-o" aria-hidden="true"></i></button>;
     }
+  }
+
+  renderEditButton() {
+    return <button onClick={this.setIsEditing.bind(this)}><i className="fa fa-pencil" aria-hidden="true"></i></button>;
+  }
+
+  renderSubmitButton() {
+    const currentPostId = this.props.post._id;
+    return <button onClick={this.update.bind(this, currentPostId)}>Submit</button>;
+  }
+
+  renderTitleTextarea() {
+    return <textarea className="ghost-input-edit ghost-input-edit-title" type="text" defaultValue={this.props.post.title} onChange={this.handleTitleChange.bind(this)}/>;
+  }
+
+  renderBodyTextarea() {
+    return <textarea className="ghost-input-edit ghost-input-edit-body" type="text" defaultValue={this.props.post.body} onChange={this.handleBodyChange.bind(this)}/>;
   }
 
   formatDate(date) {
@@ -71,6 +116,17 @@ export default class Post extends Component {
   }
 
   render() {
+    let title = (this.state.isEditing) ? this.renderTitleTextarea() : this.props.post.title;
+    let body = (this.state.isEditing) ? this.renderBodyTextarea() : this.props.post.body;
+    let icon = "";
+    if (this.state.isEditing == true) {
+      icon = this.renderSubmitButton();
+    } else if (this.props.type == "contribution") {
+      icon = this.renderEditButton();
+    } else if (this.props.type == "post") {
+      icon = this.renderLikeButton();
+    }
+
     return (
       <div className="post">
         <div className="post-component post-topbar">
@@ -88,13 +144,13 @@ export default class Post extends Component {
               </span>
             </div>
           </div>
-          <div className="like">
-            { this.renderLikeButton() }
+          <div className="like-or-edit">
+            {icon}
           </div>
         </div>
 
         <div className="post-component post-title">
-          <span className="title">{this.props.post.title}</span>
+          <span className="title">{title}</span>
         </div>
 
         <div className="post-component post-photo">
@@ -102,7 +158,7 @@ export default class Post extends Component {
         </div>
 
         <div className="post-component post-body">
-          {this.props.post.body}
+          {body}
         </div>
       </div>
     );
