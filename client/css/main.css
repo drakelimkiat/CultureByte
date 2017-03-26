@@ -857,7 +857,7 @@ Spinner and Loading CSS
  .post-topbar .author .profile-text .details .heart {
 	 font-size: 10px;
  }
- .post-topbar .like {
+ .post-topbar .like-or-edit {
 	 float: right;
 	 padding: 0 15px 0 0;
  }
@@ -941,6 +941,22 @@ Spinner and Loading CSS
  }
  .pagination .next {
 	 float: right;
+ }
+/**
+ * ===================================================================
+ * Edit section
+ *
+ * -------------------------------------------------------------------
+ */
+ .ghost-input-edit {
+	 width: 500px;
+	 outline: none;
+ }
+ .ghost-input-edit-title {
+	 height: 50px;
+ }
+ .ghost-input-edit-body {
+	 height: 200px;
  }
  /**
   * ===================================================================
