@@ -84,9 +84,17 @@ class App extends Component {
       this.setState({
           index: this.state.index + 1
       });
+      analytics.track('NewNextPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
+      });
     } else if (this.state.sortType == 'pop') {
       this.setState({
           popIndex: this.state.popIndex + 1
+      });
+      analytics.track('HotNextPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
       });
     }
   }
@@ -102,9 +110,17 @@ class App extends Component {
       this.setState({
           index: this.state.index - 1
       });
+      analytics.track('NewPreviousPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
+      });
     } else if (this.state.sortType == 'pop') {
       this.setState({
           popIndex: this.state.popIndex - 1
+      });
+      analytics.track('HotPreviousPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
       });
     }
   }
