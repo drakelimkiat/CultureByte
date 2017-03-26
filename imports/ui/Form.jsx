@@ -61,7 +61,6 @@ export default class Form extends Component {
         uploader.send(document.getElementById('pictureInput').files[0], function (error, downloadUrl) {
             if (error) {
                 console.error('Error uploading');
-                alert (error);
 
                 this.setState({
                   isSubmitting: false,
