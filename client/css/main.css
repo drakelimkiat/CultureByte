@@ -80,10 +80,10 @@
 	margin: 0;
 	height: 66px;
 }
-.main-navigation li.current a {
+.main-navigation li a.current {
 	color: #FFFFFF;
 }
-.main-navigation li.current a::after {
+.main-navigation li a.current::after {
 	position: absolute;
 	left: 50%;
 	bottom: 0;
