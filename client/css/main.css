@@ -834,6 +834,9 @@ Spinner and Loading CSS
  color: #8d8d8d;
  margin-top: 5rem;
 }
+#individual-factoid a {
+	text-decoration: none;
+}
 /**
  * ===================================================================
  * Post section

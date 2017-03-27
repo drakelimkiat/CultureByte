@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const IndividualPrompt = ({title, subtitle, imageUrl, wrapperClass}) => {
    	return (
@@ -7,7 +8,7 @@ const IndividualPrompt = ({title, subtitle, imageUrl, wrapperClass}) => {
         <div className="caption">
           <h1 className="animated fadeInLeftBig">{title}</h1>
           <p className="animated fadeInLeftBig">{subtitle}</p>
-          <a data-scroll className="btn btn-start animated fadeInRightBig" href="">SHARE</a>
+          <Link to="/contribution"><span data-scroll className="btn btn-start animated fadeInRightBig">SHARE</span></Link>
         </div>
       </div>
    	);
