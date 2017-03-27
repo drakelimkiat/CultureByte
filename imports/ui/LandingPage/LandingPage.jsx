@@ -10,6 +10,7 @@ const LandingPage = () => {
 		<div>
 			<TitlePage />
 			<FactoidSection />
+			<hr />
 			<CategoryPage />
 			<PromptPage />
 			<TeamPage />
