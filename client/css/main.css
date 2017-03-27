@@ -518,12 +518,12 @@ Spinner and Loading CSS
 	max-height: 100%;
 	background-size: cover;
 }
-.category {
-	padding-top: 0;
-	padding-bottom: 60px;
+#category {
+	padding-top: 100px;
+	background-color: #EAEAED;
 }
 .category-header h2 {
-	font-family: "raleway-regular", sans-serif;
+	font-family: "raleway-semibold", sans-serif;
 	font-size: 34px;
 	padding-bottom: 10px;
 }
@@ -535,7 +535,6 @@ Spinner and Loading CSS
 .category-header {
 	padding: 0 15px 15px 90px;
 	margin-bottom: 50px;
-	margin-top: 100px;
 	text-align: center;
 }
 /**
@@ -674,7 +673,7 @@ Spinner and Loading CSS
 	position: relative;
 	min-height: 20.4rem;
 	width: 100%;
-	height: 80vh;
+	height: 100vh;
 	overflow: hidden;
 	text-align: center;
 }
