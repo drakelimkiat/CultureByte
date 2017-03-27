@@ -21,7 +21,7 @@ class IndividualCategory extends Component {
               </div>
               <div className="folio-overview">
                 <div className="folio-link">
-                  <Link to="/post"><i className="fa fa-link" /></Link>
+                  <Link to={ this.props.currentUser ? "/post" : ""}><i className="fa fa-link" /></Link>
                 </div>
               </div>
             </div>
