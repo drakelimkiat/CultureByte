@@ -14,9 +14,15 @@ class NavBar extends Component {
 		return (
 			<div className="header">
 				<ul className="main-navigation">
-					<li className={currentPath == "/" ? 'current' : ''}><IndexLink to="/">Home</IndexLink></li>
-					<li className={this.props.currentUser ? (currentPath == "/contribution" ? 'current' : '') : 'hide'}><Link to="/contribution">Contribution</Link></li>
-					<li className={this.props.currentUser ? (currentPath == "/post" ? 'current' : '') : 'hide'}><Link to="/post">Post</Link></li>
+					<li className={currentPath == "/" ? 'current' : ''}>
+						<IndexLink to="/">Home</IndexLink>
+					</li>
+					<li className={this.props.currentUser ? (currentPath == "/contribution" ? 'current' : '') : 'hide'}>
+						<Link to="/contribution">Contribution</Link>
+					</li>
+					<li className={this.props.currentUser ? (currentPath == "/post" ? 'current' : '') : 'hide'}>
+						<Link to="/post">Post</Link>
+					</li>
 					<li id="login-button" className="highlight with-sep">
 						<AccountsUIWrapper />
 					</li>
