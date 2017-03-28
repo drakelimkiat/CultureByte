@@ -26,6 +26,7 @@ class App extends Component {
             return <Post
                 key={this.props.posts[this.state.index]._id}
                 post={this.props.posts[this.state.index]}
+                onLikeButtonClick={this.onLikeButtonClick.bind(this)}
                 type="post" />
         }
       } else if (this.state.sortType == 'pop') {
@@ -33,6 +34,7 @@ class App extends Component {
             return <Post
                 key={this.props.popPosts[this.state.popIndex]._id}
                 post={this.props.popPosts[this.state.popIndex]}
+                onLikeButtonClick={this.onLikeButtonClick.bind(this)}
                 type="post" />
         }
       }
@@ -163,6 +165,30 @@ class App extends Component {
         sortType: 'time'
       })
     }
+  }
+
+  onLikeButtonClick(postId) {
+    let postArray = null;
+    if (this.state.sortType == 'time') {
+      postArray = this.props.posts;
+    } else if (this.state.sortType == 'pop') {
+      postArray = this.props.popPosts;
+    }
+
+    let postIndexUserWasAt = postArray.findIndex(
+      function(element) {
+        return element._id == postId;
+      });
+
+      if (this.state.sortType == 'time') {
+        this.setState({
+          index: postIndexUserWasAt
+        })
+      } else if (this.state.sortType == 'pop') {
+        this.setState({
+          popIndex: postIndexUserWasAt
+        })
+      }
   }
 
   render() {
