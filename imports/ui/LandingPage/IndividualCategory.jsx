@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';import { Link } from 'react-router';
+import Popup from '../Popup.jsx';
 
 class IndividualCategory extends Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class IndividualCategory extends Component {
   }
 
   render() {
+    const showPopup = this.props.currentUser ? false : true;
     return (
       <div className="folio-item wow fadeInRightBig col-1-2" data-wow-duration="1000ms" data-wow-delay="400ms">
         <div className="folio-image">
@@ -21,7 +23,11 @@ class IndividualCategory extends Component {
               </div>
               <div className="folio-overview">
                 <div className="folio-link">
-                  <Link to={ this.props.currentUser ? "/post" : ""}><i className="fa fa-link" /></Link>
+                  <Link to={ this.props.currentUser ? "/post" : ""}>
+                    <i className="fa fa-link">
+                      <Popup show={showPopup} />
+                    </i>
+                  </Link>
                 </div>
               </div>
             </div>
