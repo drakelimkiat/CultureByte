@@ -20,6 +20,36 @@ class App extends Component {
       };
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.posts.length == 0 || newProps.posts.length == 0) {
+      return;
+    }
+
+    if (newProps.posts.length != this.props.posts.length) {
+      if (this.state.sortType == 'time') {
+        this.setState({
+          index: 0
+        });
+      } else if (this.state.sortType == 'pop') {
+        this.setState({
+          popIndex: newProps.popPosts.length - 1
+        });
+      }
+      return;
+    }
+
+    let postId = this.props.popPosts[this.state.popIndex]._id;
+    if (this.state.sortType == 'pop') {
+      let postIndex = newProps.popPosts.findIndex(
+        function(element) {
+          return element._id == postId;
+        });
+      this.setState({
+        popIndex: postIndex
+      });
+    }
+  }
+
   renderPost() {
       if (this.state.sortType == 'time') {
         if (this.props.posts[0]) {
@@ -206,9 +236,11 @@ export default createContainer(() => {
     Meteor.subscribe('posts');
 
     return {
-        posts: Posts.find({}).fetch(),
+        posts: Posts.find({}, {
+            sort: { createdAt: -1 }
+          }).fetch(),
         popPosts: Posts.find({}, {
-            sort: { liked_count: -1 }
+            sort: { liked_count: -1, createdAt: 1 }
           }).fetch(),
         currentUser: Meteor.user()
     };
