@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.props.posts.length == 0 || newProps.posts.length == 0) {
+    if (newProps.posts.length == 0) {
       return;
     }
 
@@ -36,17 +36,6 @@ class App extends Component {
         });
       }
       return;
-    }
-
-    let postId = this.props.popPosts[this.state.popIndex]._id;
-    if (this.state.sortType == 'pop') {
-      let postIndex = newProps.popPosts.findIndex(
-        function(element) {
-          return element._id == postId;
-        });
-      this.setState({
-        popIndex: postIndex
-      });
     }
   }
 
@@ -239,9 +228,7 @@ export default createContainer(() => {
         posts: Posts.find({}, {
             sort: { createdAt: -1 }
           }).fetch(),
-        popPosts: Posts.find({}, {
-            sort: { liked_count: -1, createdAt: 1 }
-          }).fetch(),
+        popPosts: Posts.find({}).fetch(),
         currentUser: Meteor.user()
     };
 }, App);
