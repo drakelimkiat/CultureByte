@@ -58,7 +58,6 @@ export default class Post extends Component {
         console.log(error.reason);
         return;
       }
-      this.props.onLikeButtonClick(currentPostId);
       this.setState({liked: false});
     }.bind(this));
   }
@@ -75,7 +74,6 @@ export default class Post extends Component {
         console.log(error.reason);
         return;
       }
-      this.props.onLikeButtonClick(currentPostId);
       this.setState({liked: true});
     }.bind(this));
   }

@@ -20,13 +20,47 @@ class App extends Component {
       };
   }
 
+  componentWillReceiveProps(newProps) {
+
+    let oldPostArray = null;
+    let newPostArray = null;
+    let currentIndex = null;
+    if (this.state.sortType == 'time') {
+      oldPostArray = this.props.posts;
+      newPostArray = newProps.posts;
+      currentIndex = this.state.index;
+    } else if (this.state.sortType == 'pop') {
+      oldPostArray = this.props.popPosts;
+      newPostArray = newProps.popPosts;
+      currentIndex = this.state.popIndex;
+    }
+
+    if (newPostArray.length == 0 || oldPostArray.length == 0) {
+      return;
+    }
+
+    let postIndex = newPostArray.findIndex(
+      function(element) {
+        return element._id == oldPostArray[currentIndex]._id;
+      });
+
+      if (this.state.sortType == 'time') {
+        this.setState({
+          index: postIndex
+        })
+      } else if (this.state.sortType == 'pop') {
+        this.setState({
+          popIndex: postIndex
+        })
+      }
+  }
+
   renderPost() {
       if (this.state.sortType == 'time') {
         if (this.props.posts[0]) {
             return <Post
                 key={this.props.posts[this.state.index]._id}
                 post={this.props.posts[this.state.index]}
-                onLikeButtonClick={this.onLikeButtonClick.bind(this)}
                 type="post" />
         }
       } else if (this.state.sortType == 'pop') {
@@ -34,7 +68,6 @@ class App extends Component {
             return <Post
                 key={this.props.popPosts[this.state.popIndex]._id}
                 post={this.props.popPosts[this.state.popIndex]}
-                onLikeButtonClick={this.onLikeButtonClick.bind(this)}
                 type="post" />
         }
       }
@@ -165,30 +198,6 @@ class App extends Component {
         sortType: 'time'
       })
     }
-  }
-
-  onLikeButtonClick(postId) {
-    let postArray = null;
-    if (this.state.sortType == 'time') {
-      postArray = this.props.posts;
-    } else if (this.state.sortType == 'pop') {
-      postArray = this.props.popPosts;
-    }
-
-    let postIndexUserWasAt = postArray.findIndex(
-      function(element) {
-        return element._id == postId;
-      });
-
-      if (this.state.sortType == 'time') {
-        this.setState({
-          index: postIndexUserWasAt
-        })
-      } else if (this.state.sortType == 'pop') {
-        this.setState({
-          popIndex: postIndexUserWasAt
-        })
-      }
   }
 
   render() {
