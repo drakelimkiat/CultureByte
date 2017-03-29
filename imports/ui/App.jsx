@@ -21,38 +21,33 @@ class App extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-
-    let oldPostArray = null;
-    let newPostArray = null;
-    let currentIndex = null;
-    if (this.state.sortType == 'time') {
-      oldPostArray = this.props.posts;
-      newPostArray = newProps.posts;
-      currentIndex = this.state.index;
-    } else if (this.state.sortType == 'pop') {
-      oldPostArray = this.props.popPosts;
-      newPostArray = newProps.popPosts;
-      currentIndex = this.state.popIndex;
-    }
-
-    if (newPostArray.length == 0 || oldPostArray.length == 0) {
+    if (this.props.posts.length == 0 || newProps.posts.length == 0) {
       return;
     }
 
-    let postIndex = newPostArray.findIndex(
-      function(element) {
-        return element._id == oldPostArray[currentIndex]._id;
-      });
-
+    if (newProps.posts.length != this.props.posts.length) {
       if (this.state.sortType == 'time') {
         this.setState({
-          index: postIndex
-        })
+          index: 0
+        });
       } else if (this.state.sortType == 'pop') {
         this.setState({
-          popIndex: postIndex
-        })
+          popIndex: newProps.popPosts.length - 1
+        });
       }
+      return;
+    }
+
+    let postId = this.props.popPosts[this.state.popIndex]._id;
+    if (this.state.sortType == 'pop') {
+      let postIndex = newProps.popPosts.findIndex(
+        function(element) {
+          return element._id == postId;
+        });
+      this.setState({
+        popIndex: postIndex
+      });
+    }
   }
 
   renderPost() {
@@ -241,9 +236,11 @@ export default createContainer(() => {
     Meteor.subscribe('posts');
 
     return {
-        posts: Posts.find({}).fetch(),
+        posts: Posts.find({}, {
+            sort: { createdAt: -1 }
+          }).fetch(),
         popPosts: Posts.find({}, {
-            sort: { liked_count: -1 }
+            sort: { liked_count: -1, createdAt: 1 }
           }).fetch(),
         currentUser: Meteor.user()
     };
