@@ -185,7 +185,7 @@ class App extends Component {
   }
 
   render() {
-    document.title = 'PostPage';
+    document.title = 'Post';
     let postView = null;
     let toggleButton = null;
     let nextButton = null;

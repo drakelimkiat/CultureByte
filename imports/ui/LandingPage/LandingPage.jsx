@@ -6,7 +6,7 @@ import PromptPage from './PromptSection.jsx';
 import FactoidSection from './FactoidSection.jsx';
 
 const LandingPage = () => {
-	document.title = 'LandingPage';
+	document.title = 'CultureByte';
 	return (
 		<div>
 			<TitlePage />

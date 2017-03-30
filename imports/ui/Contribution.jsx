@@ -71,6 +71,7 @@ class Contribution extends Component {
   }
 
   render() {
+    document.title = 'Contribution';
     var post = this.renderPost();
     if (post == undefined) { // no posts yet
       post = this.renderPlaceholderPost();
