@@ -25,6 +25,10 @@ class Contribution extends Component {
     }
   }
 
+  renderPlaceholderPost() {
+    return <div className="post placeholder">You have no posts yet!</div>;
+  }
+
   renderNextButton() {
       if (this.props.posts.length == 0) {
         return;
@@ -67,10 +71,15 @@ class Contribution extends Component {
   }
 
   render() {
+    var post = this.renderPost();
+    if (post == undefined) { // no posts yet
+      post = this.renderPlaceholderPost();
+    }
     return (
       <div className="container">
         <div className="content">
-          {this.renderPost()}
+          {post}
+          <Form />
           <div className="pagination">
             {this.renderBackButton()}
             {this.renderNextButton()}

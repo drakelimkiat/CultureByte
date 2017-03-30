@@ -59,7 +59,6 @@ export default class Form extends Component {
   }
 
   uploadPicture(title, body) {
-
       let userId = Meteor.user()._id;
       let metaContext = { avatarId: userId };
       let uploader = new Slingshot.Upload("PostPicture", metaContext);
