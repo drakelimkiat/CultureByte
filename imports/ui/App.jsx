@@ -7,6 +7,7 @@ import { Posts } from '../api/posts.js';
 import Post from './Post.jsx';
 import Form from './Form.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
+import { browserHistory } from 'react-router';
 
 // App component - represents the whole app
 class App extends Component {
@@ -17,6 +18,20 @@ class App extends Component {
           popIndex: 0,
           sortType: 'time'
       };
+  }
+
+  componentWillMount() {
+    if (!Meteor.user()) {
+      browserHistory.push('/');
+      return;
+    }
+  }
+
+  componentWillUpdate() {
+    if (!Meteor.user()) {
+      browserHistory.push('/');
+      return;
+    }
   }
 
   renderPost() {

@@ -7,6 +7,7 @@ import { Posts } from '../api/posts.js';
 import Post from './Post.jsx';
 import Form from './Form.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
+import { browserHistory } from 'react-router';
 
 class Contribution extends Component {
   constructor(props) {
@@ -22,6 +23,20 @@ class Contribution extends Component {
         key={this.props.posts[this.state.index]._id}
         post={this.props.posts[this.state.index]}
         type="contribution" />
+    }
+  }
+
+  componentWillMount() {
+    if (!Meteor.user()) {
+      browserHistory.push('/');
+      return;
+    }
+  }
+
+  componentWillUpdate() {
+    if (!Meteor.user()) {
+      browserHistory.push('/');
+      return;
     }
   }
 
