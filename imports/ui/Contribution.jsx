@@ -27,10 +27,6 @@ class Contribution extends Component {
     }
   }
 
-  renderPlaceholderPost() {
-    return <div className="post placeholder">You have no posts yet!</div>;
-  }
-
   renderNextButton() {
       if (this.props.posts.length == 0) {
         return;
