@@ -6,14 +6,14 @@ const PagePresented = ({children}) => {
 	if (!children) {
 		return (
 			<div>
-				<NavBar currentPath=''/>
+				<NavBar />
 				<div>Loading...</div>
 			</div>
 		);
 	}
 	return (
 		<div>
-			<NavBar currentPath={currentPath}/>
+			<NavBar />
 			{children}
 		</div>
 	);
