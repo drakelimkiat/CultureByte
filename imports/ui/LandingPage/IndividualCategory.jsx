@@ -29,6 +29,7 @@ class IndividualCategory extends Component {
                     </i>
                   </Link>
                 </div>
+                    <Popup />
               </div>
             </div>
           </div>

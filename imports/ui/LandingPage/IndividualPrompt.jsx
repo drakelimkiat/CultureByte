@@ -23,6 +23,7 @@ class IndividualPrompt extends Component {
             </span>
           </Link>
         </div>
+            <Popup />
       </div>
     );
   }
