@@ -1,8 +1,7 @@
 import React from 'react';
 import NavBar from './LandingPage/NavBar.jsx';
 
-const PagePresented = ({children}) => {
-	const currentPath = children.props.location.pathname;
+const Main = ({children}) => {
 	if (!children) {
 		return (
 			<div>
@@ -19,4 +18,4 @@ const PagePresented = ({children}) => {
 	);
 };
 
-export default PagePresented;
+export default Main;

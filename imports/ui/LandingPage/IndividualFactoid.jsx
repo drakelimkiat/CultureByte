@@ -9,7 +9,7 @@ class IndividualFactoid extends Component {
 
   render() {
     return (
-      <div className={this.props.wrapperClass}>
+      <div className={this.props.classNames}>
         <div id="individual-factoid">
           <Link to={ this.props.currentUser ? "/post" : ""}>
             <h3>{this.props.title}</h3>
@@ -27,7 +27,7 @@ IndividualFactoid.propTypes = {
     title: PropTypes.string,
     location: PropTypes.string,
     snippet: PropTypes.string,
-    wrapperClass: PropTypes.string
+    classNames: PropTypes.string
 };
 
 export default createContainer(() => {

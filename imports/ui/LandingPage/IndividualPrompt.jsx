@@ -11,7 +11,7 @@ class IndividualPrompt extends Component {
   render() {
     const showPopup = this.props.currentUser ? false : true;
     return (
-      <div className={this.props.wrapperClass}>
+      <div className={this.props.classNames}>
         <img src={this.props.imageUrl} />
         <div className="caption">
           <h1 className="animated fadeInLeftBig">{this.props.title}</h1>
@@ -33,7 +33,7 @@ IndividualPrompt.propTypes = {
     title: PropTypes.string,
     subtitle: PropTypes.string,
     imageUrl: PropTypes.string,
-    wrapperClass: PropTypes.string
+    classNames: PropTypes.string
 };
 
 export default createContainer(() => {
