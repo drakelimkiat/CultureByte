@@ -31,6 +31,7 @@ class App extends Component {
   componentWillUpdate() {
     if (!Meteor.user()) {
       browserHistory.push('/');
+  }
 
   componentWillReceiveProps(newProps) {
     if (newProps.posts.length == 0) {
