@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
+import { analytics } from "meteor/okgrow:analytics";
 
 import { Posts } from '../api/posts.js';
 
@@ -30,6 +31,22 @@ class App extends Component {
   componentWillUpdate() {
     if (!Meteor.user()) {
       browserHistory.push('/');
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.posts.length == 0) {
+      return;
+    }
+
+    if (newProps.posts.length != this.props.posts.length) {
+      if (this.state.sortType == 'time') {
+        this.setState({
+          index: 0
+        });
+      } else if (this.state.sortType == 'pop') {
+        this.setState({
+          popIndex: newProps.popPosts.length - 1
+        });
+      }
       return;
     }
   }
@@ -98,25 +115,53 @@ class App extends Component {
   }
 
   nextPost() {
+      // Track next post in Google Analytics
+      analytics.track('NextPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
+      });
+
     if (this.state.sortType == 'time') {
       this.setState({
           index: this.state.index + 1
+      });
+      analytics.track('NewNextPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
       });
     } else if (this.state.sortType == 'pop') {
       this.setState({
           popIndex: this.state.popIndex + 1
       });
+      analytics.track('HotNextPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
+      });
     }
   }
 
   previousPost() {
+    // Track previous post in Google Analytics
+    analytics.track('PreviousPost', {
+      Username: Meteor.user().username,
+      UserId: Meteor.user()._id
+    });
+
     if (this.state.sortType == 'time') {
       this.setState({
           index: this.state.index - 1
       });
+      analytics.track('NewPreviousPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
+      });
     } else if (this.state.sortType == 'pop') {
       this.setState({
           popIndex: this.state.popIndex - 1
+      });
+      analytics.track('HotPreviousPost', {
+        Username: Meteor.user().username,
+        UserId: Meteor.user()._id
       });
     }
   }
@@ -152,6 +197,7 @@ class App extends Component {
   }
 
   render() {
+    document.title = 'Post';
     let postView = null;
     let toggleButton = null;
     let nextButton = null;
@@ -190,10 +236,10 @@ export default createContainer(() => {
     Meteor.subscribe('posts');
 
     return {
-        posts: Posts.find({}).fetch(),
-        popPosts: Posts.find({}, {
-            sort: { liked_count: -1 }
+        posts: Posts.find({}, {
+            sort: { createdAt: -1 }
           }).fetch(),
+        popPosts: Posts.find({}).fetch(),
         currentUser: Meteor.user()
     };
 }, App);

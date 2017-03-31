@@ -6,9 +6,9 @@ export const Posts = new Mongo.Collection('posts');
 
 if (Meteor.isServer) {
     Meteor.publish('posts', function postsPublication() {
-        return Posts.find({}, {
-            sort: { createdAt: -1 }
-          });
+      return Posts.find({}, {
+          sort: { liked_count: -1, createdAt: -1 }
+        });
     });
 }
 

@@ -1042,3 +1042,13 @@ Spinner and Loading CSS
  .enable {
 	 background-color: #888888;
  }
+ /**
+  * ===================================================================
+  * Contribution section
+  *
+  * -------------------------------------------------------------------
+  */
+.placeholder {
+	text-align: center;
+	line-height: 300px;
+}

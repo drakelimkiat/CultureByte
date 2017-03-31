@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
+import { analytics } from "meteor/okgrow:analytics";
 
 export default class Form extends Component {
   constructor(props) {
@@ -36,6 +37,12 @@ export default class Form extends Component {
       return;
     }
 
+    // Track post contribution using Google Analytics
+    analytics.track('Post Contribution', {
+      ContributionTitle: title,
+      ContributionBody: body,
+    });
+
     this.setState({
       isSubmitting: true,
       message: 'Submitting your contribution...'
@@ -52,7 +59,6 @@ export default class Form extends Component {
   }
 
   uploadPicture(title, body) {
-
       let userId = Meteor.user()._id;
       let metaContext = { avatarId: userId };
       let uploader = new Slingshot.Upload("PostPicture", metaContext);
@@ -60,12 +66,11 @@ export default class Form extends Component {
       if (document.getElementById('pictureInput').files[0] != null) {
         uploader.send(document.getElementById('pictureInput').files[0], function (error, downloadUrl) {
             if (error) {
-                console.error('Error uploading', uploader.xhr.response);
-                alert (error);
+                console.error('Error uploading');
 
                 this.setState({
                   isSubmitting: false,
-                  message: 'Failed to upload picture. Please try again.'
+                  message: 'Failed to upload picture. Please make sure file is in one of these types: .png/.jpeg/.jpg/.gif'
                 });
 
             } else {
