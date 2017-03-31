@@ -19,7 +19,7 @@ class IndividualPrompt extends Component {
           <Link to={this.props.currentUser ? "/contribution" : ""}>
             <span data-scroll className="btn btn-start animated fadeInRightBig shareButton">
               SHARE
-              <Popup show={showPopup} />
+              <Popup />
             </span>
           </Link>
         </div>
