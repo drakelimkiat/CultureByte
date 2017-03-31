@@ -1,5 +1,5 @@
 import React from 'react';
-import IndividualFactoid from './IndividualFactoid.jsx'
+import IndividualFactoid from './IndividualFactoid.jsx';
 
 const FactoidSection = () => {
   return (
