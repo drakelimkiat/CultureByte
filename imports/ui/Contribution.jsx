@@ -22,6 +22,8 @@ class Contribution extends Component {
         key={this.props.posts[this.state.index]._id}
         post={this.props.posts[this.state.index]}
         type="contribution" />
+    } else {
+      return <div className="post placeholder">You have no posts yet!</div>;
     }
   }
 
@@ -72,14 +74,10 @@ class Contribution extends Component {
 
   render() {
     document.title = 'Contribution';
-    var post = this.renderPost();
-    if (post == undefined) { // no posts yet
-      post = this.renderPlaceholderPost();
-    }
     return (
       <div className="container">
         <div className="content">
-          {post}
+          {this.renderPost()}
           <Form />
           <div className="pagination">
             {this.renderBackButton()}
