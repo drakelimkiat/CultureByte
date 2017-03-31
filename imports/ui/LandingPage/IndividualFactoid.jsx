@@ -1,15 +1,37 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
+import { Link } from 'react-router';
 
-const IndividualFactoid = ({title, location, snippet, wrapperClass}) => {
-   	return (
-      <div className={wrapperClass}>
+class IndividualFactoid extends Component {
+  constructor(props) {
+      super(props);
+  }
+
+  render() {
+    return (
+      <div className={this.props.classNames}>
         <div id="individual-factoid">
-          <h3>{title}</h3>
-          <h4>{location}</h4>
-          <p>{snippet}</p>
+          <Link to={this.props.currentUser ? "/post" : ""}>
+            <h3>{this.props.title}</h3>
+            <h4>{this.props.location}</h4>
+            <p>{this.props.snippet}</p>
+          </Link>
         </div>
       </div>
-   	);
+    );
+  }
+}
+
+IndividualFactoid.propTypes = {
+    currentUser: PropTypes.object,
+    title: PropTypes.string,
+    location: PropTypes.string,
+    snippet: PropTypes.string,
+    classNames: PropTypes.string
 };
 
-export default IndividualFactoid;
+export default createContainer(() => {
+    return {
+        currentUser: Meteor.user()
+    };
+}, IndividualFactoid);

@@ -1,16 +1,44 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
+import { Link } from 'react-router';
+import Popup from '../Popup.jsx';
 
-const IndividualPrompt = ({title, subtitle, imageUrl, wrapperClass}) => {
-   	return (
-      <div className={wrapperClass}>
-        <img src={imageUrl} />
+class IndividualPrompt extends Component {
+  constructor(props) {
+      super(props);
+  }
+
+  render() {
+    const showPopup = this.props.currentUser ? false : true;
+    return (
+      <div className={this.props.classNames}>
+        <img src={this.props.imageUrl} />
         <div className="caption">
-          <h1 className="animated fadeInLeftBig">{title}</h1>
-          <p className="animated fadeInLeftBig">{subtitle}</p>
-          <a data-scroll className="btn btn-start animated fadeInRightBig" href="">SHARE</a>
+          <h1 className="animated fadeInLeftBig">{this.props.title}</h1>
+          <p className="animated fadeInLeftBig">{this.props.subtitle}</p>
+          <Link to={this.props.currentUser ? "/contribution" : ""}>
+            <span data-scroll className="btn btn-start animated fadeInRightBig shareButton">
+              SHARE
+              <Popup />
+            </span>
+          </Link>
         </div>
+            <Popup />
       </div>
-   	);
+    );
+  }
+}
+
+IndividualPrompt.propTypes = {
+    currentUser: PropTypes.object,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    imageUrl: PropTypes.string,
+    classNames: PropTypes.string
 };
 
-export default IndividualPrompt;
+export default createContainer(() => {
+    return {
+        currentUser: Meteor.user()
+    };
+}, IndividualPrompt);

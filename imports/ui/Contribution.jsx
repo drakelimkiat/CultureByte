@@ -7,6 +7,7 @@ import { Posts } from '../api/posts.js';
 import Post from './Post.jsx';
 import Form from './Form.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
+import { browserHistory } from 'react-router';
 
 class Contribution extends Component {
   constructor(props) {
@@ -24,6 +25,20 @@ class Contribution extends Component {
         type="contribution" />
     } else {
       return <div className="post placeholder">You have no posts yet!</div>;
+    }
+  }
+
+  componentWillMount() {
+    if (!Meteor.user()) {
+      browserHistory.push('/');
+      return;
+    }
+  }
+
+  componentWillUpdate() {
+    if (!Meteor.user()) {
+      browserHistory.push('/');
+      return;
     }
   }
 

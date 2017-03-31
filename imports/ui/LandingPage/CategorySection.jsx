@@ -1,5 +1,5 @@
 import React from 'react';
-import IndividualCategory from './IndividualCategory.jsx'
+import IndividualCategory from './IndividualCategory.jsx';
 
 const CategorySection = () => {
    	return (
@@ -10,13 +10,13 @@ const CategorySection = () => {
 			</div>
 			<div className="container-fluid">
 				<IndividualCategory
-					title="Trending"
+					title="Hot"
 					subtitle="Read the most popular culture bytes"
-					imageClassName="category-image trending-category"/>
+					imageClassName="category-image trending-category" />
 				<IndividualCategory
-					title="Recent Additions"
+					title="New"
 					subtitle="Read culture bytes that were recently added"
-					imageClassName="category-image recent-additions-category"/>
+					imageClassName="category-image recent-additions-category" />
 			</div>
 		</div>
    	);

@@ -1,14 +1,42 @@
 @import url("fonts.css");
 /**
 * ===================================================================
+* popup style
+*
+* -------------------------------------------------------------------
+*/
+.popup {
+	display: none;
+}
+
+.fa-link:hover .popup,
+.shareButton:hover .popup {
+	position: absolute;
+	display: block;
+	color: #000;
+	padding: 15px 20px 10px 20px;
+	display: block;
+	text-align: center;
+	opacity: 0.8;
+	background-color: #fff;
+	border-radius: 10px;
+	font-size: 12px;
+	font-family:  "raleway-semibold", sans-serif;
+	line-height: normal;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+/**
+* ===================================================================
 * navbar styles
 *
 * -------------------------------------------------------------------
 */
 .header {
+	position: fixed;
 	width: 100%;
 	min-height: 66px;
-	position: absolute;
 	background: #14171c;
 	top: 0;
 	left: 0;
@@ -19,7 +47,40 @@
 	-ms-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-
+#login-button {
+	all: initial;
+  all: unset;
+}
+.login-link-text {
+	text-decoration: none;
+}
+#login-button a {
+	text-decoration: none;
+}
+#login-dropdown-list a {
+	text-decoration: underline;
+	color: #000;
+}
+#login-dropdown-list a:hover {
+	color: #05bca9;
+}
+#login-dropdown-list {
+	position: absolute;
+	top: 30px;
+	left: auto;
+	right: 20px;
+}
+#login-button .accounts-dialog {
+	text-transform: none;
+	font-family: "raleway-regular", sans-serif;
+}
+#login-buttons .login-close-text {
+	margin: 0;
+	padding: 8px 0;
+	float: right;
+	color: #000;
+	font-size: 14px;
+}
 /**
 * primary navigation
 * -
@@ -29,7 +90,7 @@
 	display: inline-block;
 	width: auto;
 	text-align: left;
-	margin: 0px 200px 0px 0px;
+	margin: 0px auto;
 	padding: 0;
 	font-family: "raleway-heavy", sans-serif;
 	font-size: 11.5px;
@@ -47,10 +108,10 @@
 	margin: 0;
 	height: 66px;
 }
-.main-navigation li.current a {
+.main-navigation li a.current {
 	color: #FFFFFF;
 }
-.main-navigation li.current a::after {
+.main-navigation li a.current::after {
 	position: absolute;
 	left: 50%;
 	bottom: 0;
@@ -485,12 +546,11 @@ Spinner and Loading CSS
 	max-height: 100%;
 	background-size: cover;
 }
-.category {
-	padding-top: 0;
-	padding-bottom: 60px;
+#category {
+	padding-top: 70px;
 }
 .category-header h2 {
-	font-family: "raleway-regular", sans-serif;
+	font-family: "raleway-semibold", sans-serif;
 	font-size: 34px;
 	padding-bottom: 10px;
 }
@@ -502,7 +562,6 @@ Spinner and Loading CSS
 .category-header {
 	padding: 0 15px 15px 90px;
 	margin-bottom: 50px;
-	margin-top: 100px;
 	text-align: center;
 }
 /**
@@ -671,6 +730,7 @@ Spinner and Loading CSS
 #factoid-slider {
 	overflow: hidden;
 	position: relative;
+	height: 60vh;
 }
 #factoid-slider .factoid {
 	position: relative;
@@ -751,8 +811,8 @@ Spinner and Loading CSS
 	z-index: 2;
 }
 #factoid-slider .left-control, #factoid-slider .right-control {
-	position: fixed;
-	top: 50%;
+	position: absolute;
+	top: 30%;
 	height: 51px;
 	width: 51px;
 	line-height: 48px;
@@ -799,6 +859,9 @@ Spinner and Loading CSS
  line-height: 1.8;
  color: #8d8d8d;
  margin-top: 5rem;
+}
+#individual-factoid a {
+	text-decoration: none;
 }
 /**
  * ===================================================================

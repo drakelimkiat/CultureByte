@@ -1,26 +1,53 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';import { Link } from 'react-router';
+import Popup from '../Popup.jsx';
 
-const IndividualCategory = ({title, subtitle, imageClassName}) => {
-   	return (
-   		<div className="folio-item wow fadeInRightBig col-1-2" data-wow-duration="1000ms" data-wow-delay="400ms">
-   			<div className="folio-image">
-				<div className={imageClassName} />
-			</div>
-			<div className="overlay">
-				<div className="overlay-content">
-					<div className="overlay-text">
-						<div className="folio-info">
-							<h3>{title}</h3>
-							<p>{subtitle}</p>
-						</div>
-						<div className="folio-overview">
-							<div className="folio-link"><i className="fa fa-link"></i></div>
-						</div>
-					</div>
-				</div>
-			</div>
-   		</div>
-   	);
+class IndividualCategory extends Component {
+  constructor(props) {
+      super(props);
+  }
+
+  render() {
+    const showPopup = this.props.currentUser ? false : true;
+    return (
+      <div className="folio-item wow fadeInRightBig col-1-2" data-wow-duration="1000ms" data-wow-delay="400ms">
+        <div className="folio-image">
+          <div className={this.props.imageClassName} />
+        </div>
+        <div className="overlay">
+          <div className="overlay-content">
+            <div className="overlay-text">
+              <div className="folio-info">
+                <h3>{this.props.title}</h3>
+                <p>{this.props.subtitle}</p>
+              </div>
+              <div className="folio-overview">
+                <div className="folio-link">
+                  <Link to={this.props.currentUser ? "/post" : ""}>
+                    <i className="fa fa-link">
+                      <Popup />
+                    </i>
+                  </Link>
+                </div>
+                    <Popup />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+IndividualCategory.propTypes = {
+    currentUser: PropTypes.object,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    imageClassName: PropTypes.string
 };
 
-export default IndividualCategory;
+export default createContainer(() => {
+    return {
+        currentUser: Meteor.user()
+    };
+}, IndividualCategory);

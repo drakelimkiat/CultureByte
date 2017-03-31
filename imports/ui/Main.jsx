@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from './LandingPage/NavBar';
+import NavBar from './LandingPage/NavBar.jsx';
 
 const Main = ({children}) => {
 	if (!children) {
@@ -10,7 +10,6 @@ const Main = ({children}) => {
 			</div>
 		);
 	}
-
 	return (
 		<div>
 			<NavBar />
