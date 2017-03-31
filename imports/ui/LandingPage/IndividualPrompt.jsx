@@ -16,7 +16,7 @@ class IndividualPrompt extends Component {
         <div className="caption">
           <h1 className="animated fadeInLeftBig">{this.props.title}</h1>
           <p className="animated fadeInLeftBig">{this.props.subtitle}</p>
-          <Link to={ this.props.currentUser ? "/contribution" : ""}>
+          <Link to={this.props.currentUser ? "/contribution" : ""}>
             <span data-scroll className="btn btn-start animated fadeInRightBig shareButton">
               SHARE
               <Popup show={showPopup} />

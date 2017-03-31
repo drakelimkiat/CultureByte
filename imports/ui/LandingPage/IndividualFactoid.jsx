@@ -11,7 +11,7 @@ class IndividualFactoid extends Component {
     return (
       <div className={this.props.classNames}>
         <div id="individual-factoid">
-          <Link to={ this.props.currentUser ? "/post" : ""}>
+          <Link to={this.props.currentUser ? "/post" : ""}>
             <h3>{this.props.title}</h3>
             <h4>{this.props.location}</h4>
             <p>{this.props.snippet}</p>
