@@ -175,6 +175,9 @@
 .main-navigation li a:hover {
 	color: #FFFFFF;
 }
+.main-navigation li .logo {
+	font-family: arial;
+}
 
 /**
 * ===================================================================
