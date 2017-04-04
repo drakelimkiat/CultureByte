@@ -106,12 +106,12 @@ export default class Post extends Component {
   }
 
   renderEditButton() {
-    return <button onClick={this.setIsEditing.bind(this)}><i className="fa fa-pencil" aria-hidden="true"></i></button>;
+    return <button onClick={this.setIsEditing.bind(this)}><i className="fa fa-pencil" aria-hidden="true"></i> <span className="edit-or-submit">Edit</span></button>;
   }
 
   renderSubmitButton() {
     const currentPostId = this.props.post._id;
-    return <button onClick={this.update.bind(this, currentPostId)}>Submit</button>;
+    return <button onClick={this.update.bind(this, currentPostId)}><span className="edit-or-submit">Submit</span></button>;
   }
 
   renderTitleTextarea() {

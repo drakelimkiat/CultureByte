@@ -1016,10 +1016,15 @@ Spinner and Loading CSS
 	 outline: none;
  }
  .ghost-input-edit-title {
-	 height: 50px;
+	 border: solid lightgray 1px;
+	 height: 40px;
  }
  .ghost-input-edit-body {
+	 border: solid lightgray 1px;
 	 height: 200px;
+ }
+ .edit-or-submit {
+	 font-size: 16px;
  }
  /**
   * ===================================================================
@@ -1048,7 +1053,16 @@ Spinner and Loading CSS
   *
   * -------------------------------------------------------------------
   */
-.placeholder {
-	text-align: center;
-	line-height: 300px;
-}
+ .placeholder {
+	 text-align: center;
+	 line-height: 300px;
+ }
+/**
+ * ===================================================================
+ * Misc section
+ *
+ * -------------------------------------------------------------------
+ */
+ textarea {
+	 resize: none;
+ }
