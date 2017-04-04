@@ -144,9 +144,6 @@ export default class Post extends Component {
       <div className="post">
         <div className="post-component post-topbar">
           <div className="author">
-            <div className="profile-photo">
-              <img src="/images/post/profile_photo.jpeg"/>
-            </div>
             <div className="profile-text">
               <span className="username">{this.props.post.username}</span><br/>
               <span className="details">

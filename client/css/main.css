@@ -901,7 +901,7 @@ Spinner and Loading CSS
  }
  .post-topbar .author .profile-text {
 	 float: left;
-	 margin: 0 0 0 10px;
+	 /*margin: 0 0 0 10px;*/
  }
  .post-topbar .author .profile-text .username {
 	 font-size: 15px;
