@@ -870,15 +870,9 @@ Spinner and Loading CSS
  * -------------------------------------------------------------------
  */
  .content {
-	 width: 800px;
-	 margin-left: auto;
-	 margin-right: auto;
 	 margin-top: 100px;
  }
  .post {
-	 float: left;
-	 width: 70%;
-	 min-height: 300px;
 	 border: solid lightgray 1px;
 	 border-radius: 3px;
 	 color: #606060;
@@ -956,8 +950,7 @@ Spinner and Loading CSS
  * -------------------------------------------------------------------
  */
  .form {
-	 float: left;
-	 width: 30%;
+	 margin-top: 30px;
 	 color: #4b545f;
 	 font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
  }
@@ -978,32 +971,32 @@ Spinner and Loading CSS
 	 border: 1px solid #ddd;
 	 border-radius: 3px;
  }
+ .form .new-post .ghost-button:focus {
+	 outline: 0px;
+ }
 /**
  * ===================================================================
  * Pagination section
  *
  * -------------------------------------------------------------------
  */
- .pagination {
-	 float: left;
-	 clear: both;
-	 width: 70%;
-	 margin: 0px;
- }
- .pagination button {
+ .pagination-button {
 	 border: none;
 	 background-color: transparent;
 	 font-size: 20px;
 	 color: #888888;
  }
- .pagination button:focus {
+ .pagination-button:focus {
 	 outline: 0px;
  }
- .pagination button:disabled {
+ .pagination-button:disabled {
 	 display: none;
  }
- .pagination .next {
+ .next {
 	 float: right;
+ }
+ .back {
+	 float: left;
  }
 /**
  * ===================================================================

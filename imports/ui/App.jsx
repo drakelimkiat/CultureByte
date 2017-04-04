@@ -9,6 +9,7 @@ import Post from './Post.jsx';
 import Form from './Form.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 import { browserHistory } from 'react-router';
+import {Grid, Row, Col} from 'react-bootstrap';
 
 // App component - represents the whole app
 class App extends Component {
@@ -87,9 +88,9 @@ class App extends Component {
     }
     // Check if we are at the end of the list
     if (postArray.length != index + 1) {
-      return <button className="next" onClick={this.nextPost.bind(this)}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>;
+      return <button className="next pagination-button" onClick={this.nextPost.bind(this)}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>;
       } else {
-        return <button className="next" disabled><i className="fa fa-arrow-right" aria-hidden="true"></i></button>;
+        return <button className="next pagination-button" disabled><i className="fa fa-arrow-right" aria-hidden="true"></i></button>;
         }
       }
 
@@ -106,9 +107,9 @@ class App extends Component {
         }
         // Check if we are at the start of the list
         if (index != 0) {
-          return <button onClick={this.previousPost.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>;
+          return <button className="back pagination-button" onClick={this.previousPost.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>;
           } else {
-            return <button disabled><i className="fa fa-arrow-left" aria-hidden="true"></i></button>;
+            return <button className="back pagination-button" disabled><i className="fa fa-arrow-left" aria-hidden="true"></i></button>;
             }
           }
 
@@ -213,17 +214,21 @@ class App extends Component {
               createPostForm = this.renderCreatePostForm();
             }
             return (
-              <div className="container">
+              <Grid>
                 <div className="content">
-                  {toggleButton}
-                  {postView}
-                  {createPostForm}
-                  <div className="pagination">
-                    {backButton}
-                    {nextButton}
-                  </div>
+                  <Row>
+                    <Col lg={6} lgOffset={2} md={8} sm={8} xs={12}>
+                      {toggleButton}
+                      {postView}
+                      {backButton}
+                      {nextButton}
+                    </Col>
+                    <Col lg={3} lgPull={1} md={4} sm={4} xs={12}>
+                      {createPostForm}
+                    </Col>
+                  </Row>
                 </div>
-              </div>
+              </Grid>
             );
           }
         }
