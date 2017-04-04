@@ -21,13 +21,6 @@ class App extends Component {
     };
   }
 
-  componentWillMount() {
-    if (!Meteor.user()) {
-      browserHistory.push('/');
-      return;
-    }
-  }
-
   componentWillUpdate() {
     if (!Meteor.user()) {
       browserHistory.push('/');

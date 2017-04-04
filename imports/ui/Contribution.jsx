@@ -13,8 +13,14 @@ class Contribution extends Component {
   constructor(props) {
       super(props);
       this.state = {
-          index: 0,
+          index: 0
       };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.userLoaded && !Meteor.user()) {
+      browserHistory.push('/');
+    }
   }
 
   renderPost() {
@@ -25,20 +31,6 @@ class Contribution extends Component {
         type="contribution" />
     } else {
       return <div className="post placeholder">You have no posts yet!</div>;
-    }
-  }
-
-  componentWillMount() {
-    if (!Meteor.user()) {
-      browserHistory.push('/');
-      return;
-    }
-  }
-
-  componentWillUpdate() {
-    if (!Meteor.user()) {
-      browserHistory.push('/');
-      return;
     }
   }
 
@@ -102,14 +94,16 @@ class Contribution extends Component {
 
 Contribution.propTypes = {
     posts: PropTypes.array.isRequired,
-    currentUser: PropTypes.object
+    currentUser: PropTypes.object,
+    userLoaded: PropTypes.bool
 };
 
 export default createContainer(() => {
-    Meteor.subscribe('posts');
+    const posts = Meteor.subscribe('posts');
 
     return {
         posts: Posts.find({author: Meteor.userId()}).fetch(),
-        currentUser: Meteor.user()
+        currentUser: Meteor.user(),
+        userLoaded: posts.ready()
     };
 }, Contribution);
