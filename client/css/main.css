@@ -183,7 +183,7 @@
 * -------------------------------------------------------------------
 */
 
-.intro {
+#intro {
 	background: #14181E url("/images/title-page.jpg") no-repeat center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -218,6 +218,52 @@
 	margin-bottom: 0.6rem;
 	text-transform: uppercase;
 	letter-spacing: .25rem;
+}
+/**
+* responsive:
+* intro
+* -
+*/
+
+.intro-content .large-screen {
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+}
+.intro-content .large-screen h1 {
+	font-size: 4.8rem;
+	max-width: 700px;
+}
+.intro-content .large-screen h5 {
+	font-size: 1.6rem;
+}
+
+.intro-content .medium-screen h1 {
+	font-size: 4.2rem;
+	max-width: 550px;
+}
+.intro-content .medium-screen h5 {
+	font-size: 1.5rem;
+	letter-spacing: .15rem;
+}
+
+.intro-content .small-screen h1 {
+	max-width: 550px;
+	font-size: 3.8rem;
+	margin-bottom: .9rem;
+}
+.intro-content .small-screen h5 {
+	font-size: 1.4rem;
+	letter-spacing: .15rem;
+}
+
+.intro-content .tiny-screen h1 {
+	max-width: 550px;
+	font-size: 3.4rem;
+}
+.intro-content .tiny-screen h5 {
+	font-size: 1.4rem;
+	letter-spacing: .15rem;
 }
 
 /**
