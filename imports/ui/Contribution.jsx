@@ -8,6 +8,7 @@ import Post from './Post.jsx';
 import Form from './Form.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 import { browserHistory } from 'react-router';
+import {Grid, Row, Col} from 'react-bootstrap';
 
 class Contribution extends Component {
   constructor(props) {
@@ -51,9 +52,9 @@ class Contribution extends Component {
       var postArray = this.props.posts;
       // Check if we are at the end of the list
       if (postArray.length != index + 1) {
-          return <button className="next" onClick={this.nextPost.bind(this)}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>;
+          return <button className="pagination-button next" onClick={this.nextPost.bind(this)}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>;
       } else {
-          return <button className="next" disabled><i className="fa fa-arrow-right" aria-hidden="true"></i></button>;
+          return <button className="pagination-button next" disabled><i className="fa fa-arrow-right" aria-hidden="true"></i></button>;
       }
   }
 
@@ -65,9 +66,9 @@ class Contribution extends Component {
       var index = this.state.index;
       // Check if we are at the start of the list
       if (index != 0) {
-          return <button onClick={this.previousPost.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>;
+          return <button className="pagination-button back" onClick={this.previousPost.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>;
       } else {
-          return <button disabled><i className="fa fa-arrow-left" aria-hidden="true"></i></button>;
+          return <button className="pagination-button back" disabled><i className="fa fa-arrow-left" aria-hidden="true"></i></button>;
       }
   }
 
@@ -86,16 +87,20 @@ class Contribution extends Component {
   render() {
     document.title = 'Contribution';
     return (
-      <div className="container">
+      <Grid>
         <div className="content">
-          {this.renderPost()}
-          <Form />
-          <div className="pagination">
-            {this.renderBackButton()}
-            {this.renderNextButton()}
-          </div>
+          <Row>
+            <Col lg={6} lgOffset={2} md={8} sm={8} xs={12}>
+              {this.renderPost()}
+              {this.renderBackButton()}
+              {this.renderNextButton()}
+            </Col>
+            <Col lg={3} lgPull={1} md={4} sm={4} xs={12}>
+              <Form />
+            </Col>
+          </Row>
         </div>
-      </div>
+      </Grid>
     );
   }
 }
