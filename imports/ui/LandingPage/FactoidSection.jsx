@@ -2,8 +2,8 @@ import React from 'react';
 import IndividualFactoid from './IndividualFactoid.jsx';
 
 const FactoidSection = () => {
-  var MediaQuery = require('react-responsive');
-  var body = (
+  const MediaQuery = require('react-responsive');
+  const body = (
     <div>
       <div id="factoid">
         <h2>Here are some snippets of culture facts</h2>
@@ -30,7 +30,7 @@ const FactoidSection = () => {
         </div>
       </div>
     </div>
-  )
+  );
   return (
     <div>
       <MediaQuery minDeviceWidth={1025} className="desktop-screen">{body}</MediaQuery>

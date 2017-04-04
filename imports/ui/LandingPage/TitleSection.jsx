@@ -1,8 +1,8 @@
 import React from 'react';
 
 const TitleSection = () => {
-  var MediaQuery = require('react-responsive');
-  var body = (
+  const MediaQuery = require('react-responsive');
+  const body = (
     <div>
       <div className="cb-row">
         <div className="col-twelve">
