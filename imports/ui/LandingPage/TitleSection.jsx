@@ -17,8 +17,8 @@ const TitleSection = () => {
         <div className="intro-content">
           <MediaQuery minDeviceWidth={1025}>{body}</MediaQuery>
           <MediaQuery maxDeviceWidth={1024} minDeviceWidth={769} className="large-screen">{body}</MediaQuery>
-          <MediaQuery maxDeviceWidth={768} minDeviceWidth={601} className="medium-screen">{body}</MediaQuery>
-          <MediaQuery maxDeviceWidth={600} className="small-screen">{body}</MediaQuery>
+          <MediaQuery maxDeviceWidth={768} minDeviceWidth={501} className="medium-screen">{body}</MediaQuery>
+          <MediaQuery maxDeviceWidth={500} className="small-screen">{body}</MediaQuery>
         </div>
       </div>
     );
