@@ -820,8 +820,10 @@
 	margin-top: 40px;
 }
 #factoid-slider .factoid .btn-start:hover,
-#factoid-slider .left-control:hover,
-#factoid-slider .right-control:hover {
+.desktop-screen #factoid-slider .left-control:hover,
+.desktop-screen #factoid-slider .right-control:hover,
+.mobile-screen #factoid-slider .left-control,
+.mobile-screen #factoid-slider .right-control {
 	color: #fff;
 	background-color: #05bca9;
 	border: 2px solid #05bca9;
@@ -888,10 +890,12 @@
 #factoid-slider .right-control {
 	right: -51px;
 }
-#factoid-slider:hover .left-control {
+.desktop-screen #factoid-slider:hover .left-control,
+.mobile-screen #factoid-slider .left-control {
 	left: 100px
 }
-#factoid-slider:hover .right-control {
+.desktop-screen #factoid-slider:hover .right-control,
+.mobile-screen #factoid-slider .right-control {
 	right: 100px
 }
 #individual-factoid h3 {
