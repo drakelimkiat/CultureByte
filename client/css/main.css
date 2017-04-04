@@ -193,6 +193,8 @@
 	display: table;
 	position: relative;
 	overflow: hidden;
+	font-size: 1.6rem;
+	line-height: 3rem;
 }
 .intro-content {
 	display: table-cell;
@@ -231,38 +233,27 @@
 	transform: translateY(0);
 }
 .intro-content .large-screen h1 {
-	font-size: 4.8rem;
+	font-size: 6rem;
 	max-width: 700px;
 }
 .intro-content .large-screen h5 {
-	font-size: 1.6rem;
+	font-size: 1.5rem;
 }
 
 .intro-content .medium-screen h1 {
-	font-size: 4.2rem;
-	max-width: 550px;
+	font-size: 7rem;
 }
 .intro-content .medium-screen h5 {
-	font-size: 1.5rem;
+	font-size: 2.5rem;
 	letter-spacing: .15rem;
 }
 
 .intro-content .small-screen h1 {
-	max-width: 550px;
-	font-size: 3.8rem;
+	font-size: 10rem;
 	margin-bottom: .9rem;
 }
 .intro-content .small-screen h5 {
-	font-size: 1.4rem;
-	letter-spacing: .15rem;
-}
-
-.intro-content .tiny-screen h1 {
-	max-width: 550px;
-	font-size: 3.4rem;
-}
-.intro-content .tiny-screen h5 {
-	font-size: 1.4rem;
+	font-size: 3.5rem;
 	letter-spacing: .15rem;
 }
 
