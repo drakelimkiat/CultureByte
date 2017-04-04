@@ -7,6 +7,7 @@ import App from '../../ui/App.jsx';
 import Contribution from '../../ui/Contribution.jsx';
 import Index from '../../ui/LandingPage/Index.jsx';
 import Main from '../../ui/Main.jsx';
+import NotFound from '../../ui/NotFound.jsx';
 
 Meteor.startup(() => {
 	render(
@@ -15,6 +16,7 @@ Meteor.startup(() => {
 				<IndexRoute component={Index} />
 				<Route path="/post" component={App} />
 				<Route path="/contribution" component={Contribution} />
+				<Route path="*" component={NotFound} />
 			</Route>
 		</Router>,
 		document.getElementById( 'render-target' )
