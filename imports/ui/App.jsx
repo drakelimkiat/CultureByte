@@ -217,19 +217,14 @@ class App extends Component {
               <Grid>
                 <div className="content">
                   <Row>
-                    <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+                    <Col lg={6} lgOffset={2} md={8} sm={8} xs={12}>
                       {toggleButton}
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
                       {postView}
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
                       {backButton}
                       {nextButton}
+                    </Col>
+                    <Col lg={3} lgPull={1} md={4} sm={4} xs={12}>
+                      {createPostForm}
                     </Col>
                   </Row>
                 </div>
