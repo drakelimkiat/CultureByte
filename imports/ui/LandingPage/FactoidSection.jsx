@@ -15,7 +15,7 @@ const FactoidSection = () => {
           <IndividualFactoid
             title="Three Steps One Bow"
             location="Singapore"
-            snippet="Buddhist devotees would arrive at the temples from as early as the day before to queue up to attend the three steps one bow ceremony."
+            snippet="Buddhist devotees would arrive at the temples from as early as the day before to queue up for the three steps one bow ceremony."
             classNames="item" />
           <IndividualFactoid
             title="San Francisco's Major Earthquake"
