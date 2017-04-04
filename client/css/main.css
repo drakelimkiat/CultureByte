@@ -738,9 +738,14 @@
 	padding-top: 10rem;
 	position: relative;
 	width: 100%;
-	height: 600px;
 	overflow: hidden;
 	text-align: center;
+}
+.desktop-screen #factoid {
+	height: 500px;
+}
+.mobile-screen #factoid {
+	height: 600px;
 }
 #factoid h2 {
 	font-size: 32px;
@@ -768,6 +773,11 @@
 #factoid-slider {
 	overflow: hidden;
 	position: relative;
+}
+.desktop-screen #factoid-slider {
+	height: 300px;
+}
+.mobile-screen #factoid-slider {
 	height: 400px;
 }
 #factoid-slider .factoid {
