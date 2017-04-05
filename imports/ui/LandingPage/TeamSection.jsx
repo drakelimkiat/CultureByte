@@ -15,7 +15,7 @@ const TeamSection = () => {
       <div className="cb-row">
         <div className="team-page-header">
           <div>
-            <MediaQuery minWidth={601} className="desktop-screen">{body}</MediaQuery>
+            <MediaQuery minWidth={601} className="large-screen">{body}</MediaQuery>
             <MediaQuery maxWidth={600} className="small-screen">{body}</MediaQuery>
           </div>
         </div>

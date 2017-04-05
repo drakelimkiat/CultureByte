@@ -12,7 +12,7 @@ const CategorySection = () => {
   return (
     <div id="category">
       <div className="cb-row category-header wow fadeInUp">
-        <MediaQuery minDeviceWidth={601} className="desktop-screen">{text}</MediaQuery>
+        <MediaQuery minDeviceWidth={601} className="large-screen">{text}</MediaQuery>
         <MediaQuery maxDeviceWidth={600} className="small-screen">{text}</MediaQuery>
       </div>
       <div className="container-fluid">

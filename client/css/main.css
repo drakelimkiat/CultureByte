@@ -414,7 +414,7 @@
 	margin-bottom: 50px;
 	float: left;
 }
-.desktop-screen .team-member {
+.large-screen .team-member {
 	width: 20%;
 }
 .team .small-screen {
@@ -429,7 +429,7 @@
 	max-height: 100%;
 	background-size: contain;
 }
-.desktop-screen .team-member .img {
+.large-screen .team-member .img {
 	height: 200px;
 	width: 250px;
 }
@@ -463,7 +463,7 @@
 	margin-bottom: 50px;
 	margin-top: 100px;
 }
-.team-page-header .desktop-screen,
+.team-page-header .large-screen,
 .team-page-header .small-screen {
 	width: 100%;
 }
@@ -481,7 +481,7 @@
 .team-page-header h2 {
 	padding-bottom: 10px;
 }
-.team-page-header .desktop-screen h2 {
+.team-page-header .large-screen h2 {
 	font-size: 34px;
 }
 .team-page-header .small-screen h2 {
@@ -491,14 +491,14 @@
 .team-page-header p {
 	line-height: 20px;
 }
-.desktop-screen .member-info p {
+.large-screen .member-info p {
 	font-size: 16px;
 }
 .small-screen .member-info p {
 	font-size: 3rem;
 	line-height: 3.3rem;
 }
-.desktop-screen .team-page-header p {
+.large-screen .team-page-header p {
 	font-size: 16px;
 }
 .small-screen .team-page-header p {
@@ -509,7 +509,7 @@
 	margin-bottom: 10px;
 	color: #333;
 }
-.desktop-screen .member-info h3 {
+.large-screen .member-info h3 {
 	font-size: 20px;
 }
 .small-screen .member-info h3 {
@@ -520,7 +520,7 @@
 	color: #999;
 	margin-top: 10px;
 }
-.desktop-screen .member-info h4 {
+.large-screen .member-info h4 {
 	font-size: 16px;
 }
 .small-screen .member-info h4 {
@@ -585,10 +585,10 @@
 .category-header p {
 	font-family: "raleway-regular", sans-serif;
 }
-.desktop-screen h3 {
+.large-screen h3 {
 	font-size: 22px;
 }
-.desktop-screen p {
+.large-screen p {
 	font-size: 18px;
 }
 .small-screen h3 {
@@ -607,7 +607,7 @@
 	margin-top: 20px;
 	margin-right: 5px;
 }
-.desktop-screen .folio-overview a {
+.large-screen .folio-overview a {
 	height: 50px;
 	width: 50px;
 	font-size: 18px;
@@ -663,7 +663,7 @@
 	max-height: 100%;
 	background-size: cover;
 }
-.desktop-screen .folio-image .category-image {
+.large-screen .folio-image .category-image {
 	height: 400px;
 	width: 50vw;
 }
@@ -671,11 +671,11 @@
 	height: 800px;
 	width: 100vw;
 }
-.category-header .desktop-screen h2 {
+.category-header .large-screen h2 {
 	font-size: 34px;
 	padding-bottom: 10px;
 }
-.category-header .desktop-screen p {
+.category-header .large-screen p {
 	line-height: 20px;
 	font-size: 16px;
 }
@@ -705,7 +705,7 @@
 .small-screen #home-slider {
 	height: 50vh
 }
-.desktop-screen #home-slider {
+.large-screen #home-slider {
 	height: 100vh
 }
 #home .caption {
@@ -741,7 +741,7 @@
 	font-size: 3rem;
 	font-family: "raleway-bold", sans-serif;
 }
-#home .desktop-screen .caption .btn-start {
+#home .large-screen .caption .btn-start {
 	font-size: 15px;
 }
 #home .caption .btn-start:hover,
@@ -826,16 +826,16 @@
 #home .small-screen .right-control {
 	right: 90px;
 }
-#home .desktop-screen .left-control {
+#home .large-screen .left-control {
 	left: -90px
 }
-#home .desktop-screen .right-control {
+#home .large-screen .right-control {
 	right: -90px;
 }
-#home:hover .desktop-screen .left-control {
+#home:hover .large-screen .left-control {
 	left: 30px
 }
-#home:hover .desktop-screen .right-control {
+#home:hover .large-screen .right-control {
 	right: 30px
 }
 #home-description .small-screen h2 {
@@ -869,7 +869,7 @@
 	overflow: hidden;
 	text-align: center;
 }
-.desktop-screen #factoid {
+.large-screen #factoid {
 	height: 500px;
 }
 .small-screen #factoid {
@@ -916,7 +916,7 @@
 	overflow: hidden;
 	position: relative;
 }
-.desktop-screen #factoid-slider {
+.large-screen #factoid-slider {
 	height: 300px;
 }
 .small-screen #factoid-slider {
@@ -962,8 +962,8 @@
 	margin-top: 40px;
 }
 #factoid-slider .factoid .btn-start:hover,
-.desktop-screen #factoid-slider .left-control:hover,
-.desktop-screen #factoid-slider .right-control:hover,
+.large-screen #factoid-slider .left-control:hover,
+.large-screen #factoid-slider .right-control:hover,
 .small-screen #factoid-slider .left-control,
 .small-screen #factoid-slider .right-control {
 	color: #fff;
@@ -1020,7 +1020,7 @@
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-.desktop-screen #factoid-slider .left-control, .desktop-screen #factoid-slider .right-control {
+.large-screen #factoid-slider .left-control, .large-screen #factoid-slider .right-control {
 	top: 30%;
 }
 .small-screen #factoid-slider .left-control, .small-screen #factoid-slider .right-control {
@@ -1032,11 +1032,11 @@
 #factoid-slider .right-control {
 	right: -51px;
 }
-.desktop-screen #factoid-slider:hover .left-control,
+.large-screen #factoid-slider:hover .left-control,
 .small-screen #factoid-slider .left-control {
 	left: 100px
 }
-.desktop-screen #factoid-slider:hover .right-control,
+.large-screen #factoid-slider:hover .right-control,
 .small-screen #factoid-slider .right-control {
 	right: 100px
 }

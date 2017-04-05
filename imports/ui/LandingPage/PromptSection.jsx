@@ -50,7 +50,7 @@ const PromptSection = () => {
         <MediaQuery maxDeviceWidth={600} className="small-screen">{text}</MediaQuery>
       </div>
       <div>
-        <MediaQuery minDeviceWidth={601} className="desktop-screen">{body}</MediaQuery>
+        <MediaQuery minDeviceWidth={601} className="large-screen">{body}</MediaQuery>
         <MediaQuery maxDeviceWidth={600} className="small-screen">{body}</MediaQuery>
       </div>
     </div>
