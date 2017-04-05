@@ -16,8 +16,8 @@ const TeamMember = ({name, role, description, imageClassName}) => {
   );
   return (
     <div>
-      <MediaQuery minDeviceWidth={601} className="desktop-screen">{body}</MediaQuery>
-      <MediaQuery maxDeviceWidth={600} className="mobile-screen">{body}</MediaQuery>
+      <MediaQuery minWidth={601} className="desktop-screen">{body}</MediaQuery>
+      <MediaQuery maxWidth={600} className="small-screen">{body}</MediaQuery>
     </div>
   );
 };
