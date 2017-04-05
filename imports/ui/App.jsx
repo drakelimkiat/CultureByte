@@ -24,7 +24,7 @@ class App extends Component {
 
   componentWillUpdate() {
     if (!Meteor.user()) {
-      browserHistory.push('/');
+      browserHistory.push('/home');
     }
   }
 
