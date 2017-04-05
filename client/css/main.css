@@ -787,6 +787,19 @@
 	padding-bottom: 20px;
 	position: relative;
 }
+.mobile-screen #factoid h2 {
+	font-size: 5rem;
+}
+.mobile-screen #factoid h3 {
+	font-size: 4.4rem;
+}
+.mobile-screen #factoid h4 {
+	font-size: 3rem;
+}
+.mobile-screen #factoid p {
+	font-size: 3.5rem;
+	line-height: 4.5rem;
+}
 #factoid h2::after {
 	display: block;
 	background-color: #05bca9;
