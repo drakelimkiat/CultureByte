@@ -34,7 +34,7 @@ const FactoidSection = () => {
   return (
     <div>
       <MediaQuery minDeviceWidth={1025} className="desktop-screen">{body}</MediaQuery>
-      <MediaQuery maxDeviceWidth={1024} className="mobile-screen">{body}</MediaQuery>
+      <MediaQuery maxDeviceWidth={1024} className="small-screen">{body}</MediaQuery>
     </div>
   );
 };

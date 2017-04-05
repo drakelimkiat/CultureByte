@@ -417,10 +417,10 @@
 .desktop-screen .team-member {
 	width: 20%;
 }
-.team .mobile-screen {
+.team .small-screen {
 	display: table;
 }
-.mobile-screen .team-member {
+.small-screen .team-member {
 	width: 100%;
 	display: table-row;
 }
@@ -433,7 +433,7 @@
 	height: 200px;
 	width: 250px;
 }
-.mobile-screen .team-member .img {
+.small-screen .team-member .img {
 	height: 90vw;
 	width: 90vw;
 	align-self: center;
@@ -464,7 +464,7 @@
 	margin-top: 100px;
 }
 .team-page-header .desktop-screen,
-.team-page-header .mobile-screen {
+.team-page-header .small-screen {
 	width: 100%;
 }
 .team-page-header h2 {
@@ -484,7 +484,7 @@
 .team-page-header .desktop-screen h2 {
 	font-size: 34px;
 }
-.team-page-header .mobile-screen h2 {
+.team-page-header .small-screen h2 {
 	font-size: 5rem;
 }
 .member-info p,
@@ -494,14 +494,14 @@
 .desktop-screen .member-info p {
 	font-size: 16px;
 }
-.mobile-screen .member-info p {
+.small-screen .member-info p {
 	font-size: 3rem;
 	line-height: 3.3rem;
 }
 .desktop-screen .team-page-header p {
 	font-size: 16px;
 }
-.mobile-screen .team-page-header p {
+.small-screen .team-page-header p {
 	font-size: 2rem;
 }
 .member-info h3 {
@@ -512,7 +512,7 @@
 .desktop-screen .member-info h3 {
 	font-size: 20px;
 }
-.mobile-screen .member-info h3 {
+.small-screen .member-info h3 {
 	font-size: 4.5rem;
 }
 .member-info h4 {
@@ -523,7 +523,7 @@
 .desktop-screen .member-info h4 {
 	font-size: 16px;
 }
-.mobile-screen .member-info h4 {
+.small-screen .member-info h4 {
 	font-size: 3rem;
 }
 
@@ -544,7 +544,7 @@
 	padding: 0;
 	overflow: hidden;
 }
-#category .mobile-screen .col-1-2 {
+#category .small-screen .col-1-2 {
 	width: 100%;
 }
 #category .overlay {
@@ -591,10 +591,10 @@
 .desktop-screen p {
 	font-size: 18px;
 }
-.mobile-screen h3 {
+.small-screen h3 {
 	font-size: 6.5rem;
 }
-.mobile-screen p {
+.small-screen p {
 	font-size: 3rem;
 	line-height: 3.3rem;
 }
@@ -612,7 +612,7 @@
 	width: 50px;
 	font-size: 18px;
 }
-.mobile-screen .folio-overview a {
+.small-screen .folio-overview a {
 	height: 10rem;
 	width: 10rem;
 	font-size: 4rem;
@@ -667,7 +667,7 @@
 	height: 400px;
 	width: 50vw;
 }
-.mobile-screen .folio-image .category-image {
+.small-screen .folio-image .category-image {
 	height: 800px;
 	width: 100vw;
 }
@@ -679,11 +679,11 @@
 	line-height: 20px;
 	font-size: 16px;
 }
-.category-header .mobile-screen h2 {
+.category-header .small-screen h2 {
 	font-size: 5rem;
 	padding-bottom: 10px;
 }
-.category-header .mobile-screen p {
+.category-header .small-screen p {
 	line-height: 3.5rem;
 	font-size: 3rem;
 }
@@ -702,7 +702,7 @@
 	overflow: hidden;
 	position: relative;
 }
-.mobile-screen #home-slider {
+.small-screen #home-slider {
 	height: 50vh
 }
 .desktop-screen #home-slider {
@@ -737,7 +737,7 @@
 	border-radius: 8px;
 	margin-top: 40px;
 }
-#home .mobile-screen .caption .btn-start {
+#home .small-screen .caption .btn-start {
 	font-size: 3rem;
 	font-family: "raleway-bold", sans-serif;
 }
@@ -817,13 +817,13 @@
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-#home .mobile-screen .left-control, #home .mobile-screen .right-control {
+#home .small-screen .left-control, #home .small-screen .right-control {
 	top: 65%;
 }
-#home .mobile-screen .left-control {
+#home .small-screen .left-control {
 	left: 90px
 }
-#home .mobile-screen .right-control {
+#home .small-screen .right-control {
 	right: 90px;
 }
 #home .desktop-screen .left-control {
@@ -838,19 +838,19 @@
 #home:hover .desktop-screen .right-control {
 	right: 30px
 }
-#home-description .mobile-screen h2 {
+#home-description .small-screen h2 {
 	font-size: 5rem;
 	font-family: "raleway-semibold", sans-serif;
 }
-#home-description .mobile-screen p {
+#home-description .small-screen p {
 	font-size: 3rem;
 	font-family: "raleway-regular", sans-serif;
 }
-#home-description .mobile-screen h2,
-#home-description .mobile-screen p {
+#home-description .small-screen h2,
+#home-description .small-screen p {
 	text-align: center;
 }
-#home-description .mobile-screen {
+#home-description .small-screen {
 	padding: 9rem 0rem 5rem 0rem;
 	width: 100%
 }
@@ -872,7 +872,7 @@
 .desktop-screen #factoid {
 	height: 500px;
 }
-.mobile-screen #factoid {
+.small-screen #factoid {
 	height: 600px;
 }
 #factoid h2 {
@@ -883,16 +883,16 @@
 	padding-bottom: 20px;
 	position: relative;
 }
-.mobile-screen #factoid h2 {
+.small-screen #factoid h2 {
 	font-size: 5rem;
 }
-.mobile-screen #factoid h3 {
+.small-screen #factoid h3 {
 	font-size: 4.4rem;
 }
-.mobile-screen #factoid h4 {
+.small-screen #factoid h4 {
 	font-size: 2.5rem;
 }
-.mobile-screen #factoid p {
+.small-screen #factoid p {
 	font-size: 3.5rem;
 	line-height: 4.5rem;
 }
@@ -919,7 +919,7 @@
 .desktop-screen #factoid-slider {
 	height: 300px;
 }
-.mobile-screen #factoid-slider {
+.small-screen #factoid-slider {
 	height: 400px;
 }
 #factoid-slider .factoid {
@@ -964,8 +964,8 @@
 #factoid-slider .factoid .btn-start:hover,
 .desktop-screen #factoid-slider .left-control:hover,
 .desktop-screen #factoid-slider .right-control:hover,
-.mobile-screen #factoid-slider .left-control,
-.mobile-screen #factoid-slider .right-control {
+.small-screen #factoid-slider .left-control,
+.small-screen #factoid-slider .right-control {
 	color: #fff;
 	background-color: #05bca9;
 	border: 2px solid #05bca9;
@@ -1023,7 +1023,7 @@
 .desktop-screen #factoid-slider .left-control, .desktop-screen #factoid-slider .right-control {
 	top: 30%;
 }
-.mobile-screen #factoid-slider .left-control, .mobile-screen #factoid-slider .right-control {
+.small-screen #factoid-slider .left-control, .small-screen #factoid-slider .right-control {
 	bottom: 20px;
 }
 #factoid-slider .left-control {
@@ -1033,11 +1033,11 @@
 	right: -51px;
 }
 .desktop-screen #factoid-slider:hover .left-control,
-.mobile-screen #factoid-slider .left-control {
+.small-screen #factoid-slider .left-control {
 	left: 100px
 }
 .desktop-screen #factoid-slider:hover .right-control,
-.mobile-screen #factoid-slider .right-control {
+.small-screen #factoid-slider .right-control {
 	right: 100px
 }
 #individual-factoid h3 {
