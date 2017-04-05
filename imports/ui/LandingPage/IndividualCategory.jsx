@@ -9,31 +9,40 @@ class IndividualCategory extends Component {
 
   render() {
     const showPopup = this.props.currentUser ? false : true;
-    return (
-      <div className="folio-item wow fadeInRightBig col-1-2" data-wow-duration="1000ms" data-wow-delay="400ms">
-        <div className="folio-image">
-          <div className={this.props.imageClassName} />
-        </div>
-        <div className="overlay">
-          <div className="overlay-content">
-            <div className="overlay-text">
-              <div className="folio-info">
-                <h3>{this.props.title}</h3>
-                <p>{this.props.subtitle}</p>
-              </div>
-              <div className="folio-overview">
-                <div className="folio-link">
-                  <Link to={this.props.currentUser ? "/post" : ""}>
-                    <i className="fa fa-link">
-                      <Popup />
-                    </i>
-                  </Link>
+    const MediaQuery = require('react-responsive');
+    const body = (
+      <div>
+        <div className="folio-item wow fadeInRightBig col-1-2" data-wow-duration="1000ms" data-wow-delay="400ms">
+          <div className="folio-image">
+            <div className={this.props.imageClassName} />
+          </div>
+          <div className="overlay">
+            <div className="overlay-content">
+              <div className="overlay-text">
+                <div className="folio-info">
+                  <h3>{this.props.title}</h3>
+                  <p>{this.props.subtitle}</p>
                 </div>
-                    <Popup />
+                <div className="folio-overview">
+                  <div className="folio-link">
+                    <Link to={this.props.currentUser ? "/post" : ""}>
+                      <i className="fa fa-link">
+                        <Popup />
+                      </i>
+                    </Link>
+                  </div>
+                      <Popup />
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    );
+    return (
+      <div>
+        <MediaQuery minDeviceWidth={601} className="desktop-screen">{body}</MediaQuery>
+        <MediaQuery maxDeviceWidth={600} className="small-screen">{body}</MediaQuery>
       </div>
     );
   }
