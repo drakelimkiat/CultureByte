@@ -830,6 +830,23 @@
 #home-slider:hover .desktop-screen-screen .right-control {
 	right: 30px
 }
+#home-description .mobile-screen h2 {
+	font-size: 5rem;
+	font-family: "raleway-semibold", sans-serif;
+}
+#home-description .mobile-screen p {
+	font-size: 3rem;
+	font-family: "raleway-regular", sans-serif;
+}
+#home-description .mobile-screen h2,
+#home-description .mobile-screen p {
+	text-align: center;
+}
+#home-description .mobile-screen {
+	padding: 9rem 0rem 5rem 0rem;
+	width: 100%
+}
+
 /**
 * ===================================================================
 * Factoid Section styles

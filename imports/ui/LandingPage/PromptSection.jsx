@@ -3,6 +3,12 @@ import IndividualPrompt from './IndividualPrompt.jsx'
 
 const PromptSection = () => {
   const MediaQuery = require('react-responsive');
+  const text = (
+    <div>
+      <h2>Itching to share?</h2>
+      <p>Check out our prompts for inspiration</p>
+    </div>
+  );
   const body = (
     <div>
       <div id="home-slider" className="carousel slide carousel-fade" data-ride="carousel">
@@ -30,7 +36,7 @@ const PromptSection = () => {
           <IndividualPrompt
             title="LOCAL SLANG"
             subtitle="What are some local slangs used in your country?"
-            imageUrl="/images/prompt/slang.jpg"
+            imageUrl="/images/prompt/slang.png"
             classNames="item"/>
         </div>
         <a className="left-control" href="#home-slider" data-slide="prev"><i className="fa fa-angle-left"></i></a>
@@ -40,6 +46,9 @@ const PromptSection = () => {
   );
   return (
     <div id="home">
+      <div id="home-description">
+        <MediaQuery maxDeviceWidth={600} className="mobile-screen">{text}</MediaQuery>
+      </div>
       <div>
         <MediaQuery minDeviceWidth={601} className="desktop-screen">{body}</MediaQuery>
         <MediaQuery maxDeviceWidth={600} className="mobile-screen">{body}</MediaQuery>
