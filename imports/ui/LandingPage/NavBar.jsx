@@ -24,7 +24,7 @@ class NavBar extends Component {
 			<div className="header">
 				<ul className="main-navigation">
 					<li>
-						<IndexLink activeClassName='current' to={homePageRoute}><span className="logo">CultureByte</span></IndexLink>
+						<IndexLink className="logo" to={homePageRoute}>CultureByte</IndexLink>
 					</li>
 					<li className={hideIfNoUserIsLoggedIn}>
 						<Link activeClassName='current' to="/contribution">Your Posts</Link>
