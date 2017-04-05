@@ -824,10 +824,16 @@
 #home .mobile-screen .right-control {
 	right: 90px;
 }
-#home-slider:hover .desktop-screen-screen .left-control {
+#home .desktop-screen .left-control {
+	left: -90px
+}
+#home .desktop-screen .right-control {
+	right: -90px;
+}
+#home:hover .desktop-screen .left-control {
 	left: 30px
 }
-#home-slider:hover .desktop-screen-screen .right-control {
+#home:hover .desktop-screen .right-control {
 	right: 30px
 }
 #home-description .mobile-screen h2 {
