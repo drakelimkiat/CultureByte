@@ -13,10 +13,8 @@ const TitleSection = () => {
     return (
       <div id="intro">
         <div className="intro-content">
-          <MediaQuery minDeviceWidth={1025}>{body}</MediaQuery>
-          <MediaQuery maxDeviceWidth={1024} minDeviceWidth={769} className="large-screen">{body}</MediaQuery>
-          <MediaQuery maxDeviceWidth={768} minDeviceWidth={501} className="medium-screen">{body}</MediaQuery>
-          <MediaQuery maxDeviceWidth={500} className="small-screen">{body}</MediaQuery>
+          <MediaQuery minWidth={601} className="large-screen">{body}</MediaQuery>
+          <MediaQuery maxWidth={600} className="small-screen">{body}</MediaQuery>
         </div>
       </div>
     );
