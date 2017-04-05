@@ -463,6 +463,10 @@
 	margin-bottom: 50px;
 	margin-top: 100px;
 }
+.team-page-header .desktop-screen,
+.team-page-header .mobile-screen {
+	width: 100%;
+}
 .team-page-header h2 {
 	font-family: "raleway-bold", sans-serif;
 }
