@@ -496,6 +496,7 @@
 }
 .mobile-screen .member-info p {
 	font-size: 3rem;
+	line-height: 3.3rem;
 }
 .desktop-screen .team-page-header p {
 	font-size: 16px;
@@ -595,6 +596,7 @@
 }
 .mobile-screen p {
 	font-size: 3rem;
+	line-height: 3.3rem;
 }
 .folio-overview a {
 	color: #333;
