@@ -2,8 +2,9 @@ import React from 'react';
 import IndividualPrompt from './IndividualPrompt.jsx'
 
 const PromptSection = () => {
-  return (
-    <div id="home">
+  const MediaQuery = require('react-responsive');
+  const body = (
+    <div>
       <div id="home-slider" className="carousel slide carousel-fade" data-ride="carousel">
         <div className="carousel-inner">
           <IndividualPrompt
@@ -34,6 +35,14 @@ const PromptSection = () => {
         </div>
         <a className="left-control" href="#home-slider" data-slide="prev"><i className="fa fa-angle-left"></i></a>
         <a className="right-control" href="#home-slider" data-slide="next"><i className="fa fa-angle-right"></i></a>
+      </div>
+    </div>
+  );
+  return (
+    <div id="home">
+      <div>
+        <MediaQuery minDeviceWidth={601} className="desktop-screen">{body}</MediaQuery>
+        <MediaQuery maxDeviceWidth={600} className="mobile-screen">{body}</MediaQuery>
       </div>
     </div>
   );
