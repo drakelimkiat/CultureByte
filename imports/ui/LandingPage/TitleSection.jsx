@@ -5,10 +5,8 @@ const TitleSection = () => {
   const body = (
     <div>
       <div className="cb-row">
-        <div className="col-twelve">
-          <h5>Hello welcome to Culture Bytes.</h5>
-          <h1>We introduce you to interesting culture facts</h1>
-        </div>
+        <h5>Hello welcome to Culture Bytes.</h5>
+        <h1>We introduce you to interesting culture facts</h1>
       </div>
     </div>);
 
