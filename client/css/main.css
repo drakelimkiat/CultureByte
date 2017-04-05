@@ -1060,15 +1060,9 @@
 * -------------------------------------------------------------------
 */
 .content {
-	width: 800px;
-	margin-left: auto;
-	margin-right: auto;
 	margin-top: 100px;
 }
 .post {
-	float: left;
-	width: 70%;
-	min-height: 300px;
 	border: solid lightgray 1px;
 	border-radius: 3px;
 	color: #606060;
@@ -1091,7 +1085,7 @@
 }
 .post-topbar .author .profile-text {
 	float: left;
-	margin: 0 0 0 10px;
+	/*margin: 0 0 0 10px;*/
 }
 .post-topbar .author .profile-text .username {
 	font-size: 15px;
@@ -1146,8 +1140,7 @@
 * -------------------------------------------------------------------
 */
 .form {
-	float: left;
-	width: 30%;
+	margin-top: 30px;
 	color: #4b545f;
 	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
 }
@@ -1168,32 +1161,32 @@
 	border: 1px solid #ddd;
 	border-radius: 3px;
 }
+.form .new-post .ghost-button:focus {
+	outline: 0px;
+}
 /**
 * ===================================================================
 * Pagination section
 *
 * -------------------------------------------------------------------
 */
-.pagination {
-	float: left;
-	clear: both;
-	width: 70%;
-	margin: 0px;
-}
-.pagination button {
+.pagination-button {
 	border: none;
 	background-color: transparent;
 	font-size: 20px;
 	color: #888888;
 }
-.pagination button:focus {
+.pagination-button:focus {
 	outline: 0px;
 }
-.pagination button:disabled {
+.pagination-button:disabled {
 	display: none;
 }
-.pagination .next {
+.next {
 	float: right;
+}
+.back {
+	float: left;
 }
 /**
 * ===================================================================
@@ -1206,10 +1199,37 @@
 	outline: none;
 }
 .ghost-input-edit-title {
-	height: 50px;
+	border: solid lightgray 1px;
+	height: 40px;
 }
 .ghost-input-edit-body {
+	border: solid lightgray 1px;
 	height: 200px;
+}
+.edit-or-submit {
+	font-size: 16px;
+}
+
+/**
+* ===================================================================
+* Category section
+*
+* -------------------------------------------------------------------
+*/
+.category {
+	padding-bottom: 15px;
+}
+.category-button {
+	width: 120px;
+	background-color: transparent;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+}
+.category-button:focus {
+	outline: 0px;
+}
+.enable {
+	background-color: #888888;
 }
 /**
 * ===================================================================
@@ -1241,4 +1261,13 @@
 .placeholder {
 	text-align: center;
 	line-height: 300px;
+}
+/**
+* ===================================================================
+* Misc section
+*
+* -------------------------------------------------------------------
+*/
+textarea {
+	resize: none;
 }

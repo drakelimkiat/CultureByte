@@ -6,6 +6,7 @@ import PromptSection from './PromptSection.jsx';
 import FactoidSection from './FactoidSection.jsx';
 
 const Index = () => {
+	document.title = 'CultureByte';
 	return (
 		<div>
 			<TitleSection />

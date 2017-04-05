@@ -106,12 +106,12 @@ export default class Post extends Component {
   }
 
   renderEditButton() {
-    return <button onClick={this.setIsEditing.bind(this)}><i className="fa fa-pencil" aria-hidden="true"></i></button>;
+    return <button onClick={this.setIsEditing.bind(this)}><i className="fa fa-pencil" aria-hidden="true"></i> <span className="edit-or-submit">Edit</span></button>;
   }
 
   renderSubmitButton() {
     const currentPostId = this.props.post._id;
-    return <button onClick={this.update.bind(this, currentPostId)}>Submit</button>;
+    return <button onClick={this.update.bind(this, currentPostId)}><span className="edit-or-submit">Submit</span></button>;
   }
 
   renderTitleTextarea() {
@@ -144,9 +144,6 @@ export default class Post extends Component {
       <div className="post">
         <div className="post-component post-topbar">
           <div className="author">
-            <div className="profile-photo">
-              <img src="/images/post/profile_photo.jpeg"/>
-            </div>
             <div className="profile-text">
               <span className="username">{this.props.post.username}</span><br/>
               <span className="details">
