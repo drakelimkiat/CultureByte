@@ -20,7 +20,7 @@ class Contribution extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.userLoaded && !Meteor.user()) {
-      browserHistory.push('/');
+      browserHistory.push('/home');
     }
   }
 

@@ -11,15 +11,14 @@ class NavBar extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (Meteor.user()) {
-			console.log("user signed in");
+		if (Meteor.user() && this.props.pathname == "/home") {
 			browserHistory.push('/post');
 		}
 	}
 
 	render() {
 		const hideIfNoUserIsLoggedIn = this.props.currentUser ? '' : 'hide'
-		const homePageRoute = this.props.currentUser ? '/post' : '/'
+		const homePageRoute = this.props.currentUser ? '/post' : '/home'
 
 		return (
 			<div className="header">
@@ -40,11 +39,11 @@ class NavBar extends Component {
 }
 
 NavBar.propTypes = {
-    currentUser: PropTypes.object
+	currentUser: PropTypes.object
 };
 
 export default createContainer(() => {
-    return {
-        currentUser: Meteor.user()
-    };
+	return {
+		currentUser: Meteor.user()
+	};
 }, NavBar);
