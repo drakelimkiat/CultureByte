@@ -5,6 +5,10 @@
 *
 * -------------------------------------------------------------------
 */
+h1, h2, h3, h4, h5, p {
+	width: 100%;
+	text-align: center;
+}
 h1 {
 	font-family: "merriweather-bold", serif;
 }
@@ -43,12 +47,16 @@ p {
 	font-size: 2rem;
 	line-height: 3rem;
 	margin: 0;
+	padding: 0 1rem;
 }
 h5 {
 	font-family: "raleway-heavy", sans-serif;
 	font-size: 1.5rem;
 	line-height: 2rem;
 	letter-spacing: .15rem;
+}
+.small-screen, .large-screen {
+	text-align: center;
 }
 /**
 * ===================================================================
@@ -497,8 +505,8 @@ h5 {
 	color: #999;
 }
 .member-info p {
-	font-size: 1.6rem;
-	line-height: 2.2rem;
+	font-size: 1.8rem;
+	line-height: 2.3rem;
 }
 /**
 * ===================================================================
@@ -727,7 +735,6 @@ h5 {
 }
 #prompt .left-control, #prompt .right-control {
 	position: absolute;
-	top: 50%;
 	height: 51px;
 	width: 51px;
 	line-height: 48px;
@@ -743,9 +750,6 @@ h5 {
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-#prompt .small-screen .left-control, #prompt .small-screen .right-control {
-	top: 63%;
-}
 #prompt .small-screen .left-control {
 	left: 90px
 }
@@ -754,10 +758,6 @@ h5 {
 }
 #prompt:hover .large-screen .right-control {
 	right: 30px
-}
-#prompt-description .small-screen h2,
-#prompt-description .small-screen p {
-	text-align: center;
 }
 #prompt-description .small-screen {
 	padding: 4rem 0 1.5rem 0;
