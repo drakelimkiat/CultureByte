@@ -47,11 +47,11 @@ const PromptSection = () => {
   return (
     <div id="prompt">
       <div id="prompt-description">
-        <MediaQuery maxWidth={600} className="small-screen">{text}</MediaQuery>
+        <MediaQuery maxWidth={750} className="small-screen">{text}</MediaQuery>
       </div>
       <div>
-        <MediaQuery minWidth={601} className="large-screen">{body}</MediaQuery>
-        <MediaQuery maxWidth={600} className="small-screen">{body}</MediaQuery>
+        <MediaQuery minWidth={761} className="large-screen">{body}</MediaQuery>
+        <MediaQuery maxWidth={760} className="small-screen">{body}</MediaQuery>
       </div>
     </div>
   );

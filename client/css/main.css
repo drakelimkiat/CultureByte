@@ -642,7 +642,7 @@ h5 {
 	position: relative;
 }
 .small-screen #prompt-slider {
-	height: 50vh
+	height: 70vh
 }
 .large-screen #prompt-slider {
 	height: 100vh
@@ -667,17 +667,14 @@ h5 {
 #prompt .caption .btn-start {
 	color: #fff;
 	font-family: "raleway-heavy", sans-serif;
-	padding:14px 40px;
+	padding: 14px 40px;
 	border: 2px solid #fff;
 	border-radius: 8px;
-	margin-top: 40px;
+	margin-top: 2rem;
 }
-#prompt .small-screen .caption .btn-start {
-	font-size: 2.5rem;
+#prompt .caption .btn-start {
+	font-size: 2rem;
 	font-family: "raleway-bold", sans-serif;
-}
-#prompt .large-screen .caption .btn-start {
-	font-size: 15px;
 }
 #prompt .caption .btn-start:hover,
 #prompt .left-control:hover,
@@ -753,19 +750,10 @@ h5 {
 	transition: all 0.3s ease;
 }
 #prompt .small-screen .left-control, #prompt .small-screen .right-control {
-	top: 65%;
+	top: 63%;
 }
 #prompt .small-screen .left-control {
 	left: 90px
-}
-#prompt .small-screen .right-control {
-	right: 90px;
-}
-#prompt .large-screen .left-control {
-	left: -90px
-}
-#prompt .large-screen .right-control {
-	right: -90px;
 }
 #prompt:hover .large-screen .left-control {
 	left: 30px
@@ -778,7 +766,7 @@ h5 {
 	text-align: center;
 }
 #prompt-description .small-screen {
-	padding: 9rem 0rem 5rem 0rem;
+	padding: 4rem 0 1.5rem 0;
 	width: 100%
 }
 
@@ -924,24 +912,28 @@ h5 {
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-.large-screen #factoid-slider .left-control, .large-screen #factoid-slider .right-control {
+.large-screen .left-control, .large-screen .right-control {
 	top: 30%;
 }
-.small-screen #factoid-slider .left-control, .small-screen #factoid-slider .right-control {
+.small-screen .left-control, .small-screen .right-control {
 	bottom: 20px;
 }
-#factoid-slider .left-control {
+.left-control {
 	left: -51px
 }
-#factoid-slider .right-control {
+.right-control {
 	right: -51px;
 }
 .large-screen #factoid-slider:hover .left-control,
-.small-screen #factoid-slider .left-control {
+.small-screen #factoid-slider .left-control,
+.large-screen #prompt-slider:hover .left-control,
+.small-screen #prompt-slider .left-control {
 	left: 5rem;
 }
 .large-screen #factoid-slider:hover .right-control,
-.small-screen #factoid-slider .right-control {
+.small-screen #factoid-slider .right-control,
+.large-screen #prompt-slider:hover .right-control,
+.small-screen #prompt-slider .right-control {
 	right: 5rem;
 }
 #individual-factoid h3 {
