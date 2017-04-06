@@ -17,7 +17,7 @@ class NavBar extends Component {
 	}
 
 	render() {
-		const hideIfNoUserIsLoggedIn = this.props.currentUser ? '' : 'hide'
+		const hideIfNoUserIsLoggedIn = this.props.currentUser ? 'float-left' : 'hide'
 		const homePageRoute = this.props.currentUser ? '/post' : '/home'
 
 		return (
@@ -32,7 +32,7 @@ class NavBar extends Component {
 						<li className={hideIfNoUserIsLoggedIn}>
 							<Link activeClassName='current' to="/contribution">Your Posts</Link>
 						</li>
-						<li id="login-button" className="highlight">
+						<li id="login-button" className="highlight float-left">
 							<AccountsUIWrapper />
 						</li>
 					</ul>
