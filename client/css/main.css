@@ -103,12 +103,26 @@ h5 {
 	background: #14171c;
 	top: 0;
 	left: 0;
+	right: 0;
 	z-index: 600;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
+}
+.header .main-navigation .logo {
+	z-index: 1000;
+	width: 180px;
+	height: 60px;
+	margin-top: 20px;
+	position: relative;
+	display: block;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	background: url("/images/logo.png") no-repeat center;
+	background-size: 180px 60px;
 }
 #login-button {
 	all: initial;
@@ -150,8 +164,8 @@ h5 {
 */
 .main-navigation {
 	position: absolute;
-	display: inline-block;
-	width: auto;
+	display: block;
+	width: inherit;
 	text-align: left;
 	margin: 0px auto;
 	padding: 0;
@@ -159,13 +173,12 @@ h5 {
 	font-size: 11.5px;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
-	position: absolute;
 	top: 0;
-	right: 30px;
+	right: 0;
 }
 .main-navigation li {
 	position: relative;
-	display: inline-block;
+	display: block;
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -223,7 +236,6 @@ h5 {
 	padding: 18px 7px;
 	line-height: 30px;
 	text-decoration: none;
-	text-align: left;
 	color: #98999a;
 	position: relative;
 	-moz-transition: color 0.3s ease-in-out;
@@ -238,7 +250,12 @@ h5 {
 .main-navigation li a:hover {
 	color: #FFFFFF;
 }
-
+.main-navigation .float-right {
+	float: right;
+}
+.main-navigation .float-left {
+	float: left;
+}
 /**
 * ===================================================================
 * Title Section section
