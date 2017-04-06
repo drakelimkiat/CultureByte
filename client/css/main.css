@@ -21,7 +21,7 @@ h2 {
 }
 .large-screen h2 {
 	font-size: 5rem;
-	line-height: 7.2rem;
+	line-height: 6.2rem;
 }
 .small-screen h2 {
 	font-size: 4rem;
@@ -811,8 +811,6 @@ h5 {
 	height: 600px;
 }
 #factoid h2 {
-	font-size: 32px;
-	font-family: "raleway-semibold", sans-serif;
 	margin-bottom: 36px;
 	margin-top: 0;
 	padding-bottom: 20px;
