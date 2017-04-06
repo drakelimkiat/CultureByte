@@ -42,6 +42,7 @@ p {
 	font-family: "raleway-regular", sans-serif;
 	font-size: 2rem;
 	line-height: 3rem;
+	margin: 0;
 }
 h5 {
 	font-family: "raleway-heavy", sans-serif;
@@ -434,16 +435,20 @@ h5 {
 	padding: 0 20px;
 	margin-bottom: 50px;
 	float: left;
+	display: table-row;
 }
 .large-screen .team-member {
 	width: 20%;
+}
+#medium-screen .team-member {
+	width: 50%;
+	padding: 0;
 }
 .team .small-screen {
 	display: table;
 }
 .small-screen .team-member {
 	width: 100%;
-	display: table-row;
 }
 .team-member .img {
 	max-width: 100%;
@@ -452,12 +457,10 @@ h5 {
 }
 .large-screen .team-member .img {
 	height: 200px;
-	width: 250px;
 }
 .small-screen .team-member .img {
 	height: 90vw;
 	width: 90vw;
-	align-self: center;
 }
 .ana {
 	background: url("/images/avatars/ana.jpg") no-repeat center;
@@ -474,38 +477,29 @@ h5 {
 .annabel {
 	background: url("/images/avatars/annabel.jpg") no-repeat center;
 }
-.team {
-	padding-top: 0;
-	padding-bottom: 60px;
-}
 .team-page-header {
 	text-align: center;
-	padding: 15px;
-	margin-bottom: 50px;
-	margin-top: 100px;
+	margin: 8rem 0 3rem 0;
 }
 .team-page-header .large-screen,
 .team-page-header .small-screen {
 	width: 100%;
 }
-.member-info p,
-.team-page-header p {
-	font-family: "raleway-regular", sans-serif;
-}
 .team-page-header h2 {
-	padding-bottom: 10px;
+	padding-bottom: 0.5rem;
 }
 .member-info h3 {
-	margin-top: 24px;
-	margin-bottom: 10px;
+	margin-top: 1.5rem;
 	color: #333;
 }
 .member-info h4 {
-	margin-bottom: 15px;
+	margin-top: 0.8rem;
 	color: #999;
-	margin-top: 10px;
 }
-
+.member-info p {
+	font-size: 1.6rem;
+	line-height: 2.2rem;
+}
 /**
 * ===================================================================
 * Category Section section
@@ -787,7 +781,7 @@ h5 {
 #factoid h2 {
 	margin-bottom: 36px;
 	margin-top: 0;
-	padding-bottom: 20px;
+	padding: 0 2rem 2rem 0;
 	position: relative;
 }
 #factoid h2::after {
