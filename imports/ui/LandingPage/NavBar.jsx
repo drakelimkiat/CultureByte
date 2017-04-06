@@ -30,7 +30,7 @@ class NavBar extends Component {
 					</li>
 					<ul className="float-right">
 						<li className={hideIfNoUserIsLoggedIn}>
-							<Link activeClassName='current' to="/contribution">Your Posts</Link>
+							<Link activeClassName='current' to="/contribution">My Posts</Link>
 						</li>
 						<li id="login-button" className="highlight float-left">
 							<AccountsUIWrapper />
