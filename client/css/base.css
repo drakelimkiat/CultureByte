@@ -284,7 +284,6 @@ textarea {
 
 .cb-row {
 	width: 100%;
-	max-width: 1140px;
 	margin: 0;
 }
 .cb-row:before, .cb-row:after {

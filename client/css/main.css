@@ -266,7 +266,6 @@ h5 {
 }
 .intro-content h1 {
 	color: #FFFFFF;
-	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -809,6 +808,7 @@ h5 {
 }
 .small-screen #factoid-slider {
 	height: 370px;
+	max-height: 80vh;
 }
 #factoid-slider .factoid {
 	position: relative;
