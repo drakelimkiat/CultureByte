@@ -11,7 +11,7 @@ const PromptSection = () => {
   );
   const body = (
     <div>
-      <div id="home-slider" className="carousel slide carousel-fade" data-ride="carousel">
+      <div id="prompt-slider" className="carousel slide carousel-fade" data-ride="carousel">
         <div className="carousel-inner">
           <IndividualPrompt
             title="CHILDHOOD"
@@ -39,19 +39,19 @@ const PromptSection = () => {
             imageUrl="/images/prompt/slang.png"
             classNames="item"/>
         </div>
-        <a className="left-control" href="#home-slider" data-slide="prev"><i className="fa fa-angle-left"></i></a>
-        <a className="right-control" href="#home-slider" data-slide="next"><i className="fa fa-angle-right"></i></a>
+        <a className="left-control" href="#prompt-slider" data-slide="prev"><i className="fa fa-angle-left"></i></a>
+        <a className="right-control" href="#prompt-slider" data-slide="next"><i className="fa fa-angle-right"></i></a>
       </div>
     </div>
   );
   return (
-    <div id="home">
-      <div id="home-description">
-        <MediaQuery maxDeviceWidth={600} className="small-screen">{text}</MediaQuery>
+    <div id="prompt">
+      <div id="prompt-description">
+        <MediaQuery maxWidth={600} className="small-screen">{text}</MediaQuery>
       </div>
       <div>
-        <MediaQuery minDeviceWidth={601} className="large-screen">{body}</MediaQuery>
-        <MediaQuery maxDeviceWidth={600} className="small-screen">{body}</MediaQuery>
+        <MediaQuery minWidth={601} className="large-screen">{body}</MediaQuery>
+        <MediaQuery maxWidth={600} className="small-screen">{body}</MediaQuery>
       </div>
     </div>
   );

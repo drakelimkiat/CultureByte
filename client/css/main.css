@@ -637,17 +637,17 @@ h5 {
 *
 * -------------------------------------------------------------------
 */
-#home-slider {
+#prompt-slider {
 	overflow: hidden;
 	position: relative;
 }
-.small-screen #home-slider {
+.small-screen #prompt-slider {
 	height: 50vh
 }
-.large-screen #home-slider {
+.large-screen #prompt-slider {
 	height: 100vh
 }
-#home .caption {
+#prompt .caption {
 	position: absolute;
 	top: 50%;
 	margin-top: -104px;
@@ -659,12 +659,12 @@ h5 {
 	font-weight: 300;
 	color: #fff;
 }
-#home .caption h1 {
+#prompt .caption h1 {
 	color: #fff;
 	font-family: "raleway-bold", sans-serif;
 	margin-bottom: 25px;
 }
-#home .caption .btn-start {
+#prompt .caption .btn-start {
 	color: #fff;
 	font-family: "raleway-heavy", sans-serif;
 	padding:14px 40px;
@@ -672,21 +672,21 @@ h5 {
 	border-radius: 8px;
 	margin-top: 40px;
 }
-#home .small-screen .caption .btn-start {
+#prompt .small-screen .caption .btn-start {
 	font-size: 2.5rem;
 	font-family: "raleway-bold", sans-serif;
 }
-#home .large-screen .caption .btn-start {
+#prompt .large-screen .caption .btn-start {
 	font-size: 15px;
 }
-#home .caption .btn-start:hover,
-#home .left-control:hover,
-#home .right-control:hover {
+#prompt .caption .btn-start:hover,
+#prompt .left-control:hover,
+#prompt .right-control:hover {
 	color: #fff;
 	background-color: #05bca9;
 	border: 2px solid #05bca9;
 }
-#home .carousel-fade .carousel-inner .item {
+#prompt .carousel-fade .carousel-inner .item {
 	opacity: 1;
 	-webkit-transition-property: inherit;
 	transition-property: inherit;
@@ -695,10 +695,10 @@ h5 {
 	margin: 0;
 	padding: 0;
 }
-#home .carousel-inner {
+#prompt .carousel-inner {
 	height: inherit;
 }
-#home .carousel-fade .carousel-inner .item img {
+#prompt .carousel-fade .carousel-inner .item img {
 	vertical-align: middle;
 	border: none;
 	margin: 0;
@@ -709,7 +709,7 @@ h5 {
 	object-fit: cover;
 	overflow: hidden;
 }
-#home .carousel-fade .carousel-inner .item:after {
+#prompt .carousel-fade .carousel-inner .item:after {
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -718,23 +718,23 @@ h5 {
 	right: 0;
 	background: rgba(0,0,0,.7);
 }
-#home .carousel-fade .carousel-inner .active {
+#prompt .carousel-fade .carousel-inner .active {
 	opacity: 1;
 }
-#home .carousel-fade .carousel-inner .active.left,
-#home .carousel-fade .carousel-inner .active.right {
+#prompt .carousel-fade .carousel-inner .active.left,
+#prompt .carousel-fade .carousel-inner .active.right {
 	left: 0;
 	opacity: 1;
 	z-index: 1;
 }
-#home .carousel-fade .carousel-inner .next.left,
-#home .carousel-fade .carousel-inner .prev.right {
+#prompt .carousel-fade .carousel-inner .next.left,
+#prompt .carousel-fade .carousel-inner .prev.right {
 	opacity: 1;
 }
-#home .carousel-fade .carousel-control {
+#prompt .carousel-fade .carousel-control {
 	z-index: 2;
 }
-#home .left-control, #home .right-control {
+#prompt .left-control, #prompt .right-control {
 	position: absolute;
 	top: 50%;
 	height: 51px;
@@ -752,32 +752,32 @@ h5 {
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-#home .small-screen .left-control, #home .small-screen .right-control {
+#prompt .small-screen .left-control, #prompt .small-screen .right-control {
 	top: 65%;
 }
-#home .small-screen .left-control {
+#prompt .small-screen .left-control {
 	left: 90px
 }
-#home .small-screen .right-control {
+#prompt .small-screen .right-control {
 	right: 90px;
 }
-#home .large-screen .left-control {
+#prompt .large-screen .left-control {
 	left: -90px
 }
-#home .large-screen .right-control {
+#prompt .large-screen .right-control {
 	right: -90px;
 }
-#home:hover .large-screen .left-control {
+#prompt:hover .large-screen .left-control {
 	left: 30px
 }
-#home:hover .large-screen .right-control {
+#prompt:hover .large-screen .right-control {
 	right: 30px
 }
-#home-description .small-screen h2,
-#home-description .small-screen p {
+#prompt-description .small-screen h2,
+#prompt-description .small-screen p {
 	text-align: center;
 }
-#home-description .small-screen {
+#prompt-description .small-screen {
 	padding: 9rem 0rem 5rem 0rem;
 	width: 100%
 }
