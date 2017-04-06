@@ -247,8 +247,6 @@ h5 {
 	display: table;
 	position: relative;
 	overflow: hidden;
-	font-size: 1.6rem;
-	line-height: 3rem;
 }
 .intro-content {
 	display: table-cell;
@@ -798,17 +796,11 @@ h5 {
 */
 #factoid {
 	background: #FFFFFF;
-	padding-top: 10rem;
+	padding-top: 6rem;
 	position: relative;
 	width: 100%;
 	overflow: hidden;
 	text-align: center;
-}
-.large-screen #factoid {
-	height: 500px;
-}
-.small-screen #factoid {
-	height: 600px;
 }
 #factoid h2 {
 	margin-bottom: 36px;
@@ -840,7 +832,7 @@ h5 {
 	height: 300px;
 }
 .small-screen #factoid-slider {
-	height: 400px;
+	height: 370px;
 }
 #factoid-slider .factoid {
 	position: relative;
@@ -952,11 +944,11 @@ h5 {
 }
 .large-screen #factoid-slider:hover .left-control,
 .small-screen #factoid-slider .left-control {
-	left: 100px
+	left: 5rem;
 }
 .large-screen #factoid-slider:hover .right-control,
 .small-screen #factoid-slider .right-control {
-	right: 100px
+	right: 5rem;
 }
 #individual-factoid h3 {
 	color: #000;
