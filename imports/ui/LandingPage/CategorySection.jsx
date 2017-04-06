@@ -12,8 +12,8 @@ const CategorySection = () => {
   return (
     <div id="category">
       <div className="cb-row category-header wow fadeInUp">
-        <MediaQuery minDeviceWidth={601} className="large-screen">{text}</MediaQuery>
-        <MediaQuery maxDeviceWidth={600} className="small-screen">{text}</MediaQuery>
+        <MediaQuery minWidth={751} className="large-screen">{text}</MediaQuery>
+        <MediaQuery maxWidth={750} className="small-screen">{text}</MediaQuery>
       </div>
       <div className="container-fluid">
         <IndividualCategory

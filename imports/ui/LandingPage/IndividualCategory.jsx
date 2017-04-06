@@ -41,8 +41,8 @@ class IndividualCategory extends Component {
     );
     return (
       <div>
-        <MediaQuery minDeviceWidth={601} className="large-screen">{body}</MediaQuery>
-        <MediaQuery maxDeviceWidth={600} className="small-screen">{body}</MediaQuery>
+        <MediaQuery minWidth={751} className="large-screen">{body}</MediaQuery>
+        <MediaQuery maxWidth={750} className="small-screen">{body}</MediaQuery>
       </div>
     );
   }
