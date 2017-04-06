@@ -17,21 +17,25 @@ class NavBar extends Component {
 	}
 
 	render() {
-		const hideIfNoUserIsLoggedIn = this.props.currentUser ? '' : 'hide'
+		const hideIfNoUserIsLoggedIn = this.props.currentUser ? 'float-left' : 'hide'
 		const homePageRoute = this.props.currentUser ? '/post' : '/home'
 
 		return (
 			<div className="header">
 				<ul className="main-navigation">
-					<li>
-						<IndexLink className="logo" to={homePageRoute}>CultureByte</IndexLink>
+					<li className="float-left">
+						<IndexLink id="logo" to={homePageRoute}>
+							<div className="logo" />
+						</IndexLink>
 					</li>
-					<li className={hideIfNoUserIsLoggedIn}>
-						<Link activeClassName='current' to="/contribution">Your Posts</Link>
-					</li>
-					<li id="login-button" className="highlight with-sep">
-						<AccountsUIWrapper />
-					</li>
+					<ul className="float-right">
+						<li className={hideIfNoUserIsLoggedIn}>
+							<Link activeClassName='current' to="/contribution">Your Posts</Link>
+						</li>
+						<li id="login-button" className="highlight float-left">
+							<AccountsUIWrapper />
+						</li>
+					</ul>
 				</ul>
 			</div>
 		);

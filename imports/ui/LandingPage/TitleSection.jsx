@@ -1,18 +1,23 @@
 import React from 'react';
 
 const TitleSection = () => {
-  return (
-    <div className="intro">
-      <div className="intro-content">
-        <div className="cb-row">
-          <div className="col-twelve">
-            <h5>Hello welcome to Culture Bytes.</h5>
-            <h1>We introduce you to interesting culture facts</h1>
-          </div>
+  const MediaQuery = require('react-responsive');
+  const body = (
+    <div>
+      <div className="cb-row">
+        <h5>Hello welcome to Culture Bytes.</h5>
+        <h1>We introduce you to interesting culture facts</h1>
+      </div>
+    </div>);
+
+    return (
+      <div id="intro">
+        <div className="intro-content">
+          <MediaQuery minWidth={601} className="large-screen">{body}</MediaQuery>
+          <MediaQuery maxWidth={600} className="small-screen">{body}</MediaQuery>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
-export default TitleSection;
+  export default TitleSection;
