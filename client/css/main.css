@@ -1,6 +1,56 @@
 @import url("fonts.css");
 /**
 * ===================================================================
+* base responsive style
+*
+* -------------------------------------------------------------------
+*/
+h1 {
+	font-family: "merriweather-bold", serif;
+}
+.large-screen h1 {
+	font-size: 6rem;
+	line-height: 7.2rem;
+}
+.small-screen h1 {
+	font-size: 4rem;
+	line-height: 5.2rem;
+}
+h2 {
+	font-family: "raleway-semibold", sans-serif;
+}
+.large-screen h2 {
+	font-size: 5rem;
+	line-height: 7.2rem;
+}
+.small-screen h2 {
+	font-size: 4rem;
+	line-height: 5.2rem;
+}
+h3, h4 {
+	font-family: "montserrat-regular", sans-serif;
+}
+h3 {
+	font-size: 2.5rem;
+	line-height: 3rem;
+}
+h4 {
+	font-size: 1.6rem;
+	line-height: 2rem;
+}
+p {
+	font-family: "raleway-regular", sans-serif;
+	font-size: 2rem;
+	line-height: 3rem;
+}
+h5 {
+	font-family: "raleway-heavy", sans-serif;
+	font-size: 1.5rem;
+	line-height: 2rem;
+	letter-spacing: .15rem;
+}
+/**
+* ===================================================================
 * popup style
 *
 * -------------------------------------------------------------------
@@ -25,6 +75,10 @@
 	line-height: normal;
 	left: 50%;
 	transform: translate(-50%, 0);
+}
+.popup p {
+	font-size: 1.5rem;
+	line-height: 2rem;
 }
 
 /**
@@ -205,21 +259,14 @@
 }
 .intro-content h1 {
 	color: #FFFFFF;
-	font-family: "merriweather-bold", serif;
-	font-size: 5.4rem;
-	line-height: 1.334;
 	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
 }
 .intro-content h5 {
 	color: rgba(255, 255, 255, 0.6);
-	font-family: "raleway-heavy", sans-serif;
-	font-size: 1.8rem;
-	line-height: 1.667;
 	margin-bottom: 0.6rem;
 	text-transform: uppercase;
-	letter-spacing: .25rem;
 }
 /**
 * responsive:
@@ -231,30 +278,6 @@
 	-webkit-transform: translateY(0);
 	-ms-transform: translateY(0);
 	transform: translateY(0);
-}
-.intro-content .large-screen h1 {
-	font-size: 6rem;
-	max-width: 700px;
-}
-.intro-content .large-screen h5 {
-	font-size: 1.5rem;
-}
-
-.intro-content .medium-screen h1 {
-	font-size: 7rem;
-}
-.intro-content .medium-screen h5 {
-	font-size: 2.5rem;
-	letter-spacing: .15rem;
-}
-
-.intro-content .small-screen h1 {
-	font-size: 4rem;
-	margin-bottom: .9rem;
-}
-.intro-content .small-screen h5 {
-	font-size: 1.5rem;
-	letter-spacing: .15rem;
 }
 
 /**
@@ -467,64 +490,22 @@
 .team-page-header .small-screen {
 	width: 100%;
 }
-.team-page-header h2 {
-	font-family: "raleway-semibold", sans-serif;
-}
 .member-info p,
 .team-page-header p {
 	font-family: "raleway-regular", sans-serif;
 }
-.member-info h4,
-.member-info h3 {
-	font-family: "montserrat-regular", sans-serif;
-}
 .team-page-header h2 {
 	padding-bottom: 10px;
-}
-.team-page-header .large-screen h2 {
-	font-size: 34px;
-}
-.team-page-header .small-screen h2 {
-	font-size: 5rem;
-}
-.member-info p,
-.team-page-header p {
-	line-height: 20px;
-}
-.large-screen .member-info p {
-	font-size: 16px;
-}
-.small-screen .member-info p {
-	font-size: 3rem;
-	line-height: 3.3rem;
-}
-.large-screen .team-page-header p {
-	font-size: 16px;
-}
-.small-screen .team-page-header p {
-	font-size: 2rem;
 }
 .member-info h3 {
 	margin-top: 24px;
 	margin-bottom: 10px;
 	color: #333;
 }
-.large-screen .member-info h3 {
-	font-size: 20px;
-}
-.small-screen .member-info h3 {
-	font-size: 4.5rem;
-}
 .member-info h4 {
 	margin-bottom: 15px;
 	color: #999;
 	margin-top: 10px;
-}
-.large-screen .member-info h4 {
-	font-size: 16px;
-}
-.small-screen .member-info h4 {
-	font-size: 3rem;
 }
 
 /**
@@ -576,27 +557,6 @@
 	margin-top: -75px;
 	-webkit-transition: all 1s ease-in-out;
 	transition: all 1s ease-in-out;
-}
-.folio-info h3,
-.category-header h2 {
-	font-family: "raleway-semibold", sans-serif;
-}
-.folio-info p,
-.category-header p {
-	font-family: "raleway-regular", sans-serif;
-}
-.large-screen h3 {
-	font-size: 22px;
-}
-.large-screen p {
-	font-size: 18px;
-}
-.small-screen h3 {
-	font-size: 6.5rem;
-}
-.small-screen p {
-	font-size: 3rem;
-	line-height: 3.3rem;
 }
 .folio-overview a {
 	color: #333;
@@ -671,21 +631,8 @@
 	height: 800px;
 	width: 100vw;
 }
-.category-header .large-screen h2 {
-	font-size: 34px;
+.category-header h2 {
 	padding-bottom: 10px;
-}
-.category-header .large-screen p {
-	line-height: 20px;
-	font-size: 16px;
-}
-.category-header .small-screen h2 {
-	font-size: 5rem;
-	padding-bottom: 10px;
-}
-.category-header .small-screen p {
-	line-height: 3.5rem;
-	font-size: 3rem;
 }
 .category-header {
 	padding: 15px;
@@ -722,12 +669,8 @@
 }
 #home .caption h1 {
 	color: #fff;
-	font-size: 60px;
 	font-family: "raleway-bold", sans-serif;
 	margin-bottom: 25px;
-}
-#home .caption p {
-	font-family: "raleway-regular", sans-serif;
 }
 #home .caption .btn-start {
 	color: #fff;
@@ -738,7 +681,7 @@
 	margin-top: 40px;
 }
 #home .small-screen .caption .btn-start {
-	font-size: 3rem;
+	font-size: 2.5rem;
 	font-family: "raleway-bold", sans-serif;
 }
 #home .large-screen .caption .btn-start {
@@ -838,14 +781,6 @@
 #home:hover .large-screen .right-control {
 	right: 30px
 }
-#home-description .small-screen h2 {
-	font-size: 5rem;
-	font-family: "raleway-semibold", sans-serif;
-}
-#home-description .small-screen p {
-	font-size: 3rem;
-	font-family: "raleway-regular", sans-serif;
-}
 #home-description .small-screen h2,
 #home-description .small-screen p {
 	text-align: center;
@@ -883,19 +818,6 @@
 	padding-bottom: 20px;
 	position: relative;
 }
-.small-screen #factoid h2 {
-	font-size: 5rem;
-}
-.small-screen #factoid h3 {
-	font-size: 4.4rem;
-}
-.small-screen #factoid h4 {
-	font-size: 2.5rem;
-}
-.small-screen #factoid p {
-	font-size: 3.5rem;
-	line-height: 4.5rem;
-}
 #factoid h2::after {
 	display: block;
 	background-color: #05bca9;
@@ -930,7 +852,6 @@
 	right: 0;
 	text-align: center;
 	z-index: 15;
-	font-size: 18px;
 	font-weight: 300;
 	color: #fff;
 }
@@ -938,7 +859,6 @@
 	display: inline;
 	font-family: Arial, sans-serif;
 	color: #c7c7c7;
-	font-size: 6rem;
 	line-height: 0;
 	vertical-align: bottom;
 	position: relative;
@@ -1042,22 +962,15 @@
 }
 #individual-factoid h3 {
 	color: #000;
-	font-size: 40px;
-	font-family: "raleway-bold", sans-serif;
 	margin-bottom: 10px;
 }
 #individual-factoid h4 {
 	color: rgba(0, 0, 0, 0.4);
-	font-size: 12px;
-	font-family: "raleway-regular", sans-serif;
 	text-transform: uppercase;
 }
 #individual-factoid p {
-	font-family: "raleway-regular", sans-serif;
-	font-size: 25px;
-	line-height: 1.8;
 	color: #8d8d8d;
-	margin-top: 5rem;
+	margin-top: 3rem;
 }
 #individual-factoid a {
 	text-decoration: none;
