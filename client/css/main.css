@@ -602,20 +602,23 @@ h5 {
 	-webkit-transition: all 0.8s ease-in-out;
 	transition: all 0.8s ease-in-out;
 }
-#category .folio-item:hover .folio-image {
+#category .large-screen .folio-item:hover .folio-image {
 	-webkit-transform: scale(1.5);
 	transform: scale(1.5);
 }
-#category .folio-item:hover .overlay {
+#category .large-screen .folio-item:hover .overlay,
+#category .small-screen .folio-item .overlay {
 	opacity: 0.8;
 	bottom: 0;
 	height: 100%;
 }
-#category .folio-item:hover .folio-overview .folio-expand {
+#category .large-screen .folio-item:hover .folio-overview .folio-expand,
+#category .small-screen .folio-item .folio-overview .folio-expand  {
 	margin-top: 0;
 	margin-left: 0;
 }
-#category .folio-item:hover .overlay .folio-info {
+#category .large-screen .folio-item:hover .overlay .folio-info,
+#category .small-screen .folio-item .overlay .folio-info {
 	opacity: 1;
 	margin: 0;
 	padding: 0 2rem;
