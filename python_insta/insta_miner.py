@@ -128,15 +128,15 @@ def create_posts(acct, data, host, port):
 		post['username'] = acct['username']
 		post['liked_count'] = 0
 		post['createdAt'] = datetime.datetime.utcnow()
-		print
-		pprint(post)
+		# print
+		# pprint(post)
 
 		# insert to mongo
 		client = pymongo.MongoClient(host, port)
 		db = client['meteor']
 		coll = db['posts']
 		coll.insert(post)
-		print('POSTED!')
+		# print('POSTED!')
 
 
 # ---------------------------------------------------------------------------------------
