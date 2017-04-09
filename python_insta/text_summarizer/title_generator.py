@@ -10,7 +10,7 @@ def get_title(text):
 	try:
 		fs = summarizer_class.FrequencySummarizer()
 		result = fs.summarize(text, 1)
-		return result
+		return result[0]
 
 	except:
 		traceback.print_exc()

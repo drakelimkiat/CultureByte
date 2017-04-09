@@ -5,6 +5,7 @@ import time
 import requests
 import json
 from text_summarizer import title_generator
+import datetime
 
 
 # ---------------------------------------------------------------------------------------
@@ -104,7 +105,7 @@ def posts_mongo_store(data, accts, host, port):
 				access_token = user_data['access_token']
 				for acct in accts:
 					if acct['insta_access_token'] == access_token:
-						create_posts(acct, user_data['results'])
+						create_posts(acct, user_data['results'], host, port)
 
 			except:
 				traceback.print_exc()
@@ -117,17 +118,25 @@ def posts_mongo_store(data, accts, host, port):
 # For each user, store all instagram posts into mongo
 # ---------------------------------------------------------------------------------------
 
-def create_posts(acct, data):
+def create_posts(acct, data, host, port):
 	for dat in data:
 		post = {}
 		post['body'] = dat['caption']
 		post['title'] = title_generator.get_title(dat['caption'])
 		post['pictureUrl'] = dat['picture']
-		post['createdAt'] = dat['created_at']
 		post['author'] = acct['id']
 		post['username'] = acct['username']
+		post['liked_count'] = 0
+		post['createdAt'] = datetime.datetime.utcnow()
 		print
 		pprint(post)
+
+		# insert to mongo
+		client = pymongo.MongoClient(host, port)
+		db = client['meteor']
+		coll = db['posts']
+		coll.insert(post)
+		print('POSTED!')
 
 
 # ---------------------------------------------------------------------------------------
