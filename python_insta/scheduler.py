@@ -9,7 +9,7 @@ def job(interval):
 def run_scheduler(interval):
 	schedule.every(interval).minutes.do(job, interval)
 	while True:
-		print('here')
+		print('waiting...')
 		schedule.run_pending()
 		time.sleep(1)
 
@@ -18,4 +18,4 @@ def run_scheduler(interval):
 # Main method
 # ---------------------------------------------------------------------------------------
 if __name__ == '__main__':
-    run_scheduler(3)
+    run_scheduler(0.5)
