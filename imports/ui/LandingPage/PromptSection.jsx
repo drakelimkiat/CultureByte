@@ -2,9 +2,16 @@ import React from 'react';
 import IndividualPrompt from './IndividualPrompt.jsx'
 
 const PromptSection = () => {
-  return (
-    <div id="home">
-      <div id="home-slider" className="carousel slide carousel-fade" data-ride="carousel">
+  const MediaQuery = require('react-responsive');
+  const text = (
+    <div>
+      <h2>Itching to share?</h2>
+      <p>Check out our prompts for inspiration</p>
+    </div>
+  );
+  const body = (
+    <div>
+      <div id="prompt-slider" className="carousel slide carousel-fade" data-ride="carousel">
         <div className="carousel-inner">
           <IndividualPrompt
             title="CHILDHOOD"
@@ -29,11 +36,22 @@ const PromptSection = () => {
           <IndividualPrompt
             title="LOCAL SLANG"
             subtitle="What are some local slangs used in your country?"
-            imageUrl="/images/prompt/slang.jpg"
+            imageUrl="/images/prompt/slang.png"
             classNames="item"/>
         </div>
-        <a className="left-control" href="#home-slider" data-slide="prev"><i className="fa fa-angle-left"></i></a>
-        <a className="right-control" href="#home-slider" data-slide="next"><i className="fa fa-angle-right"></i></a>
+        <a className="left-control" href="#prompt-slider" data-slide="prev"><i className="fa fa-angle-left"></i></a>
+        <a className="right-control" href="#prompt-slider" data-slide="next"><i className="fa fa-angle-right"></i></a>
+      </div>
+    </div>
+  );
+  return (
+    <div id="prompt">
+      <div id="prompt-description">
+        <MediaQuery maxWidth={750} className="small-screen">{text}</MediaQuery>
+      </div>
+      <div>
+        <MediaQuery minWidth={761} className="large-screen">{body}</MediaQuery>
+        <MediaQuery maxWidth={760} className="small-screen">{body}</MediaQuery>
       </div>
     </div>
   );
