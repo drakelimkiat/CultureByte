@@ -61,7 +61,7 @@ def get_user_posts(access_token, interval, start_timestamp, end_timestamp):
                     try:
                         # check if time range is within the last hr - if not,
                         # skip this post
-                        if start_timestamp <= int(post['created_time']) <= end_timestamp:
+                        if start_timestamp <= int(post['created_time']) <= end_timestamp and 'culturebyte' in post['tags']:
                             result = {}
                             result['created_time'] = post['created_time']
                             result['picture'] = post['images'][
