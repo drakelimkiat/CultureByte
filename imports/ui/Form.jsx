@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { analytics } from "meteor/okgrow:analytics";
+import { Button } from 'react-bootstrap';
+import { FacebookButton, FacebookCount } from "react-social";
 
 export default class Form extends Component {
   constructor(props) {
@@ -122,6 +124,7 @@ export default class Form extends Component {
             <div className="line"></div>
             <input className="ghost-input" type="file" id="pictureInput" />
             <div className="line"></div>
+            <Button className="btn btn-primary icon-save" block><i className="fa fa-instagram"></i>  Link to Instagram</Button>
             <input className="ghost-button" type="submit" value="Submit" />
           </form>
         </div>
