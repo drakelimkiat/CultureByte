@@ -56,7 +56,7 @@ class App extends Component {
           isInfiniteLoading: true,
         });
         var elemLength = that.state.elements.length,
-          newElements = that.buildElements(elemLength, elemLength + 1);
+          newElements = that.buildElements(elemLength, elemLength + 5);
         that.setState({
           isInfiniteLoading: false,
           elements: that.state.elements.concat(newElements)
@@ -66,9 +66,17 @@ class App extends Component {
   }
 
   elementInfiniteLoad() {
+    var text = "";
+    if (this.props.posts && this.state.elements) {
+      if (this.props.posts.length == this.state.elements.length) {
+        text = "End"
+      } else {
+        text = "Loading..."
+      }
+    }
     return (
       <div>
-        Loading...
+        {text}
       </div>
     );
   }
@@ -84,7 +92,7 @@ class App extends Component {
     if (newProps && newProps.posts[0]) {
       console.log("componentWillReceiveProps " + "success");
       this.setState({
-        elements: this.buildElements(0, 2, newProps.posts)
+        elements: this.buildElements(0, 5, newProps.posts)
       });
       console.log("componentWillReceiveProps " + "success2");
     } else {
@@ -141,12 +149,13 @@ class App extends Component {
           <Row>
             <Col lg={6} lgOffset={2} md={8} sm={8} xs={12}>
               {toggleButton}
-              <Infinite elementHeight={300}
-                         containerHeight={1000}
-                         infiniteLoadBeginEdgeOffset={200}
+              <Infinite elementHeight={500}
+                         containerHeight={window.innerHeight}
+                         infiniteLoadBeginEdgeOffset={100}
                          onInfiniteLoad={this.handleInfiniteLoad.bind(this)}
                          loadingSpinnerDelegate={this.elementInfiniteLoad()}
-                         isInfiniteLoading={this.state.isInfiniteLoading}>
+                         isInfiniteLoading={this.state.isInfiniteLoading}
+                         useWindowAsScrollContainer={true}>
                 {this.state.elements}
               </Infinite>
             </Col>
