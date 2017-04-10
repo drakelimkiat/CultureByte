@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { analytics } from "meteor/okgrow:analytics";
 import { Button } from 'react-bootstrap';
-import { FacebookButton, FacebookCount } from "react-social";
 
 export default class Form extends Component {
   constructor(props) {
