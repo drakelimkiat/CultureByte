@@ -23,6 +23,10 @@ class App extends Component {
     };
   }
 
+  componentWillMount() {
+    this.initBuildElements(this.props);
+  }
+
   componentWillUpdate() {
     if (!Meteor.user()) {
       browserHistory.push('/home');
@@ -30,7 +34,11 @@ class App extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps && newProps.posts[0]) {
+    this.initBuildElements(newProps);
+  }
+
+  initBuildElements(newProps) {
+    if (newProps && newProps.posts && newProps.posts[0]) {
       if (this.state.elements == undefined) {
         this.setState({
           elements: this.buildElements(0, 5, newProps.posts)
@@ -180,7 +188,6 @@ App.propTypes = {
 
 export default createContainer(() => {
   Meteor.subscribe('posts');
-
   return {
     posts: Posts.find({}, {
       sort: { createdAt: -1 }
