@@ -23,26 +23,41 @@ class App extends Component {
     };
   }
 
-  buildElements(start, end, p) {
-    console.log("buildElements " + p);
-    if (p == undefined) {
-      p = this.props.posts;
+  componentWillUpdate() {
+    if (!Meteor.user()) {
+      browserHistory.push('/home');
     }
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps && newProps.posts[0]) {
+      if (this.state.elements == undefined) {
+        this.setState({
+          elements: this.buildElements(0, 5, newProps.posts)
+        });
+      } else {
+        if (this.state.sortType == "time") {
+          this.setState({
+            elements: this.buildElements(0, this.state.elements.length, newProps.posts)
+          });
+        } else if (this.state.sortType == "pop") {
+          this.setState({
+            elements: this.buildElements(0, this.state.elements.length, newProps.popPosts)
+          });
+        }
+      }
+    }
+  }
+
+  buildElements(start, end, p) {
     if (p[0]) {
       end = Math.min(p.length, end);
       var elements = [];
       for (var i=start; i<end; i++) {
-        if (this.state.sortType == 'time') {
-          elements.push(<Post
-            key={p[i]._id}
-            post={p[i]}
-            type="post" />);
-        } else if (this.state.sortType == 'pop') {
-          elements.push(<Post
-            key={p[i]._id}
-            post={p[i]}
-            type="post" />);
-        }
+        elements.push(<Post
+          key={p[i]._id}
+          post={p[i]}
+          type="post" />);
       }
       return elements;
     }
@@ -55,14 +70,19 @@ class App extends Component {
         that.setState({
           isInfiniteLoading: true,
         });
-        var elemLength = that.state.elements.length,
-          newElements = that.buildElements(elemLength, elemLength + 5);
+        var elemLength = that.state.elements.length;
+        var newElements = [];
+        if (that.state.sortType == "time") {
+          newElements = that.buildElements(0, elemLength + 5, that.props.posts);
+        } else if (that.state.sortType == "pop") {
+          newElements = that.buildElements(0, elemLength + 5, that.props.popPosts);
+        }
         that.setState({
           isInfiniteLoading: false,
-          elements: that.state.elements.concat(newElements)
+          elements: newElements,
         });
       }
-    }, 2500);
+    }, 1500);
   }
 
   elementInfiniteLoad() {
@@ -79,25 +99,6 @@ class App extends Component {
         {text}
       </div>
     );
-  }
-
-  componentWillUpdate() {
-    if (!Meteor.user()) {
-      browserHistory.push('/home');
-    }
-  }
-
-  componentWillReceiveProps(newProps) {
-    console.log("componentWillReceiveProps newProps: " + newProps.posts);
-    if (newProps && newProps.posts[0]) {
-      console.log("componentWillReceiveProps " + "success");
-      this.setState({
-        elements: this.buildElements(0, 5, newProps.posts)
-      });
-      console.log("componentWillReceiveProps " + "success2");
-    } else {
-      console.log("componentWillReceiveProps " + "failed");
-    }
   }
 
   renderCreatePostForm() {
@@ -125,12 +126,14 @@ class App extends Component {
   onToggleBetweenTimeAndPop() {
     if (this.state.sortType == 'time') {
       this.setState({
-        sortType: 'pop'
-      })
+        sortType: 'pop',
+        elements: this.buildElements(0, 5, this.props.popPosts),
+      });
     } else if (this.state.sortType == 'pop') {
       this.setState({
-        sortType: 'time'
-      })
+        sortType: 'time',
+        elements: this.buildElements(0, 5, this.props.posts),
+      });
     }
   }
 
@@ -142,16 +145,16 @@ class App extends Component {
       toggleButton  = this.renderToggleButton();
       createPostForm = this.renderCreatePostForm();
     }
-    console.log("rendering " + this.state.elements);
+
     return (
       <Grid>
         <div className="content">
           <Row>
             <Col lg={6} lgOffset={2} md={8} sm={8} xs={12}>
               {toggleButton}
-              <Infinite elementHeight={500}
+              <Infinite elementHeight={300}
                          containerHeight={window.innerHeight}
-                         infiniteLoadBeginEdgeOffset={100}
+                         infiniteLoadBeginEdgeOffset={600}
                          onInfiniteLoad={this.handleInfiniteLoad.bind(this)}
                          loadingSpinnerDelegate={this.elementInfiniteLoad()}
                          isInfiniteLoading={this.state.isInfiniteLoading}
