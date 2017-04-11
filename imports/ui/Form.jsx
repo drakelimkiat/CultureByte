@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { analytics } from "meteor/okgrow:analytics";
 import { Button } from 'react-bootstrap';
+import { Instagram } from 'meteor/helium:instagram';
+import { Session } from 'meteor/session'
 
 export default class Form extends Component {
   constructor(props) {
@@ -10,6 +12,7 @@ export default class Form extends Component {
       this.state = {
           message: 'Share your story!',
           isSubmitting: false,
+          instagramUser: false
       };
   }
 
@@ -50,6 +53,50 @@ export default class Form extends Component {
     })
 
     this.uploadPicture(title, body);
+  }
+
+  handleInstagramAuth(event) {
+    event.preventDefault();
+    let userId = Meteor.user()._id;
+    this.linkInsta(userId);
+  }
+
+  linkInsta(userId) {
+    userInfo = Meteor.users.findOne({_id: userId});
+    var username;
+    
+    try {
+      username = userInfo['profile']['instagram']['username'];
+    }
+    catch(err) {
+      console.log('User has not linked an Instagram account.');
+      username = null;
+    }
+
+    if (username) {
+      this.setState({
+        message: 'Instagram account already linked: @' + username
+      });
+    }
+    else {
+      Instagram.requestCredential((tokenOrError) => {
+        let secret = Package.oauth.OAuth._retrieveCredentialSecret(tokenOrError);
+        let userId = Meteor.user()._id;
+        Meteor.call('updateInstagramData', userId, tokenOrError, secret, function(error, result) {
+          if (error) {
+            console.log(error.reason);
+          } else {
+            console.log("Instagram authorization done");
+            this.setState({
+              message: 'Instagram account linked: @' + result
+            });
+          }
+        }.bind(this));
+        this.setState({
+          message: 'Instagram account linked.'
+        });
+      });
+    }
   }
 
   componentDidMount() {
@@ -123,7 +170,9 @@ export default class Form extends Component {
             <div className="line"></div>
             <input className="ghost-input" type="file" id="pictureInput" />
             <div className="line"></div>
-            <Button className="btn btn-primary icon-save" block><i className="fa fa-instagram"></i>  Link to Instagram</Button>
+            <Button className="btn btn-primary icon-save" onClick={this.handleInstagramAuth.bind(this)} block>
+              <i className="fa fa-instagram"></i>  Link to Instagram
+              </Button>
             <input className="ghost-button" type="submit" value="Submit" />
           </form>
         </div>
