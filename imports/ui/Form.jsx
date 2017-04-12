@@ -11,8 +11,7 @@ export default class Form extends Component {
       super(props);
       this.state = {
           message: 'Share your story!',
-          isSubmitting: false,
-          instagramUser: false
+          isSubmitting: false
       };
   }
 
