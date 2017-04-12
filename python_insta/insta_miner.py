@@ -29,13 +29,13 @@ def get_valid_accounts(host, port):
                     if 'profile' in user:
                         if 'instagram' in user['profile']:
                             acct = user['profile']['instagram']
-                            user_info['id'] = user['_id']
+                            user_info['user_id'] = user['_id']
                             user_info['username'] = user['username']
                             user_info['insta_username'] = acct['username']
                             user_info['insta_access_token'] = acct['accessToken']
                             users.append(user_info)
-            except:
-                traceback.print_exc()
+                except:
+                    traceback.print_exc()
         return users
 
     except:
@@ -47,7 +47,7 @@ def get_valid_accounts(host, port):
 # Given user's instagram access token, collect their latest posts
 # ---------------------------------------------------------------------------------------
 
-def get_user_posts(access_token, interval, start_timestamp, end_timestamp):
+def get_user_posts(session_post_ids, user_id, access_token, interval, start_timestamp, end_timestamp):
     ENDPOINT_URL = 'https://api.instagram.com/v1/users/self/media/recent/'
     try:
         response = requests.get(ENDPOINT_URL,
@@ -55,27 +55,31 @@ def get_user_posts(access_token, interval, start_timestamp, end_timestamp):
 
         res = json.loads(response.text)
 
-        user_results = {'access_token': access_token}
+        user_results = {
+            'access_token': access_token,
+            'user_id': user_id
+        }
+
         results = []
 
         if 'data' in res:
             # print(type(res))
             if res['data']:
                 for post in res['data']:
-                    pprint(post)
                     # create dictionary for each post
                     try:
-                        # check if time range is within the last hr - if not,
-                        # skip this post
-                        if start_timestamp <= int(post['created_time']) <= end_timestamp and 'culturebyte' in post['tags']:
-                            result = {}
-                            result['created_time'] = post['created_time']
-                            result['picture'] = post['images'][
-                                'standard_resolution']['url']
-                            result['location'] = post['location']
-                            result['caption'] = post['caption']['text']
-                            result['created_at'] = int(post['created_time'])
-                            results.append(result)
+                        # check if this post is in the list of pending post ids
+                        post_id = post['id']
+                        if post_id not in session_post_ids:
+                            # check if posted time was in the interval and culturebyte hashtag is in the post
+                            if start_timestamp <= int(post['created_time']) <= end_timestamp and 'culturebyte' in post['tags']:
+                                result = {}
+                                result['picture'] = post['images']['standard_resolution']['url']
+                                result['location'] = post['location']
+                                result['caption'] = post['caption']['text']
+                                result['created_time'] = int(post['created_time'])
+                                session_post_ids.append(post_id)
+                                results.append(result)
 
                     except Exception:
                         traceback.print_exc()
@@ -104,19 +108,21 @@ def filter_posts_by_uniqueness(posts):
 # ---------------------------------------------------------------------------------------
 
 def posts_mongo_store(data, accts, host, port):
-	try:
-		for user_data in data:
-			try:
-				access_token = user_data['access_token']
-				for acct in accts:
-					if acct['insta_access_token'] == access_token:
-						create_posts(acct, user_data['results'], host, port)
+    try:
+        pprint(data)
+        for user_data in data:
+            try:
+                access_token = user_data['access_token']
+                user_id = user_data['user_id']
+                for acct in accts:
+                    if acct['insta_access_token'] == access_token and acct['user_id'] == user_id:
+                        create_posts(acct, user_data['results'], host, port)
 
-			except:
-				traceback.print_exc()
+            except:
+                traceback.print_exc()
 
-	except:
-		traceback.print_exc()
+    except:
+        traceback.print_exc()
 
 
 # ---------------------------------------------------------------------------------------
@@ -129,7 +135,7 @@ def create_posts(acct, data, host, port):
 		post['body'] = dat['caption']
 		post['title'] = title_generator.get_title(dat['caption'])
 		post['pictureUrl'] = dat['picture']
-		post['author'] = acct['id']
+		post['author'] = acct['user_id']
 		post['username'] = acct['username']
 		post['liked_count'] = 0
 		post['createdAt'] = datetime.datetime.utcnow()
@@ -154,11 +160,13 @@ def collect_instagram_data(interval, host="localhost", port=3001):
     start_timestamp = end_timestamp - (interval * 60)
 
     data = []
+    session_post_ids = []
     accts = get_valid_accounts(host, port)
 
     for acct in accts:
         try:
-            posts = get_user_posts(acct['insta_access_token'], interval, start_timestamp, end_timestamp)
+            posts = get_user_posts(session_post_ids, acct['user_id'], acct['insta_access_token'], interval, start_timestamp, end_timestamp)
+            
             if posts['results']:
                 unique_posts = filter_posts_by_uniqueness(posts)
                 if unique_posts:
