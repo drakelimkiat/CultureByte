@@ -6,6 +6,7 @@ import requests
 import json
 from text_summarizer import title_generator
 import datetime
+import Config
 
 
 # ---------------------------------------------------------------------------------------
@@ -156,6 +157,18 @@ def create_posts(acct, data, host, port):
 # ---------------------------------------------------------------------------------------
 
 def collect_instagram_data(interval, host="localhost", port=3001):
+    config = Config.get_config()
+    if config:
+        try:
+            mongo_keys = config['mongo']
+            host = mongo_keys['host']
+            port = mongo_keys['port']
+        except:
+            print('Mongo keys not found!')
+            traceback.print_exc()
+            host = "localhost"
+            port = 3001
+
     end_timestamp = int(time.time())
     start_timestamp = end_timestamp - (interval * 60)
 
