@@ -85,7 +85,7 @@ export default class Form extends Component {
           if (error) {
             console.log(error.reason);
             this.setState({
-              message: 'ERROR: Instagram account cannot be linked. Request to be a Sandbox user today!'
+              message: 'Oops, looks like you are not one of our sandbox users...'
             });
           } else {
             console.log("Instagram authorization done");
