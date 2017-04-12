@@ -84,6 +84,9 @@ export default class Form extends Component {
         Meteor.call('updateInstagramData', userId, tokenOrError, secret, function(error, result) {
           if (error) {
             console.log(error.reason);
+            this.setState({
+              message: 'ERROR: Instagram account cannot be linked. Request to be a Sandbox user today!'
+            });
           } else {
             console.log("Instagram authorization done");
             this.setState({
@@ -91,9 +94,6 @@ export default class Form extends Component {
             });
           }
         }.bind(this));
-        this.setState({
-          message: 'Instagram account linked.'
-        });
       });
     }
   }
