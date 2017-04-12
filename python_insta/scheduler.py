@@ -18,4 +18,4 @@ def run_scheduler(interval):
 # Main method
 # ---------------------------------------------------------------------------------------
 if __name__ == '__main__':
-    run_scheduler(3)
+    run_scheduler(1)

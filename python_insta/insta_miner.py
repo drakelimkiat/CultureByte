@@ -22,15 +22,20 @@ def get_valid_accounts(host, port):
         db = client['meteor']
         coll = db['users']
         results = coll.find({}, no_cursor_timeout=True)
-        for user in results:
-            user_info = {}
-            if 'instagram' in user:
-                acct = user['instagram']
-                user_info['id'] = user['_id']
-                user_info['username'] = user['username']
-                user_info['insta_username'] = acct['username']
-                user_info['insta_access_token'] = acct['access_token']
-                users.append(user_info)
+        if results:
+            for user in results:
+                try:
+                    user_info = {}
+                    if 'profile' in user:
+                        if 'instagram' in user['profile']:
+                            acct = user['profile']['instagram']
+                            user_info['id'] = user['_id']
+                            user_info['username'] = user['username']
+                            user_info['insta_username'] = acct['username']
+                            user_info['insta_access_token'] = acct['accessToken']
+                            users.append(user_info)
+            except:
+                traceback.print_exc()
         return users
 
     except:
@@ -50,13 +55,14 @@ def get_user_posts(access_token, interval, start_timestamp, end_timestamp):
 
         res = json.loads(response.text)
 
-        user_results = {}
+        user_results = {'access_token': access_token}
+        results = []
 
         if 'data' in res:
             # print(type(res))
             if res['data']:
-                results = []
                 for post in res['data']:
+                    pprint(post)
                     # create dictionary for each post
                     try:
                         # check if time range is within the last hr - if not,
@@ -76,8 +82,7 @@ def get_user_posts(access_token, interval, start_timestamp, end_timestamp):
                         pass
             
             user_results['results'] = results
-            user_results['access_token'] = access_token
-            return user_results
+        return user_results
 
     except Exception:
         traceback.print_exc()
@@ -153,9 +158,8 @@ def collect_instagram_data(interval, host="localhost", port=3001):
 
     for acct in accts:
         try:
-            posts = get_user_posts(
-                acct['insta_access_token'], interval, start_timestamp, end_timestamp)
-            if posts:
+            posts = get_user_posts(acct['insta_access_token'], interval, start_timestamp, end_timestamp)
+            if posts['results']:
                 unique_posts = filter_posts_by_uniqueness(posts)
                 if unique_posts:
                     data.append(unique_posts)
