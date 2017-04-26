@@ -20,7 +20,7 @@ def get_valid_accounts(host, port):
     try:
         users = []
         client = pymongo.MongoClient(host, port)
-        db = client['meteor']
+        db = client['CultureByte']
         coll = db['users']
         results = coll.find({}, no_cursor_timeout=True)
         if results:
