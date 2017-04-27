@@ -136,6 +136,10 @@ def create_posts(acct, data, host, port):
 		post['title'] = title_generator.get_title(dat['caption'])
 		post['pictureUrl'] = dat['picture']
 		post['author'] = acct['user_id']
+
+		if 'username' in acct:
+			post['username'] = acct['username']
+			
 		post['liked_count'] = 0
 		post['createdAt'] = datetime.datetime.utcnow()
 		# print
