@@ -31,7 +31,6 @@ def get_valid_accounts(host, port):
                         if 'instagram' in user['profile']:
                             acct = user['profile']['instagram']
                             user_info['user_id'] = user['_id']
-                            user_info['username'] = user['username']
                             user_info['insta_username'] = acct['username']
                             user_info['insta_access_token'] = acct['accessToken']
                             users.append(user_info)
@@ -137,7 +136,6 @@ def create_posts(acct, data, host, port):
 		post['title'] = title_generator.get_title(dat['caption'])
 		post['pictureUrl'] = dat['picture']
 		post['author'] = acct['user_id']
-		post['username'] = acct['username']
 		post['liked_count'] = 0
 		post['createdAt'] = datetime.datetime.utcnow()
 		# print
@@ -145,7 +143,7 @@ def create_posts(acct, data, host, port):
 
 		# insert to mongo
 		client = pymongo.MongoClient(host, port)
-		db = client['meteor']
+		db = client['CultureByte']
 		coll = db['posts']
 		coll.insert(post)
 		# print('POSTED!')
