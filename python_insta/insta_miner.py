@@ -147,15 +147,10 @@ def create_posts(acct, data, host, port):
 		post['liked_count'] = 0
 		post['createdAt'] = datetime.datetime.utcnow()
         post['_id'] = str(ObjectId())
-		# print
-		# pprint(post)
-
-		# insert to mongo
-		client = pymongo.MongoClient(host, port)
-		db = client['CultureByte']
-		coll = db['posts']
-		coll.insert(post)
-		# print('POSTED!')
+        client = pymongo.MongoClient(host, port)
+        db = client['CultureByte']
+        coll = db['posts']
+        coll.insert(post)
 
 
 # ---------------------------------------------------------------------------------------
