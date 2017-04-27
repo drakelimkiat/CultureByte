@@ -7,6 +7,7 @@ import json
 from text_summarizer import title_generator
 import datetime
 import Config
+from bson.objectid import ObjectId
 
 
 # ---------------------------------------------------------------------------------------
