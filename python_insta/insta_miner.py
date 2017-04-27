@@ -145,6 +145,7 @@ def create_posts(acct, data, host, port):
 		post['username'] = acct['username']
 		post['liked_count'] = 0
 		post['createdAt'] = datetime.datetime.utcnow()
+        post['_id'] = str(ObjectId())
 		# print
 		# pprint(post)
 
