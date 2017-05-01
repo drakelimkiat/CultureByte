@@ -9,7 +9,6 @@ const Index = () => {
 	document.title = 'CultureByte';
 	return (
 		<div>
-			<TitleSection />
 			<FactoidSection />
 			<hr />
 			<CategorySection />
