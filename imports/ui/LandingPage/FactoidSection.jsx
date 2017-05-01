@@ -6,7 +6,7 @@ const FactoidSection = () => {
   const body = (
     <div>
       <div id="factoid">
-        <h2>Here are some culture facts</h2>
+        <h2>Snippets of cultural facts</h2>
         <div id="factoid-slider" className="carousel slide carousel-fade" data-ride="carousel">
           <div className="carousel-inner">
             <IndividualFactoid
