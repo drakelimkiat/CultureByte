@@ -123,13 +123,13 @@ export default class Form extends Component {
             } else {
                 console.log(downloadUrl);
                 this.storeIntoDatabase(title, body, downloadUrl);
-                this.props.closeModal();
+                if (this.props.closeModal) this.props.closeModal();
 
             }
         }.bind(this));
       } else {
         this.storeIntoDatabase(title, body, '');
-        this.props.closeModal();
+        if (this.props.closeModal) this.props.closeModal();
       }
   }
 
