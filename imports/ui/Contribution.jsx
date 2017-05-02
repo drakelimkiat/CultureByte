@@ -82,12 +82,12 @@ class Contribution extends Component {
       <Grid>
         <div className="content">
           <Row>
-            <Col lg={6} lgOffset={2} md={8} sm={8} xs={12}>
+            <Col lg={6} md={6} sm={7} xs={12}>
               {this.renderPost()}
               {this.renderBackButton()}
               {this.renderNextButton()}
             </Col>
-            <Col lg={3} lgPull={1} md={4} sm={4} xs={12}>
+            <Col lg={6} md={6} sm={5} xs={12}>
               <Form />
             </Col>
           </Row>
