@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { analytics } from "meteor/okgrow:analytics";
-import { Button } from 'react-bootstrap';
+import { Grid, Row, Col, Button } from 'react-bootstrap';
 import { Instagram } from 'meteor/helium:instagram';
 import { Session } from 'meteor/session'
 
@@ -63,7 +63,7 @@ export default class Form extends Component {
   linkInsta(userId) {
     userInfo = Meteor.users.findOne({_id: userId});
     var username;
-    
+
     try {
       username = userInfo['profile']['instagram']['username'];
     }
@@ -123,10 +123,13 @@ export default class Form extends Component {
             } else {
                 console.log(downloadUrl);
                 this.storeIntoDatabase(title, body, downloadUrl);
+                this.props.closeModal();
+
             }
         }.bind(this));
       } else {
         this.storeIntoDatabase(title, body, '');
+        this.props.closeModal();
       }
   }
 
@@ -159,22 +162,26 @@ export default class Form extends Component {
       );
     } else {
       return (
-        <div className="form">
-          <form className="new-post" onSubmit={this.handleSubmit.bind(this)}>
-            {this.state.message}<br/>
-            <div className="line"></div>
-            <textarea className="ghost-input" type="text" ref="titleInput" placeholder="Title"/>
-            <div className="line"></div>
-            <textarea className="ghost-input" rows="8" type="text" ref="bodyInput" placeholder="Body"/>
-            <div className="line"></div>
-            <input className="ghost-input" type="file" id="pictureInput" />
-            <div className="line"></div>
-            <Button className="btn btn-primary icon-save" onClick={this.handleInstagramAuth.bind(this)} block>
-              <i className="fa fa-instagram"></i>  Link to Instagram
-              </Button>
-            <input className="ghost-button" type="submit" value="Submit" />
-          </form>
-        </div>
+        <Row className="form">
+          <Col lg={8} lgOffset={2} md={8} mdOffset={2} xs={12}>
+              <form className="new-post" onSubmit={this.handleSubmit.bind(this)}>
+                <div className="form-title">{this.state.message}</div>
+                <br/>
+                <div className="line"></div>
+                <textarea className="ghost-input" type="text" ref="titleInput" placeholder="Title"/>
+                <div className="line"></div>
+                <textarea className="ghost-input" rows="8" type="text" ref="bodyInput" placeholder="Body"/>
+                <div className="line"></div>
+                <br/>
+                <input className="ghost-input" type="file" id="pictureInput" />
+                <br/>
+                <Button className="btn btn-primary icon-save" onClick={this.handleInstagramAuth.bind(this)} block>
+                  <i className="fa fa-instagram"></i>  Link to Instagram
+                </Button>
+                <input className="ghost-button" type="submit" value="Submit" />
+              </form>
+          </Col>
+        </Row>
       );
     }
   }
