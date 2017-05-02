@@ -11,6 +11,7 @@ import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 import { browserHistory } from 'react-router';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Infinitez } from 'react-infinite';
+import Modal from 'react-modal';
 
 // App component - represents the whole app
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
       sortType: 'time',
       elements: undefined,
       isInfiniteLoading: false,
+      isModalOpen: false
     };
   }
 
@@ -110,25 +112,23 @@ class App extends Component {
   }
 
   renderCreatePostForm() {
-    return <Form/>
+    return <Form closeModal={this.closeModal.bind(this)} />
   }
 
   renderToggleButton() {
-    if (this.state.sortType == 'time') {
+    const sortByTime = this.state.sortType == 'time';
+    const sortByPop = this.state.sortType == 'pop';
       return (
-        <div className="category">
-          <button className="category-button enable" onClick={this.onToggleBetweenTimeAndPop.bind(this)}>New <i className="fa fa-clock-o" aria-hidden="true"></i></button>
-          <button className="category-button" onClick={this.onToggleBetweenTimeAndPop.bind(this)}>Hot <i className="fa fa-fire" aria-hidden="true"></i></button>
-        </div>
+        <Row className="category">
+          <Col lg={8} xs={10}>
+            <button className={"category-button " + (sortByTime ? "enable" : "")} onClick={this.onToggleBetweenTimeAndPop.bind(this)}>New <i className="fa fa-clock-o" aria-hidden="true"></i></button>
+            <button className={"category-button " + (sortByPop ? "enable" : "")} onClick={this.onToggleBetweenTimeAndPop.bind(this)}>Hot <i className="fa fa-fire" aria-hidden="true"></i></button>
+          </Col>
+          <Col lg={4} xs={2}>
+            <button className="category-button new-post-button" onClick={this.openModal.bind(this)}>New Post</button>
+          </Col>
+      </Row>
       );
-    } else if (this.state.sortType == 'pop') {
-      return (
-        <div className="category">
-          <button className="category-button" onClick={this.onToggleBetweenTimeAndPop.bind(this)}>New <i className="fa fa-clock-o" aria-hidden="true"></i></button>
-          <button className="category-button enable" onClick={this.onToggleBetweenTimeAndPop.bind(this)}>Hot <i className="fa fa-fire" aria-hidden="true"></i></button>
-        </div>
-      );
-    }
   }
 
   onToggleBetweenTimeAndPop() {
@@ -145,6 +145,14 @@ class App extends Component {
     }
   }
 
+  openModal(){
+      this.setState({isModalOpen: true});
+  }
+
+  closeModal(){
+      this.setState({isModalOpen: false});
+  }
+
   render() {
     document.title = 'Post';
     let toggleButton = null;
@@ -154,11 +162,19 @@ class App extends Component {
       createPostForm = this.renderCreatePostForm();
     }
 
+    const modalStyle = {
+        content : {
+            top : '110px',
+            left: '10%',
+            right: '10%'
+        }
+    }
+
     return (
       <Grid>
         <div className="content">
           <Row>
-            <Col lg={6} lgOffset={2} md={8} sm={8} xs={12}>
+            <Col lg={6} lgOffset={3} xs={12}>
               {toggleButton}
               <Infinite elementHeight={300}
                          containerHeight={window.innerHeight}
@@ -170,10 +186,15 @@ class App extends Component {
                 {this.state.elements}
               </Infinite>
             </Col>
-            <Col lg={3} lgPull={1} md={4} sm={4} xs={12}>
-              {createPostForm}
-            </Col>
           </Row>
+          <Modal
+              isOpen={this.state.isModalOpen}
+              onRequestClose={this.closeModal.bind(this)}
+              contentLabel="Create Post"
+              style={modalStyle}
+          >
+            {createPostForm}
+          </Modal>
         </div>
       </Grid>
     );
