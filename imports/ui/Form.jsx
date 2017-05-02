@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { analytics } from "meteor/okgrow:analytics";
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Button } from 'react-bootstrap';
+import { Instagram } from 'meteor/helium:instagram';
+import { Session } from 'meteor/session'
 
 export default class Form extends Component {
   constructor(props) {
       super(props);
       this.state = {
           message: 'Share your story!',
-          isSubmitting: false,
+          isSubmitting: false
       };
   }
 
@@ -50,6 +52,50 @@ export default class Form extends Component {
     })
 
     this.uploadPicture(title, body);
+  }
+
+  handleInstagramAuth(event) {
+    event.preventDefault();
+    let userId = Meteor.user()._id;
+    this.linkInsta(userId);
+  }
+
+  linkInsta(userId) {
+    userInfo = Meteor.users.findOne({_id: userId});
+    var username;
+
+    try {
+      username = userInfo['profile']['instagram']['username'];
+    }
+    catch(err) {
+      console.log('User has not linked an Instagram account.');
+      username = null;
+    }
+
+    if (username) {
+      this.setState({
+        message: 'Instagram account already linked: @' + username
+      });
+    }
+    else {
+      Instagram.requestCredential((tokenOrError) => {
+        let secret = Package.oauth.OAuth._retrieveCredentialSecret(tokenOrError);
+        let userId = Meteor.user()._id;
+        Meteor.call('updateInstagramData', userId, tokenOrError, secret, function(error, result) {
+          if (error) {
+            console.log(error.reason);
+            this.setState({
+              message: 'Oops, looks like you are not one of our sandbox users...'
+            });
+          } else {
+            console.log("Instagram authorization done");
+            this.setState({
+              message: 'Instagram account linked: @' + result
+            });
+          }
+        }.bind(this));
+      });
+    }
   }
 
   componentDidMount() {
@@ -129,6 +175,9 @@ export default class Form extends Component {
                 <br/>
                 <input className="ghost-input" type="file" id="pictureInput" />
                 <br/>
+                <Button className="btn btn-primary icon-save" onClick={this.handleInstagramAuth.bind(this)} block>
+                  <i className="fa fa-instagram"></i>  Link to Instagram
+                </Button>
                 <input className="ghost-button" type="submit" value="Submit" />
               </form>
           </Col>

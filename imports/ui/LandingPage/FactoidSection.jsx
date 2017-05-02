@@ -6,7 +6,7 @@ const FactoidSection = () => {
   const body = (
     <div>
       <div id="factoid">
-        <h2>Here are some culture facts</h2>
+        <h2>Local culture at your fingertips.</h2>
         <div id="factoid-slider" className="carousel slide carousel-fade" data-ride="carousel">
           <div className="carousel-inner">
             <IndividualFactoid
@@ -32,9 +32,11 @@ const FactoidSection = () => {
     </div>
   );
   return (
-    <div>
-      <MediaQuery minWidth={1001} className="large-screen">{body}</MediaQuery>
-      <MediaQuery maxWidth={1000} className="small-screen">{body}</MediaQuery>
+    <div id="intro">
+      <div className="intro-content">
+        <MediaQuery minWidth={601} className="large-screen">{body}</MediaQuery>
+        <MediaQuery maxWidth={600} className="small-screen">{body}</MediaQuery>
+      </div>
     </div>
   );
 };

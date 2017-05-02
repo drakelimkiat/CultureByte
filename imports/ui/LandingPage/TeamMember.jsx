@@ -9,7 +9,6 @@ const TeamMember = ({name, role, description, imageClassName}) => {
         <div className="member-info">
           <h3>{name}</h3>
           <h4>{role}</h4>
-          <p>{description}</p>
         </div>
       </div>
     </div>
